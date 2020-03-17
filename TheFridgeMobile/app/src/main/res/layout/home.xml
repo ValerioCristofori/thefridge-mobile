@@ -1,49 +1,1 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/linearLayout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <View
-        android:id="@+id/view-top"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv-your-fridge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:fontFamily="@font/comfortaa"
-        android:text="Your Fridge"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view-top"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/view-top" />
-
-    <View
-        android:id="@+id/view-center"
-        android:layout_width="wrap_content"
-        android:layout_height="611dp"
-        app:layout_constraintBottom_toTopOf="@+id/view-bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view-top"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <View
-        android:id="@+id/view-bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="69dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+<?xml version="1.0" encoding="utf-8"?><androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"    xmlns:app="http://schemas.android.com/apk/res-auto"    xmlns:tools="http://schemas.android.com/tools"    android:id="@+id/linearLayout"    android:layout_width="match_parent"    android:layout_height="match_parent">    <View        android:id="@+id/view-top"        android:layout_width="wrap_content"        android:layout_height="50dp"        app:layout_constraintEnd_toEndOf="parent"        app:layout_constraintStart_toStartOf="parent"        app:layout_constraintTop_toTopOf="parent" />    <TextView        android:id="@+id/tv-your-fridge"        android:layout_width="wrap_content"        android:layout_height="wrap_content"        android:layout_marginStart="20dp"        android:fontFamily="@font/comfortaa"        android:text="Your Fridge"        android:textSize="18sp"        app:layout_constraintBottom_toBottomOf="@+id/view-top"        app:layout_constraintStart_toStartOf="parent"        app:layout_constraintTop_toTopOf="@+id/view-top" />    <View        android:id="@+id/view-bottom"        android:layout_width="wrap_content"        android:layout_height="69dp"        android:visibility="visible"        app:layout_constraintBottom_toBottomOf="parent"        app:layout_constraintEnd_toEndOf="parent"        app:layout_constraintHorizontal_bias="1.0"        app:layout_constraintStart_toStartOf="parent" />    <ImageButton        android:id="@+id/ibtn-fridge"        android:layout_width="40dp"        android:layout_height="40dp"        android:layout_marginStart="20dp"        android:background="@android:color/transparent"        android:src="@drawable/fridge_icon"        app:layout_constraintBottom_toBottomOf="@+id/view-bottom"        app:layout_constraintStart_toStartOf="@+id/view-bottom"        app:layout_constraintTop_toTopOf="@+id/view-bottom"        app:layout_constraintVertical_bias="0.448" />    <ImageButton        android:id="@+id/ibtn-addfood"        android:layout_width="40dp"        android:layout_height="40dp"        android:background="@android:color/transparent"        android:src="@drawable/add_shopping_cart_icon"        app:layout_constraintBottom_toBottomOf="@+id/view-bottom"        app:layout_constraintEnd_toStartOf="@+id/ibtn-recipes"        app:layout_constraintStart_toEndOf="@+id/ibtn-fridge"        app:layout_constraintTop_toTopOf="@+id/view-bottom" />    <ImageButton        android:id="@+id/ibtn-recipes"        android:layout_width="40dp"        android:layout_height="40dp"        android:layout_marginEnd="64dp"        android:background="@android:color/transparent"        android:src="@drawable/cooking_book_icon"        app:layout_constraintBottom_toBottomOf="@+id/view-bottom"        app:layout_constraintEnd_toStartOf="@+id/ibtn-news"        app:layout_constraintTop_toTopOf="@+id/view-bottom"        app:layout_constraintVertical_bias="0.482" />    <ImageButton        android:id="@+id/ibtn-news"        android:layout_width="40dp"        android:layout_height="40dp"        android:layout_marginEnd="20dp"        android:background="@android:color/transparent"        android:src="@drawable/profile_icon"        app:layout_constraintBottom_toBottomOf="@+id/view-bottom"        app:layout_constraintEnd_toEndOf="@+id/view-bottom"        app:layout_constraintTop_toTopOf="@+id/view-bottom" /></androidx.constraintlayout.widget.ConstraintLayout>
