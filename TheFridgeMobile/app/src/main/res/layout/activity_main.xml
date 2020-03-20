@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_the_fridge_mobile"
-    tools:context=".activities.MainActivity">
+    tools:context=".activity.MainActivity">
 
     <!-- also try Edit view : with attribute input type -->
 
@@ -22,7 +22,7 @@
         app:layout_constraintBottom_toTopOf="@+id/btnSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tfPassword"
+        app:layout_constraintTop_toTopOf="@+id/til"
         app:layout_constraintVertical_bias="0.993" />
 
     <TextView
@@ -66,7 +66,7 @@
         app:layout_constraintVertical_bias="0.368" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/tfPassword"
         android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
@@ -81,7 +81,7 @@
         app:layout_constraintVertical_bias="0.338" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tfPassword"
+        android:id="@+id/til"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa"

@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.activities;
+package it.valeriocristofori.thefridgemobile.activity;
 
 import android.os.Bundle;
 
