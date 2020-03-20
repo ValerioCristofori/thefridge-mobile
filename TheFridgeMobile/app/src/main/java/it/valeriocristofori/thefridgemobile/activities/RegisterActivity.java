@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.controller;
+package it.valeriocristofori.thefridgemobile.activities;
 
 import android.os.Bundle;
 
@@ -7,11 +7,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import it.valeriocristofori.thefridgemobile.R;
 
-public class HomeActivity extends AppCompatActivity {
-
+public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.home);
+        setContentView(R.layout.signup);
     }
 }

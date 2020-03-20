@@ -5,39 +5,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_the_fridge_mobile"
-    tools:context=".controller.MainActivity">
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="391dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/comfortaa"
-        android:text="LOGIN"
-        app:layout_constraintBottom_toTopOf="@+id/btn_signup"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="108dp"
-        android:layout_marginEnd="120dp"
-        android:fontFamily="@font/comfortaa"
-        android:text=" Some description..."
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fridge_logo" />
+    tools:context=".activities.MainActivity">
 
     <!-- also try Edit view : with attribute input type -->
 
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="0dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="5dp"
+        android:background="#28a745"
+        android:fontFamily="@font/comfortaa"
+        android:text="LOGIN"
+        app:layout_constraintBottom_toTopOf="@+id/btnSignup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tfPassword"
+        app:layout_constraintVertical_bias="0.993" />
+
     <TextView
-        android:id="@+id/fridge_logo"
+        android:id="@+id/tvDescription"
+        android:layout_width="224dp"
+        android:layout_height="131dp"
+        android:fontFamily="@font/comfortaa"
+        android:text=" Some description..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvFridgeLogo"
+        app:layout_constraintVertical_bias="0.132" />
+
+    <TextView
+        android:id="@+id/tvFridgeLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa"
@@ -50,36 +52,36 @@
         app:layout_constraintVertical_bias="0.133" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/tf_username"
-        android:layout_width="385dp"
+        android:id="@+id/tfUsername"
+        android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="234dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="15dp"
         android:fontFamily="@font/comfortaa"
         android:hint="Username"
-        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/description" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:layout_constraintVertical_bias="0.368" />
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/textInputEditText"
-        android:layout_width="385dp"
+        android:layout_width="0dp"
         android:layout_height="45dp"
         android:layout_marginStart="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="70dp"
         android:fontFamily="@font/comfortaa"
         android:hint="Password"
         android:password="true"
-        app:layout_constraintBottom_toTopOf="@+id/btn_login"
+        app:layout_constraintBottom_toTopOf="@+id/btnLogin"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfUsername"
+        app:layout_constraintVertical_bias="0.338" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/tf_password"
+        android:id="@+id/tfPassword"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/comfortaa"
@@ -88,7 +90,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_signup"
+        android:id="@+id/btnSignup"
         android:layout_width="85dp"
         android:layout_height="26dp"
         android:layout_marginBottom="5dp"
@@ -100,7 +102,9 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.994" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
