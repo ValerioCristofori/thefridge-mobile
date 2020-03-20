@@ -28,9 +28,9 @@ public class MainActivity extends AppCompatActivity {
 
         public Holder(){
             //init login button
-            this.btn_login = (Button)findViewById(R.id.btn_login);
+            this.btn_login = (Button)findViewById(R.id.btnLogin);
             //init signup button
-            this.btn_signup = (Button)findViewById(R.id.btn_signup);
+            this.btn_signup = (Button)findViewById(R.id.btnSignup);
 
             //assign click listener
             this.btn_login.setOnClickListener(this);
@@ -40,11 +40,11 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            if(v.getId() == R.id.btn_login){
+            if(v.getId() == R.id.btnLogin){
                 //remand home GUI
                 startActivity(new Intent(MainActivity.this, HomeActivity.class));
             }
-            else if(v.getId() == R.id.btn_signup){
+            else if(v.getId() == R.id.btnSignup){
                 //remand to register GUI
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
