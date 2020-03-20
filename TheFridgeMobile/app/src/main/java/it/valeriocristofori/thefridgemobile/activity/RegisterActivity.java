@@ -2,18 +2,18 @@ package it.valeriocristofori.thefridgemobile.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputEditText;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
-import it.valeriocristofori.thefridgemobile.model.ToastFactory;
 
 public class RegisterActivity extends AppCompatActivity {
     @Override
@@ -24,17 +24,17 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     class Holder implements View.OnClickListener{
-        private TextInputEditText tfUsername;
-        private TextInputEditText tfEmail;
-        private TextInputEditText tfPassword;
+        private EditText tfUsername;
+        private EditText tfEmail;
+        private EditText tfPassword;
         private Button btnSignup;
 
 
         public Holder(){
             //binding xml components and java components
-            this.tfUsername = (TextInputEditText)findViewById(R.id.tfUsername);
-            this.tfEmail = (TextInputEditText)findViewById(R.id.tfEmail);
-            this.tfPassword = (TextInputEditText)findViewById(R.id.tfPassword);
+            this.tfUsername = (EditText)findViewById(R.id.tfUsername);
+            this.tfEmail = (EditText)findViewById(R.id.tfEmail);
+            this.tfPassword = (EditText)findViewById(R.id.tfPassword);
             this.btnSignup = (Button)findViewById(R.id.btnSignup);
 
             //assign click listener
@@ -45,7 +45,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
-            if( v.getId() == R.id.btnSignup ){
+            if( v.getId() == R.id.btnSignup){
                 //registration use case
 
                 //syntax control
@@ -53,20 +53,17 @@ public class RegisterActivity extends AppCompatActivity {
                 SyntaxValidation sv = new SyntaxValidation();
                 if( !sv.validSyntaxUsername(tfUsername.getText().toString()) ){
                     //launch toast for username error
-                    ToastFactory toastFactory = new ToastFactory();
-                    toastFactory.displayUsernameError();
+                    this.displayUsernameError();
                     return;
                 }
                 if( !sv.validSyntaxEmail(tfEmail.getText().toString()) ){
                     //launch toast for email error
-                    ToastFactory toastFactory = new ToastFactory();
-                    toastFactory.displayEmailError();
+                    this.displayEmailError();
                     return;
                 }
                 if( !sv.validSyntaxPassword(tfPassword.getText().toString()) ){
                     //launch toast for pass error
-                    ToastFactory toastFactory = new ToastFactory();
-                    toastFactory.displayPasswordError();
+                    this.displayPasswordError();
                     return;
                 }
 
@@ -77,6 +74,35 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
+        private void displayUsernameError(){
+            CharSequence text = "Hello toast!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(RegisterActivity.this , text, duration);
+            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.show();
+
+        }
+
+        private void displayEmailError(){
+            CharSequence text = "Hello toast!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(RegisterActivity.this , text, duration);
+            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.show();
+
+        }
+
+        private void displayPasswordError(){
+            CharSequence text = "Hello toast!";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(RegisterActivity.this , text, duration);
+            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.show();
+
+        }
 
     }
 

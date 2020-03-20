@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
-
-import com.google.android.material.textfield.TextInputEditText;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
-import it.valeriocristofori.thefridgemobile.model.ToastFactory;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,19 +31,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     class Holder implements View.OnClickListener{
-        private TextInputEditText tfUsername;
-        private TextInputEditText tfPassword;
+        private EditText tfUsername;
+        private EditText tfPassword;
         private Button btnLogin;
         private Button btnSignup;
 
         public Holder(){
             //init login button
             this.btnLogin = (Button)findViewById(R.id.btnLogin);
-            //init signup button
+            //init sign up button
             this.btnSignup = (Button)findViewById(R.id.btnSignup);
             //binding xml components and java components
-            this.tfUsername = (TextInputEditText)findViewById(R.id.tfUsername);
-            this.tfPassword = (TextInputEditText)findViewById(R.id.tfPassword);
+            this.tfUsername = (EditText)findViewById(R.id.tfUsername);
+            this.tfPassword = (EditText)findViewById(R.id.tfPassword);
 
             //assign click listener
             this.btnLogin.setOnClickListener(this);
@@ -58,14 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 SyntaxValidation sv = new SyntaxValidation();
                 if( !sv.validSyntaxUsername(tfUsername.getText().toString()) ){
                     //launch toast for username error
-                    ToastFactory toastFactory = new ToastFactory();
-                    toastFactory.displayUsernameError();
+                    this.displayUsernameError();
                     return;
                 }
                 if( !sv.validSyntaxPassword(tfPassword.getText().toString()) ){
                     //launch toast for pass error
-                    ToastFactory toastFactory = new ToastFactory();
-                    toastFactory.displayPasswordError();
+                    this.displayPasswordError();
                     return;
                 }
 
@@ -76,6 +77,32 @@ public class MainActivity extends AppCompatActivity {
                 //remand to register GUI
                 startActivity(new Intent(MainActivity.this, RegisterActivity.class));
             }
+        }
+
+        private void displayUsernameError(){
+            LayoutInflater inflater = getLayoutInflater();
+            View layout = inflater.inflate(R.layout.custom_alert_layout,
+                    (ViewGroup) findViewById(R.id.custom_toast_container));
+
+            TextView text = (TextView) layout.findViewById(R.id.text);
+            text.setText("Username wrong");
+
+            Toast toast = new Toast(getApplicationContext());
+            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
+            toast.show();
+
+        }
+
+        private void displayPasswordError(){
+            CharSequence text = "Password wrong";
+            int duration = Toast.LENGTH_SHORT;
+
+            Toast toast = Toast.makeText(MainActivity.this , text, duration);
+            toast.setGravity(Gravity.TOP, 0, 0);
+            toast.show();
+
         }
     }
 
