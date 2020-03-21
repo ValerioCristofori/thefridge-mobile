@@ -3,9 +3,12 @@ package it.valeriocristofori.thefridgemobile.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -53,17 +56,17 @@ public class RegisterActivity extends AppCompatActivity {
                 SyntaxValidation sv = new SyntaxValidation();
                 if( !sv.validSyntaxUsername(tfUsername.getText().toString()) ){
                     //launch toast for username error
-                    this.displayUsernameError();
+                    this.displayErrorMessage("Username wrong");
                     return;
                 }
                 if( !sv.validSyntaxEmail(tfEmail.getText().toString()) ){
                     //launch toast for email error
-                    this.displayEmailError();
+                    this.displayErrorMessage("Email wrong");
                     return;
                 }
                 if( !sv.validSyntaxPassword(tfPassword.getText().toString()) ){
                     //launch toast for pass error
-                    this.displayPasswordError();
+                    this.displayErrorMessage("Password wrong");
                     return;
                 }
 
@@ -74,35 +77,26 @@ public class RegisterActivity extends AppCompatActivity {
 
         }
 
-        private void displayUsernameError(){
-            CharSequence text = "Hello toast!";
-            int duration = Toast.LENGTH_SHORT;
+        private void displayErrorMessage( String message ){
+            //duplicated codes
+            //refactor this in the ToastCustom class!
 
-            Toast toast = Toast.makeText(RegisterActivity.this , text, duration);
+            LayoutInflater inflater = getLayoutInflater();
+            View layout = inflater.inflate(R.layout.custom_alert_layout,
+                    (ViewGroup) findViewById(R.id.custom_toast_container));
+
+            TextView text = (TextView) layout.findViewById(R.id.text);
+            text.setText(message);
+
+
+            Toast toast = new Toast(getApplicationContext());
             toast.setGravity(Gravity.TOP, 0, 0);
+            toast.setDuration(Toast.LENGTH_SHORT);
+            toast.setView(layout);
             toast.show();
 
         }
 
-        private void displayEmailError(){
-            CharSequence text = "Hello toast!";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(RegisterActivity.this , text, duration);
-            toast.setGravity(Gravity.TOP, 0, 0);
-            toast.show();
-
-        }
-
-        private void displayPasswordError(){
-            CharSequence text = "Hello toast!";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(RegisterActivity.this , text, duration);
-            toast.setGravity(Gravity.TOP, 0, 0);
-            toast.show();
-
-        }
 
     }
 

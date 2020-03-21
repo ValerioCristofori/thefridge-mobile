@@ -15,10 +15,10 @@ import android.widget.Toast;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
+import it.valeriocristofori.thefridgemobile.model.ToastCustom;
 
 public class MainActivity extends AppCompatActivity {
 
-    //change here and in Register Activity text input layout and text fields consulting https://www.youtube.com/watch?v=EVgxH2UhyQk
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,12 +61,12 @@ public class MainActivity extends AppCompatActivity {
                 SyntaxValidation sv = new SyntaxValidation();
                 if( !sv.validSyntaxUsername(tfUsername.getText().toString()) ){
                     //launch toast for username error
-                    this.displayUsernameError();
+                    this.displayErrorMessage("Username wrong");
                     return;
                 }
                 if( !sv.validSyntaxPassword(tfPassword.getText().toString()) ){
                     //launch toast for pass error
-                    this.displayPasswordError();
+                    this.displayErrorMessage("Password wrong");
                     return;
                 }
 
@@ -79,28 +79,23 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        private void displayUsernameError(){
+
+
+        private void displayErrorMessage( String message ){
+            //refactor this in the ToastCustom class!
+
             LayoutInflater inflater = getLayoutInflater();
             View layout = inflater.inflate(R.layout.custom_alert_layout,
                     (ViewGroup) findViewById(R.id.custom_toast_container));
 
             TextView text = (TextView) layout.findViewById(R.id.text);
-            text.setText("Username wrong");
+            text.setText(message);
+
 
             Toast toast = new Toast(getApplicationContext());
             toast.setGravity(Gravity.TOP, 0, 0);
             toast.setDuration(Toast.LENGTH_SHORT);
             toast.setView(layout);
-            toast.show();
-
-        }
-
-        private void displayPasswordError(){
-            CharSequence text = "Password wrong";
-            int duration = Toast.LENGTH_SHORT;
-
-            Toast toast = Toast.makeText(MainActivity.this , text, duration);
-            toast.setGravity(Gravity.TOP, 0, 0);
             toast.show();
 
         }
