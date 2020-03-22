@@ -13,8 +13,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.sql.SQLException;
+
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
+import it.valeriocristofori.thefridgemobile.db.init.DatabaseManagerConnection;
 import it.valeriocristofori.thefridgemobile.model.ToastCustom;
 
 public class MainActivity extends AppCompatActivity {
@@ -27,6 +30,21 @@ public class MainActivity extends AppCompatActivity {
 
         //create this.Holder
         Holder holder = new Holder();
+
+        this.open_db_connection();
+
+    }
+
+    private void open_db_connection(){
+
+        // init connection with 'sqlite' database
+        try {
+            DatabaseManagerConnection db = DatabaseManagerConnection.getSingletonInstance(this);
+            db.open();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
 
     }
 
