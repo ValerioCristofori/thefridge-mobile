@@ -24,19 +24,34 @@ public class HomeActivity extends AppCompatActivity {
         private ImageButton ibtnAddFood;
         private ImageButton ibtnRecipes;
         private ImageButton ibtnProfile;
-        private ImageButton ibtnFridge;
+        private Intent intent;
 
         public Holder(){
             //init image buttons
             this.ibtnAddFood = (ImageButton)findViewById(R.id.ibtnAddFood);
-
+            this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
+            this.ibtnProfile = (ImageButton)findViewById(R.id.ibtnProfile);
 
             //assign listener
             this.ibtnAddFood.setOnClickListener(this);
+            this.ibtnRecipes.setOnClickListener(this);
+            this.ibtnProfile.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
+
+            switch(v.getId()) {
+
+                //case R.id.ibtnProfile:
+
+                //case R.id.ibtnAddFood:
+
+                case R.id.ibtnRecipes:
+                    intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
+                    startActivityForResult(intent,0);
+
+            }
             /** error : not thread alive
             if( v.getId() == R.id.ibtnAddFood ){
                 //remand add food GUI
