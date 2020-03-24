@@ -1,7 +1,7 @@
 package it.valeriocristofori.thefridgemobile.model.utility;
 
 public class ListAllFood {
-    private static String[] list = {"Achacha","Agave-Syrup","Agave-Syrup","Alfalfa","Almond-oil","Albacore-Tuna",
+    private static final String[] list = {"Achacha","Agave-Syrup","Agave-Syrup","Alfalfa","Almond-oil","Albacore-Tuna",
             "Annatto-seed","Apple-Juice-Concentrate","Apples-Braeburn","Apples-Granny-Smith","Apples-Red-Delicious",
             "Apples-Royal-Gala","Arborio-rice","Arugula","Asian-Noodles","Avocado","Avocado-Spread","Bacon",
             "Balmain-Bug","Banana","Barley-Pearl","Barramundi","Basmati-rice","Bean-Sprouts","Beans-Green",
@@ -68,7 +68,7 @@ public class ListAllFood {
             "Kecap-Manis","Kidneys","Kiwiberries","Kombu","Kumera","Lavender-Flowers","Leeks","Lemongrass",
             "Licorice","Liver","Loquats","Lychees","Mace","Mahi-mahi","Mandarins","Maple-Syrup","Marjoram",
             "Melon-Piel-de-Sapo","Merchant-stock","Millet","Mirin","Molasses","Mountain-Bread","Mulberries",
-            "Mung-Beans","Mushrooms-Brown","Mushrooms-Oyster","Mustard","Nasturtium","Nectarines-white","Nori",
+            "Mung-Beans","Mushrooms-Brown","MushroSmoked-Troutoms-Oyster","Mustard","Nasturtium","Nectarines-white","Nori",
             "Nuts","Oats-Coarse","Ocean-Perch","Olive-Oil","Onion-Brown","Onion-White","Oranges","Oysters",
             "Pandoro","Papaya","Parmesan-cheese","Parsnip","Pasta-dried-wholegrain","Peanuts","Peas","Pepitas",
             "Peppercorns","Persimmon","Pinto-Beans","Polenta","Poppy-Seed","Potatoes","Provolone","Prickly-Pear",
@@ -80,6 +80,15 @@ public class ListAllFood {
             "Tuna-tinned","Turnips","Veal","Verjuice","Wakame","Wasabi","Watermelon","Wheatgrass-juice","Whiting",
             "Wine-Red","Wolfberry","Yellowtail-Kingfish","Yeast","Zatar"};
 
+    private static final String[] categoryFruit = {};
+    private static final String[] categoryVegetable = {};
+    private static final String[] categoryMeal = {};
+    private static final String[] categoryPastaBread = {};
+    private static final String[] categorySpices = {};
+    private static final String[] categoryFish = {};
+    private static final String[] categoryDessert = {};
+
+    
     //non deve essere istanziata
     private ListAllFood() {
         throw new IllegalStateException("Utility class");
