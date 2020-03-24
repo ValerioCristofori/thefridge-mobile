@@ -59,13 +59,6 @@ public class AddFoodActivity extends AppCompatActivity {
                     break;
 
             }
-            /** error : not thread alive
-             if( v.getId() == R.id.ibtnAddFood ){
-             //remand add food GUI
-             startActivity(new Intent( HomeActivity.this, AddFoodActivity.class ));
-             }
-             */
-
 
         }
     }
