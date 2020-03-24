@@ -5,7 +5,7 @@ public class Food {
     private int quantity;
     private String expirationDate;
     private String category;
-
+/*
     public String getName() {
         return name;
     }
@@ -76,4 +76,6 @@ public class Food {
         }
 
     }
+    */
+
 }

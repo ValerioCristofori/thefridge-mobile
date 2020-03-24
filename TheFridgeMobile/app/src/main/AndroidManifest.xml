@@ -39,9 +39,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ChooseRecipesActivity">
+        <activity android:name=".activity.ChooseRecipesActivity" />
 
-        </activity>
+        <activity android:name=".activity.ProfileActivity" />
+        <activity android:name=".activity.DeleteAccount" />
+
 
         <meta-data
             android:name="com.google.android.actions"

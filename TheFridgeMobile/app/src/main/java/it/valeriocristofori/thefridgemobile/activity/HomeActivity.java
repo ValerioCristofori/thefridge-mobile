@@ -2,6 +2,7 @@ package it.valeriocristofori.thefridgemobile.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -43,13 +44,20 @@ public class HomeActivity extends AppCompatActivity {
 
             switch(v.getId()) {
 
-                //case R.id.ibtnProfile:
+                case R.id.ibtnProfile:
+                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                    startActivityForResult(intent,0);
+                    break;
 
-                //case R.id.ibtnAddFood:
+                case R.id.ibtnAddFood:
+                    intent = new Intent(v.getContext(), AddFoodActivity.class);
+                    startActivityForResult(intent,0);
+                    break;
 
                 case R.id.ibtnRecipes:
                     intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
                     startActivityForResult(intent,0);
+                    break;
 
             }
             /** error : not thread alive
