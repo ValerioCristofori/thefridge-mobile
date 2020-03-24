@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.model;
+package it.valeriocristofori.thefridgemobile.model.customize;
 
 import android.view.LayoutInflater;
 import android.view.View;
