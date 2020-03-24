@@ -2,6 +2,8 @@ package it.valeriocristofori.thefridgemobile.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
+import android.view.Display;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -16,67 +18,18 @@ public class DeleteAccount extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.);
+        setContentView(R.layout.delete_account);
 
-        Holder holder = new Holder();
+        //creazione pop up
+        DisplayMetrics dm = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(dm);
+
+        int width = dm.widthPixels;
+        int height = dm.heightPixels;
+
+        getWindow().setLayout((int)(width*.8),(int)(height*.6));
+
     }
 
-    class Holder implements View.OnClickListener{
-        private ImageButton ibtnAddFood;
-        private ImageButton ibtnRecipes;
-        private ImageButton ibtnFrifge;
-        private Button btnDelete;
-        private Intent intent;
-
-        public Holder(){
-            //init image buttons
-            this.btnDelete = findViewById(R.id.btnDelete);
-            this.ibtnAddFood = (ImageButton)findViewById(R.id.ibtnAddFood);
-            this.ibtnRecipes = (ImageButton)findViewById(R.id.ibtnRecipes);
-            this.ibtnFrifge = (ImageButton)findViewById(R.id.ibtnFridge);
-
-            //assign listener
-            this.btnDelete.setOnClickListener(this);
-            this.ibtnAddFood.setOnClickListener(this);
-            this.ibtnRecipes.setOnClickListener(this);
-            this.ibtnFrifge.setOnClickListener(this);
-        }
-
-        @Override
-        public void onClick(View v) {
-
-            switch(v.getId()) {
-
-                case R.id.btnDelete:
-                    intent = new Intent(v.getContext(), DeleteAccount.class);
-                    startActivityForResult(intent,0);
-                    break;
-
-                case R.id.ibtnRecipes:
-                    intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
-                    startActivityForResult(intent,0);
-                    break;
-
-                case R.id.ibtnAddFood:
-                    intent = new Intent(v.getContext(), AddFoodActivity.class);
-                    startActivityForResult(intent,0);
-                    break;
-
-                case R.id.ibtnFridge:
-                    intent = new Intent(v.getContext(), HomeActivity.class);
-                    startActivityForResult(intent,0);
-                    break;
-
-            }
-            /** error : not thread alive
-             if( v.getId() == R.id.ibtnAddFood ){
-             //remand add food GUI
-             startActivity(new Intent( HomeActivity.this, AddFoodActivity.class ));
-             }
-             */
-
-
-        }
     }
-
-}
+    
