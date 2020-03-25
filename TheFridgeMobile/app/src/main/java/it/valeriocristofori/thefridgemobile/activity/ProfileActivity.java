@@ -5,9 +5,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import org.w3c.dom.Text;
 
 import it.valeriocristofori.thefridgemobile.R;
 
@@ -19,6 +22,7 @@ public class ProfileActivity extends AppCompatActivity {
         setContentView(R.layout.profile);
 
         Holder holder = new Holder();
+
     }
 
     class Holder implements View.OnClickListener{
@@ -26,7 +30,11 @@ public class ProfileActivity extends AppCompatActivity {
         private ImageButton ibtnRecipes;
         private ImageButton ibtnFrifge;
         private Button btnDelete;
+        private TextView tvUsername;
+        private TextView tvEmail;
         private Intent intent;
+        private String welcome = "Hi ";
+        private String username, text;
 
         public Holder(){
             //init image buttons
@@ -34,6 +42,17 @@ public class ProfileActivity extends AppCompatActivity {
             this.ibtnAddFood = (ImageButton)findViewById(R.id.ibtnAddFood);
             this.ibtnRecipes = (ImageButton)findViewById(R.id.ibtnRecipes);
             this.ibtnFrifge = (ImageButton)findViewById(R.id.ibtnFridge);
+
+            this.tvUsername = findViewById(R.id.tvUsername);
+            //query DB per sapere username
+            username = "Carl";
+            //////////
+            text = welcome.concat(username);
+            tvUsername.setText(text);
+
+            this.tvEmail = findViewById(R.id.tvEmail);
+            //query DB per sapere email
+            tvEmail.setText("email@gmail.com");
 
             //assign listener
             this.btnDelete.setOnClickListener(this);
