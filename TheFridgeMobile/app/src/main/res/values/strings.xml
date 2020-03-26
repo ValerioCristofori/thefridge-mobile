@@ -1,4 +1,22 @@
 <resources>
     <string name="app_name">The Fridge Mobile</string>
     <string name="username" />
+
+    <string-array name="food_categories">
+        <item>Fruit</item>
+        <item>Vegetable</item>
+        <item>Meat</item>
+        <item>Fish</item>
+        <item>Cereals and Flour</item>
+        <item>Bread and Pasta</item>
+        <item>Legumes</item>
+        <item>Mushroom</item>
+        <item>Dairy Product</item>
+        <item>Dessert</item>
+        <item>Spices</item>
+        <item>Sauces</item>
+        <item>Beverages</item>
+        <item>Vegan</item>
+        <item>Oils</item>
+    </string-array>
 </resources>

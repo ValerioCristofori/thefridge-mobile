@@ -1,5 +1,6 @@
 package it.valeriocristofori.thefridgemobile.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -7,8 +8,11 @@ import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.model.customize.RecyclerCustom;
 
 public class AddFoodActivity extends AppCompatActivity {
 
@@ -17,20 +21,42 @@ public class AddFoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_food);
 
-        Holder holder = new Holder();
+        Holder holder = new Holder(this);
     }
 
     class Holder implements View.OnClickListener{
+        private Context context;
         private ImageButton ibtnFridge;
         private ImageButton ibtnRecipes;
         private ImageButton ibtnProfile;
         private Intent intent;
 
-        public Holder(){
+        //data for initialize recycler view
+        RecyclerView rvCategories;
+        String str[];
+        int images[] = {R.drawable.category_fruit,R.drawable.category_vegetable,R.drawable.category_meat,
+                R.drawable.category_fish,R.drawable.category_cereal,R.drawable.category_bread,R.drawable.category_legume,
+                R.drawable.category_mushroom,R.drawable.category_dairy_product,R.drawable.category_dessert,R.drawable.category_spices,
+                R.drawable.category_sauces,R.drawable.category_beverage,R.drawable.category_vegan,R.drawable.category_oil};
+
+
+        public Holder(Context context){
+            //take context
+            this.context = context;
+
             //init image buttons
             this.ibtnFridge = (ImageButton)findViewById(R.id.ibtnFridge);
             this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
             this.ibtnProfile = (ImageButton)findViewById(R.id.ibtnProfile);
+
+            this.rvCategories = (RecyclerView)findViewById(R.id.rvCategories);
+
+            //init recycler
+            str = getResources().getStringArray(R.array.food_categories);
+            RecyclerCustom recyclerCustom = new RecyclerCustom(this.context,this.str,this.images);
+            rvCategories.setAdapter(recyclerCustom);
+            rvCategories.setLayoutManager(new LinearLayoutManager(this.context));
+
 
             //assign listener
             this.ibtnFridge.setOnClickListener(this);

@@ -1,94 +1,159 @@
 package it.valeriocristofori.thefridgemobile.model.utility;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class ListAllFood {
-    private static String[] list = {"Achacha","Agave-Syrup","Agave-Syrup","Alfalfa","Almond-oil","Albacore-Tuna",
-            "Annatto-seed","Apple-Juice-Concentrate","Apples-Braeburn","Apples-Granny-Smith","Apples-Red-Delicious",
-            "Apples-Royal-Gala","Arborio-rice","Arugula","Asian-Noodles","Avocado","Avocado-Spread","Bacon",
-            "Balmain-Bug","Banana","Barley-Pearl","Barramundi","Basmati-rice","Bean-Sprouts","Beans-Green",
-            "Beef-Organic","Berries","Beurre-Bosc-Pears","Black-Rice","Blood-oranges","Blue-Swimmer-Crab",
-            "Bok-Choy","Bran","Bread-Rice","Bread-Spelt","Bread-Wholemeal","Broccolini","Brussels-Sprouts","Bulghur",
-            "Butter","Butternut-lettuce","Cacao","Camellia-Tea-Oil","Candle-Nut","Cantaloupe","Capsicum-red",
-            "Cardamom","Cashews","Aniseed","Celery","Cherries","Chestnut","Chickory","Chilli-Pepper-Fresh",
-            "Chinese-Cabbage","Chocolate-Dark","Choy-Sum","Clams","Coconut","Coconut-water","Coriander-Leaves",
-            "Corn-Syrup","Cornmeal","Bush-Tomato","Cottage-Cheese","Cream","Cucumber","Currants","Custard-Apples",
-            "Dashi","Devil","Dragonfruit","Edam","Eggs","English-Spinach","Feijoa","Fenugreek","File-Powder",
-            "Fish-Sauce","Flaxseed-Oil"	,"Flour-Buckwheat","Fennel-Seeds","Flour-Tapioca","Flour-Potato","Fromage-Blanc",
-            "Fruit-salad","Garlic","Ginger","Goji-Berry","Grapefruit","Green-Chicken-Curry","Green-Tea-noodles",
-            "Guava","Ham","Hazelnut","Hokkien-Noodles","Horseradish","Iceberg-lettuce","Jarrahdale-pumpkin",
-            "Jerusalem-Artichoke","John-Dory","Kaffir-Lime-Leaves","Kangaroo","Kidney-Beans","Kiwi-Fruit","Kokam",
-            "Kudzu","Koshihikari-rice","Lecithin","Lemon-Myrtle","Lentils","Ling","Longan","Lotus-Root","Macadamia-oil"
-            ,"Mackerel-Tinned","Malt-vinegar","Mangosteens","Marigold","Mastic","Melon","Mesclun","Mint","Miso",
-            "Morwong","Muesli","Mullet","Mushroom-Flat","Mushrooms-Enoki","Mussels","Nashi-Pear","Nectarines",
-            "Nigella-seed","Nutmeg","Oatmeal","Oca","Okra","Omega-Spread","Onion-Red","orange-blood","Oyster-Sauce",
-            "Pandanus-leaves","Papaw","Paradise-Pears","Parsley","Pasta-Dried","Peaches","Pears","Pecorino",
-            "Pepperberry","Peppermint","Pineapple","Plums","Pomegrante-molasses","Pork","Prawns","Preserved-lemon",
-            "Prunes","Pumpkin-Seed","Quail","Quinoa","Radish","Red-cabbage","Red-papaya","Redfish","Rice-Noodles",
-            "Rocket","Rockmelon","Rye","Sage","Salmon","Sausages","Semolina","Sesame-seed","Shoyu","Slivered-Almonds",
-            "Snowpea-sprouts","Sorrel","Soy-Milk","Soy-Sprouts","Spearmint","Spring-Onions","Star-Anise","Stock-Beef",
-            "Stock-Vegetable","Sugar","Sumac","Sunflower-Seeds","Sweet-Potato","Swiss-Chard","Tabasco","Tamari",
-            "Tapioca","Tea-Oil","Thyme","Tomato","Triticale","Tuna","Turmeric","Vanilla-Beans","Vegetable-spaghetti",
-            "Vinegar","Warehou","Watercress","Wheat","White-wine-vinegar","William-Pear","Witlof","Wine-White",
-            "Yoghurt","Zucchini","Apple-juice","Apples-Bonza","Apples-Golden-Delicious","Apples-Jonathan",
-            "Apples-Sundowner","Arame","Artichoke","Asian-Greens","Aubergine","Avocado-Oil","Baby-mum","Baking-Soda",
-            "Bamboo-Shoots","Barley","Barley-Malt","Basil-fresh","Bean-Shoots","Beans-Broad","Beans-Snake",
-            "Beetroot-powder","Beurre-Bosc-Pear","Black-limes","Blackberries","Blue-Eye-Trevalla","Bocconcini",
-            "Borlotti-Beans","Bread","Bread-Sour-Dough","Bread-Wholegrain","Broccoli","Brown-rice-vinegar",
-            "Buttermilk","Cabbage","Calamari","Camomile","Canola-Oil","Capsicum","Caraway-Seed","Carrot",
-            "Cauliflower","Celeriac","Cheddar","Chervil","Chicken-Free-Range","Chicory","Chinese-Broccoli",
-            "Chives","Chocolate-coated-strawberries","Cipollini-onions","Cocoa-powder","Coconut-Oil",
-            "Corella-Pear","Corn-Oil","Cornichons","Cous-Cous","Cranberry","Cumquat","Curry-Powder",
-            "Dandelion","Devil","Dill","Duck","Eggplant","Endive","Farmed-Prawns","Figs","Fioretto",
-            "Flaxseed","Flour-Besan","Flour-Wholewheat","Gem","Grape-Seed-Oil","Grapes-red-seedless","Gruyere",
-            "Haloumi","Harissa","Hiramasa-Kingfish","Honeydew-melon","Hummus","Jackfruit","Jelly","Jicama",
-            "Juniper-Berries","Kalettes","Kenchur","Kimchi","Kohlrabi","Lamb","Leatherjacket","Lemon","Limes",
-            "Lobster","Macadamia-Nut","Mackerel","Mahlab","Mango","Margarine","Mascarpone","Mirror-Dory",
-            "Monkfish","Mozzarella","Mushrooms-Common-Cultivated","Mushrooms-Shiitake","Mustard-Seed","Nasturtium",
-            "Nicole","Oat-milk","Oats-Rolled","Octopus","Olives","Orange-Roughy","Oregano","Packham-Pear","Panetonne",
-            "Paprika","Parrotfish","Passionfruit","Pear-Juice-Concentrate","Pecan-Nut","Pepper","Pine-Nut",
-            "Pistachio-Nut","Pomegranate","Porcini-mushrooms","Purple-Rice","Quince","Radicchio-Castelfranco",
-            "Raspberry","Red-Wine-Vinegar","Rice-milk","Rice-Syrup","Rosemary","Saffron","Salad","Sea-Salt",
-            "Shark","Silverbeet","Snapper","Soba","Soy-Beans","Spatchcock","Spinach","Squid","Stevia",
-            "Stock-Fish","Strudel","Sultanas","Sunflower-Oil","Sweet-Chilli-Sauce","Taleggio-cheese","Tangelo",
-            "Tea","Threadfin-Bream","Tom-Yum","Tomatoes-Roma","Turkey","Umeboshi","Vegetable-Oil",
-            "Vermicelli-Noodles","Walnut","Water","Wattleseed","White-rice","Wild-Rice","Adzuki-Beans",
-            "Ajowan-Seed","Agar-Agar","Almonds","Anchovies","Apple-Cider-Vinegar","Apples","Allspice",
-            "Apples-Jazz","Apples-Red-Fuji","Apricots","Arrowroot","Asafoetida","Asparagus","Avocado-Reed",
-            "Baba-ghanoush","Baking-Powder","Balsamic-Vinegar","Barberry","Barley-Rolled","Basil-dried",
-            "Bay-Leaves","Beans","Beans-Runner","Beetroot","Beurre-Bosc-Pear","Black-Eyed-Beans","Black-tahini",
-            "Blue-Cheese","Blueberries","Bonito-Flakes","Brazil-Nut","Bread-Rye","Bread-White","Brie",
-            "Brown-Rice","Buckwheat","Amaranth","Butter-Beans","Butternut-pumpkin","Cake","Camembert",
-            "Cannellini-Beans","Capers","Carambola","Carob","Cassia-bark","Cayenne","Celery-Seed","Cherry-Plum",
-            "Chia-seeds","Chickpea","Chillies-dried","Chinese-Five-Spice","Chocolate-Milk","Cinnamon",
-            "Cloves","Coconut-Cream","Coffee","Coriander-Seed","Corn-Tortilla","Cos-lettuce","Courgette",
-            "Crabs","Cream-Cheese","Cumin","Curry-Leaves","Daikon","Dates","Dijon-mustard","Dried-Apricots",
-            "Edamame","Elderberry","Extra-virgin-olive-oil","Fennel","Feta","Fingerlime","Flathead","Flounder",
-            "Flour-Oat","Flour-Rice","Flour-Unbleached","Freekeh","Flour-Soy","Galangal","Garlic-Chives",
-            "French-eschallots","Good-mood-food","Grapes","Garam-Masala","Green-Tea","Gula-Melaka","Haricot-Beans",
-            "Hijiki","Honey","Hot-smoked-salmon","Incaberries","Jasmine-rice","Jewfish","juicer","Kale",
-            "Kecap-Manis","Kidneys","Kiwiberries","Kombu","Kumera","Lavender-Flowers","Leeks","Lemongrass",
-            "Licorice","Liver","Loquats","Lychees","Mace","Mahi-mahi","Mandarins","Maple-Syrup","Marjoram",
-            "Melon-Piel-de-Sapo","Merchant-stock","Millet","Mirin","Molasses","Mountain-Bread","Mulberries",
-            "Mung-Beans","Mushrooms-Brown","Mushrooms-Oyster","Mustard","Nasturtium","Nectarines-white","Nori",
-            "Nuts","Oats-Coarse","Ocean-Perch","Olive-Oil","Onion-Brown","Onion-White","Oranges","Oysters",
-            "Pandoro","Papaya","Parmesan-cheese","Parsnip","Pasta-dried-wholegrain","Peanuts","Peas","Pepitas",
-            "Peppercorns","Persimmon","Pinto-Beans","Polenta","Poppy-Seed","Potatoes","Provolone","Prickly-Pear",
-            "Pumpkin","Purple-carrot","Quark","Radicchio","Raisin","Red-Lentils","Red-Pepper","Rhubarb",
-            "Rice-paper","Ricotta","Rose-Water","Safflower-Oil","Sake","Sardines","Scallops","Sesame-Oil",
-            "Shallots","Silver-Trevally","Smoked-Trout","Snowpeas","Soupmaker","Soy-Sauce","Spanner-Crab",
-            "Spelt","Squash","Star-Fruit","Stock-Chicken","Strawberries","Sugarsnap-peas","Sun-dried-tomatoes",
-            "Swede","Sweetcorn","Swordfish","Tahini","Tamarillo","Tarragon","Tempeh","Tofu","Tomato-Truss","Trout",
-            "Tuna-tinned","Turnips","Veal","Verjuice","Wakame","Wasabi","Watermelon","Wheatgrass-juice","Whiting",
-            "Wine-Red","Wolfberry","Yellowtail-Kingfish","Yeast","Zatar"};
+
+    private static final String[] CATEGORY_FRUIT = {"Achacha","Apples-Braeburn","Apples-Granny-Smith","Apples-Red-Delicious", "Apples-Royal-Gala","Avocado","Banana",
+            "Berries","Beurre-Bosc-Pears","Blood-oranges", "Cantaloupe", "Cashews","Cherries","Chestnut", "Coconut","Cucumber","Currants","Custard-Apples",
+            "Dragonfruit","Grapefruit","Kiwi-Fruit","Jackfruit","Passionfruit","Star-Fruit","Goji-Berry","Cranberry","Raspberry","Elderberry","Wolfberry","Watermelon",
+            "Pineapple","Plums","Corella-Pear","Honeydew-melon","Apples-Bonza","Apples-Golden-Delicious","Apples-Jonathan","Papaya","Lychees","Kiwiberries", "Pistachio-Nut",
+            "Feijoa","Guava","Hazelnut","Kaffir-Lime-Leaves","Longan","Strawberries","Raisin","Oranges","Nuts","Nectarines-white","Macadamia-Nut","Mulberries","Mandarins","Mace",
+            "Loquats","Incaberries","Grapes", "Fingerlime","Dried-Apricots","Dates","Cherry-Plum","Carob","Carambola","Blueberries","Brazil-Nut","Beurre-Bosc-Pear","Packham-Pear",
+            "Apples-Jazz","Apples-Red-Fuji","Apricots","Apples","Apples-Sundowner","William-Pear","Pears",
+            "Peaches","Paradise-Pears","Nashi-Pear","Nectarines","Olives","Avocado-Reed","Almonds","Walnut","Umeboshi","Tangelo","Sultanas",
+            "Quince","Pomegranate","Pecan-Nut","Pine-Nut","Mango","Lemon","Limes","Juniper-Berries","Grapes-red-seedless","Figs",
+            "Cumquat","Blackberries","Black-limes","Slivered-Almonds","Rockmelon","Melon","Orange-blood","Prunes","Preserved-lemon","Papaw","Red-papaya"};
+
+    private static final String[] CATEGORY_VEGETABLE = {"Alfalfa","Arugula","Bean-Sprouts","Broccolini","Brussels-Sprouts","Butternut-lettuce","Celery","Capsicum-red","Chilli-Pepper-Fresh","Chicory",
+            "Chinese-Cabbage","Choy-Sum","Cauliflower","Bush-Tomato","Onion-Red","Capsicum","Carrot","Garlic","Jarrahdale-pumpkin","Jerusalem-Artichoke",
+            "Horseradish","Lotus-Root","Pumpkin","Purple-carrot","Radicchio","Turnips","Tamarillo","Tomato-Truss",
+            "Sun-dried-tomatoes","Shallots","Red-Pepper","Potatoes","Persimmon","Parsnip","Onion-White","Onion-Brown",
+            "Leeks","Fennel","Daikon","Courgette","Chillies-dried","Cayenne","Butternut-pumpkin","Beetroot","Asparagus","Pepper",
+            "Tomatoes-Roma","Radicchio-Castelfranco","Cornichons","Cipollini-onions","Celeriac","Artichoke","Zucchini","Tomato",
+            "Sweet-Potato","Spring-Onions","Eggplant","Radish","English-Spinach","Salad","Cabbage","Iceberg-lettuce",
+            "Wakame","Squash","Rhubarb","Nori","Kale","Hijiki","Edamame","Cos-lettuce","Spinach","Silverbeet","Gem","Endive",
+            "Bamboo-Shoots","Asian-Greens","Arame","Rocket","Okra","Red-cabbage"};
+
+    private static final String[] CATEGORY_MEAT_EGG = { "Bacon","Beef-Organic","Sausages","Eggs","Ham","Liver","Kangaroo","Veal","Stock-Chicken","Kidneys","Turkey",
+            "Spatchcock","Lamb","Duck","Chicken-Free-Range","Stock-Beef","Oca","Pork","Quail"};
+
+    private static final String[] CATEGORY_PASTA_BREAD_RISE = {"Arborio-rice","Asian-Noodles","Barley-Pearl","Basmati-rice","Black-Rice","Bread-Rice","Bread-Spelt","Bread-Wholemeal","Bulghur",
+            "Cornmeal","Quinoa","Purple-Rice","Cous-Cous","Bread","Green-Tea-noodles","Hokkien-Noodles","Koshihikari-rice","Polenta","Mountain-Bread","Jasmine-rice",
+            "Brown-Rice","Bread-Rye","Bread-White","White-rice","Wild-Rice","Bread-Sour-Dough","Bread-Wholegrain","Pasta-Dried","Rice-Noodles"};
+
+    private static final String[] CATEGORY_SPICES = {"Cacao","Cardamom","Aniseed","Coriander-Leaves","Zatar","Green-Chicken-Curry","Ginger","Lemon-Myrtle","Oregano","Curry-Powder","Paprika",
+            "File-Powder","Tarragon","Peppercorns","Marjoram","Licorice","Lemongrass","Lavender-Flowers","Garam-Masala","Garlic-Chives","Galangal",
+            "Curry-Leaves","Cumin","Coriander-Seed","Cloves","Cinnamon","Chinese-Five-Spice","Cassia-bark","Bay-Leaves","Spearmint","Asafoetida","Stevia","Saffron",
+            "Rosemary","Dill","Dandelion","Chervil","Basil-fresh","Turmeric","Thyme","Sumac","Star-Anise","Sage","Mint","Nutmeg","Parsley","Peppermint"};
+
+    private static final String[] CATEGORY_FISH = {"Albacore-Tuna","Barramundi","Blue-Swimmer-Crab", "Clams","Yellowtail-Kingfish","John-Dory","Tuna-tinned","Redfish","Hiramasa-Kingfish",
+            "Monkfish","Parrotfish","Stock-Fish","Jewfish","Swordfish","Tuna","Shark","Octopus","Lobster","Calamari","Mackerel-Tinned","Whiting","Sardines",
+            "Scallops","Trout","Spanner-Crab","Smoked-Trout","Silver-Trevally","Oysters","Ocean-Perch","Mahi-mahi","Hot-smoked-salmon","Flounder","Flathead","Crabs","Bonito-Flakes",
+            "Orange-Roughy","Anchovies","Threadfin-Bream","Squid","Snapper","Mirror-Dory","Mackerel","Leatherjacket","Farmed-Prawns","Blue-Eye-Trevalla",
+            "Warehou","Salmon","Morwong","Mullet","Mussels","Prawns"};
+
+    private static final String[] CATEGORY_DAIRY_PRODUCT = {"Butter","Cottage-Cheese","Taleggio-cheese","Blue-Cheese","Cream-Cheese","Parmesan-cheese","Rice-milk","Oat-milk", "Buttermilk","Soy-Milk",
+            "Feta","Yoghurt","Mozzarella","Cheddar","Edam","Fromage-Blanc","Ricotta","Quark","Provolone","Camembert","Brie","Pecorino","Mascarpone","Margarine","Haloumi","Gruyere"};
+
+    private static final String[] CATEGORY_DESSERT = {"Chocolate-Dark","Corn-Syrup","Agave-Syrup","Cream","Strudel","Vanilla-Beans","Maple-Syrup","Honey",
+            "Cake","Rice-Syrup","Jelly","Cocoa-powder","Barley-Malt"};
+
+    private static final String[] CATEGORY_SAUCES = {"Avocado-Spread","Wasabi","Omega-Spread","Fish-Sauce","Soy-Sauce","Mustard","Molasses","Mirin","Kecap-Manis","Dijon-mustard",
+            "Balsamic-Vinegar","Baba-ghanoush","Apple-Cider-Vinegar","Sweet-Chilli-Sauce","Red-Wine-Vinegar","Hummus",
+            "Harissa","Brown-rice-vinegar","White-wine-vinegar","Vinegar","Tamari","Tabasco","Malt-vinegar","Oyster-Sauce"};
+
+    private static final String[] CATEGORY_BEVERAGES = {"Apple-Juice-Concentrate","Coconut-water","Wine-Red","Verjuice","Pear-Juice-Concentrate","Apple-juice",
+            "Wheatgrass-juice","Sake","Water", "Tea","Green-Tea","Coffee","Camomile","Wine-White"};
+
+    private static final String[] CATEGORY_LEGUMES = {"Beans-Green","Kidney-Beans","Beans-Broad","Beans-Snake","Borlotti-Beans","Soy-Beans","Adzuki-Beans","Beans",
+            "Beans-Runner","Black-Eyed-Beans","Butter-Beans","Cannellini-Beans","Haricot-Beans","Mung-Beans","Pinto-Beans",
+            "Lentils","Red-Lentils","Sugarsnap-peas","Snowpeas","Peas","Chickpea","Bean-Shoots","Chinese-Broccoli","Broccoli"};
+
+    private static final String[] CATEGORY_VEGAN = {"Tofu","Tempeh", "Miso", "Quorn", "Chia Seeds", "Ajowan-Seed","Wattleseed","Mustard-Seed","Flaxseed","Caraway-Seed",
+            "Sunflower-Seeds","Sesame-seed","Pumpkin-Seed","Nigella-seed","Fennel-seeds","Celery-seed", "Poppy-seed", "Coriander-seed"};
+
+    private static final String[] CATEGORY_FLOUR_CEREALS = {"Flour-Tapioca","Flour-Potato","Sweetcorn","Spelt","Oats-Coarse","Flour-Oat","Flour-Rice","Flour-Unbleached","Freekeh","Flour-Soy",
+            "Amaranth","Buckwheat","Barley-Rolled","Baking-Powder","Oats-Rolled","Flour-Besan","Flour-Wholewheat","Barley","Wheat","Triticale","Semolina","Rye","Muesli"};
+
+    private static final String[] CATEGORY_OILS = {"Almond-oil","Camellia-Tea-Oil","Macadamia-oil","Tea-Oil","Avocado-Oil","Canola-Oil","Coconut-Oil","Corn-Oil","Grape-Seed-Oil",
+            "Sunflower-Oil","Vegetable-Oil","Extra-virgin-olive-oil","Olive-Oil","Safflower-Oil","Sesame-Oil","Flaxseed-Oil"};
+
+    private static final String[] CATEGORY_MUSHROOMS = {"Mushrooms-Oyster","Mushrooms-Brown","Porcini-mushrooms","Mushrooms-Shiitake","Mushrooms-Common-Cultivated","Mushrooms-Enoki","Mushroom-Flat"};
 
     //non deve essere istanziata
     private ListAllFood() {
         throw new IllegalStateException("Utility class");
     }
 
-    /**
-     * @return the listAllFood
-     */
-    public static String[] getListAllFood() {
-        return list;
+    public static String[] getCategoryFruit() {
+        return CATEGORY_FRUIT;
+    }
+
+    public static String[] getCategoryVegetable() {
+        return CATEGORY_VEGETABLE;
+    }
+
+    public static String[] getCategoryMeatEgg() {
+        return CATEGORY_MEAT_EGG;
+    }
+
+    public static String[] getCategoryPastaBreadRise() {
+        return CATEGORY_PASTA_BREAD_RISE;
+    }
+
+    public static String[] getCategorySpices() {
+        return CATEGORY_SPICES;
+    }
+
+    public static String[] getCategoryFish() {
+        return CATEGORY_FISH;
+    }
+
+    public static String[] getCategoryDessert() {
+        return CATEGORY_DESSERT;
+    }
+
+    public static String[] getCategorySauces() {
+        return CATEGORY_SAUCES;
+    }
+
+    public static String[] getCategoryBeverages() {
+        return CATEGORY_BEVERAGES;
+    }
+
+    public static String[] getCategoryLegumes() {
+        return CATEGORY_LEGUMES;
+    }
+
+    public static String[] getCategoryVegan() {
+        return CATEGORY_VEGAN;
+    }
+
+    public static String[] getCategoryFlourCereals() {
+        return CATEGORY_FLOUR_CEREALS;
+    }
+
+    public static String[] getCategoryOils() {
+        return CATEGORY_OILS;
+    }
+
+    public static String[] getCategoryMushrooms() {
+        return CATEGORY_MUSHROOMS;
+    }
+
+    public static String[] getCategoryDairyProduct() { return CATEGORY_DAIRY_PRODUCT; }
+
+    public static List<String> getCategory(String cat){
+        switch(cat){
+            case "Fruit": return new ArrayList<>(Arrays.asList(getCategoryFruit()));
+            case "Vegetable": return new ArrayList<>(Arrays.asList(getCategoryVegetable()));
+            case "Meat": return new ArrayList<>(Arrays.asList(getCategoryMeatEgg()));
+            case "Fish": return new ArrayList<>(Arrays.asList(getCategoryFish()));
+            case "Cereals and Flour": return new ArrayList<>(Arrays.asList(getCategoryFlourCereals()));
+            case "Bread and Pasta": return new ArrayList<>(Arrays.asList(getCategoryPastaBreadRise()));
+            case "Legumes": return new ArrayList<>(Arrays.asList(getCategoryLegumes()));
+            case "Mushroom": return new ArrayList<>(Arrays.asList(getCategoryMushrooms()));
+            case "Dairy Product": return new ArrayList<>(Arrays.asList(getCategoryDairyProduct()));
+            case "Dessert": return new ArrayList<>(Arrays.asList(getCategoryDessert()));
+            case "Spices": return new ArrayList<>(Arrays.asList(getCategorySpices()));
+            case "Sauces": return new ArrayList<>(Arrays.asList(getCategorySauces()));
+            case "Beverages": return new ArrayList<>(Arrays.asList(getCategoryBeverages()));
+            case "Vegan": return new ArrayList<>(Arrays.asList(getCategoryVegan()));
+            case "Oils": return new ArrayList<>(Arrays.asList(getCategoryOils()));
+            default: return null;
+        }
     }
 }

@@ -39,6 +39,8 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activity.ListFoodActivity" />
+
         <activity android:name=".activity.ChooseRecipesActivity" />
 
         <activity android:name=".activity.ProfileActivity" />
