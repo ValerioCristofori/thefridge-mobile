@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +36,7 @@ public class ListFoodActivity extends AppCompatActivity {
         Holder holder = new Holder(this);
     }
 
-    class Holder implements View.OnClickListener{
+    class Holder implements View.OnClickListener, AdapterView.OnItemClickListener {
 
         ImageButton ibtnLeftArrow;
         ImageView ivSpecificCategory;
@@ -53,12 +55,13 @@ public class ListFoodActivity extends AppCompatActivity {
             this.getData();
             this.setData();
 
+            //build adapter
+            ArrayAdapter arrayAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, arrayList);
+            lvFood.setAdapter(arrayAdapter);
+
             //assign click listener
             ibtnLeftArrow.setOnClickListener(this);
-
-            //build adapter
-            ArrayAdapter arrayAdapter = new ArrayAdapter(context, android.R.layout.simple_list_item_1, arrayList);
-            lvFood.setAdapter(arrayAdapter);
+            lvFood.setOnItemClickListener(this);
         }
 
         @Override
@@ -71,6 +74,14 @@ public class ListFoodActivity extends AppCompatActivity {
             }
         }
 
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Toast.makeText(ListFoodActivity.this, arrayList.get(position).toString(), Toast.LENGTH_SHORT).show();
+
+            //call query to insert food
+        }
+
+
         private void getData(){
             category = getIntent().getStringExtra("data");
             Log.d("tag",category);
@@ -82,6 +93,7 @@ public class ListFoodActivity extends AppCompatActivity {
             tvSpecificCategory.setText(category);
             ivSpecificCategory.setImageResource(imageOfCategory);
         }
+
 
     }
 
