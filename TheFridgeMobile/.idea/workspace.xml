@@ -4,6 +4,7 @@
     <shared>
       <config>
         <device id="pixel_2_xl" />
+        <device id="Nexus 6" />
         <device id="pixel_3a" />
       </config>
     </shared>

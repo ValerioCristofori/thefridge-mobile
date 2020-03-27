@@ -4,6 +4,7 @@ public class User {
     private String username;
     private String email;
     private String password;
+    private Fridge fridge;
 
     public String getUsername() {
         return username;
@@ -28,4 +29,18 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Fridge getFridge() {
+        return fridge;
+    }
+
+    public void setFridge(Fridge fridge) {
+        this.fridge = fridge;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("User = username: %s , Email: %s, Id: %d", this.username, this.email, this.fridge.getId() );
+    }
+
 }

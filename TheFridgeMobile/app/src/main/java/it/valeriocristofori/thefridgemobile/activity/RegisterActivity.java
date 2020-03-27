@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.controller.RegistrationController;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -70,9 +71,24 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                //all syntax error verified
-                //remand home GUI
-                startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                RegistrationController registrationController = new RegistrationController();
+                if( registrationController.isValidUsername(tfUsername.getText().toString()) ){
+                    //all syntax error verified
+                    try {
+                        registrationController.registration( tfUsername.getText().toString(),tfPassword.getText().toString(),tfEmail.getText().toString() );
+                        //remand home GUI
+                        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                }
+                else{
+                    this.displayErrorMessage("Username already used");
+                    return;
+                }
+
+
             }
 
         }

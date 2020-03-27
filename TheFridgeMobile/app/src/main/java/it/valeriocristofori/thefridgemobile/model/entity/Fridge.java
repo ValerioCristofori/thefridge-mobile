@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Fridge {
     private ArrayList<Food> listFood;
     private String name;
+    private int id;
 
     public ArrayList<Food> getListFood() {
         return listFood;
@@ -22,4 +23,11 @@ public class Fridge {
         this.name = name;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }

@@ -17,13 +17,15 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.controller.LoginController;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
-import it.valeriocristofori.thefridgemobile.db.init.DatabaseManagerConnection;
+import it.valeriocristofori.thefridgemobile.db.init.DatabaseHelper;
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
 
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Food> listFood;
+    private DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,25 +35,12 @@ public class MainActivity extends AppCompatActivity {
         //create this.Holder
         Holder holder = new Holder();
 
-        open_db_connection();
+        db = DatabaseHelper.getDatabaseInstance(getApplicationContext());
 
         /**
         listFood = new ArrayList<>();
         view_content_fridge();
         */
-
-    }
-
-    private void open_db_connection(){
-
-        // init connection with 'sqlite' database
-        try {
-            DatabaseManagerConnection db = DatabaseManagerConnection.getSingletonInstance(this);
-            db.open();
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
 
     }
 
@@ -113,9 +102,15 @@ public class MainActivity extends AppCompatActivity {
                     this.displayErrorMessage("Password wrong");
                     return;
                 }
+                LoginController loginController = new LoginController();
+                if( loginController.isValidUser( tfUsername.getText().toString(), tfPassword.getText().toString() )) {
+                    //remand home GUI
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                }else{
+                    this.displayErrorMessage("Username/Password not valid");
+                    return;
+                }
 
-                //remand home GUI
-                startActivity(new Intent(MainActivity.this, HomeActivity.class));
             }
             else if(v.getId() == R.id.btnSignup){
                 //remand to register GUI
