@@ -104,8 +104,10 @@ public class MainActivity extends AppCompatActivity {
                 }
                 LoginController loginController = new LoginController();
                 if( loginController.isValidUser( tfUsername.getText().toString(), tfPassword.getText().toString() )) {
+
                     //remand home GUI
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
+
                 }else{
                     this.displayErrorMessage("Username/Password not valid");
                     return;

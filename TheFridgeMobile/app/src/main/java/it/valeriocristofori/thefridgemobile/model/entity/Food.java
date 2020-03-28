@@ -8,6 +8,11 @@ public class Food {
     private String expirationDate;
     private String category;
 
+    public Food(){
+        this.quantity = 1;
+        this.expirationDate = null;
+    }
+
     public String getName() {
         return name;
     }

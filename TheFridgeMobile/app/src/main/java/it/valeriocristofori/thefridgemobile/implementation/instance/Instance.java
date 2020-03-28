@@ -1,5 +1,6 @@
 package it.valeriocristofori.thefridgemobile.implementation.instance;
 
+import it.valeriocristofori.thefridgemobile.model.entity.Fridge;
 import it.valeriocristofori.thefridgemobile.model.entity.User;
 
 public class Instance {
@@ -27,5 +28,7 @@ public class Instance {
     }
 
 
-
+    public void updateFridge(Fridge fridge) {
+        this.currentUser.setFridge(fridge);
+    }
 }

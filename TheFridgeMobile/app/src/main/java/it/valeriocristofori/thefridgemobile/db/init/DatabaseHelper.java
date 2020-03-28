@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import it.valeriocristofori.thefridgemobile.model.entity.Food;
 import it.valeriocristofori.thefridgemobile.model.entity.Fridge;
 import it.valeriocristofori.thefridgemobile.model.entity.User;
 
@@ -45,18 +46,22 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     // Table Create Statements
 
     // User table create statement
-    private static final String CREATE_TABLE_USER = "CREATE TABLE "
-            + TABLE_USER + "(" + COLUMN_USERNAME + " TEXT PRIMARY KEY, "
-            + COLUMN_EMAIL + " TEXT, " + COLUMN_PASSWORD + " TEXT, "
+    private static final String CREATE_TABLE_USER = "CREATE TABLE " + TABLE_USER + "("
+            + COLUMN_USERNAME + " TEXT PRIMARY KEY, "
+            + COLUMN_EMAIL + " TEXT, "
+            + COLUMN_PASSWORD + " TEXT, "
             + COLUMN_FRIDGE_ID + " INTEGER " + ")";
 
     // User table create statement
-    private static final String CREATE_TABLE_FOOD = "CREATE TABLE "
-            + TABLE_FOOD + "(" + COLUMN_FOOD_NAME + " TEXT, "
-            + COLUMN_FRIDGE_ID + " INTEGER, " + COLUMN_QUANTITY + "INTEGER, "
+    private static final String CREATE_TABLE_FOOD = "CREATE TABLE " + TABLE_FOOD + "("
+            + COLUMN_FOOD_NAME + " TEXT, "
+            + COLUMN_FRIDGE_ID + " INTEGER, "
+            //+ COLUMN_QUANTITY + " INTEGER, "
             + COLUMN_EXPIRATION_DATE + " TEXT, "
-            + "FOREIGN KEY (" + COLUMN_FRIDGE_ID + ")" + " REFERENCES " + TABLE_USER + "(" + COLUMN_FRIDGE_ID + ")"
-            + " ON DELETE CASCADE, " + "PRIMARY KEY" + "(" + COLUMN_FOOD_NAME + "," + COLUMN_FRIDGE_ID + ")" + ")";
+            + "FOREIGN KEY (" + COLUMN_FRIDGE_ID + ")"
+            + " REFERENCES " + TABLE_USER + "(" + COLUMN_FRIDGE_ID + ")"
+            + " ON DELETE CASCADE, "
+            + "PRIMARY KEY" + "(" + COLUMN_FOOD_NAME + "," + COLUMN_FRIDGE_ID + ")" + ")";
 
 
     private DatabaseHelper(Context context) {
@@ -101,6 +106,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // insert row
         db.insert(TABLE_USER, null, values);
+    }
+
+    public void insertFood( Fridge fridge, Food food){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_FOOD_NAME, food.getName() );
+        values.put(COLUMN_EXPIRATION_DATE, food.getExpirationDate() );
+        //values.put(COLUMN_QUANTITY, food.getQuantity() );
+        values.put(COLUMN_FRIDGE_ID, fridge.getId() );
+
+        // insert row
+        db.insert(TABLE_FOOD, null, values);
     }
 
     public boolean checkValidUsername(User user) {
@@ -152,4 +169,52 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return c.moveToFirst();
     }
 
+    public Fridge takeFridgeOfUser(User user){
+        /**
+         * return the fridge of a user with all food
+         */
+        //take the right id
+        int id = takeFridgeIdOfUser(user);
+        Fridge fridge = new Fridge();
+        fridge.setId(id);
+
+        //search for all her foods
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + TABLE_FOOD + " WHERE " +  COLUMN_FRIDGE_ID + " = '" + id + "'";
+
+        Log.e(String.valueOf(LOG), selectQuery);
+
+        Cursor c = db.rawQuery(selectQuery, null);
+
+
+        if(c.moveToFirst()){
+            //looping do-while through all rows (foods) and
+            //add to the list (fridge.getListFood())
+            do{
+                Food food = new Food();
+                food.setName(c.getString( c.getColumnIndex(COLUMN_FOOD_NAME)));
+
+                fridge.addFood(food);
+            }while(c.moveToNext());
+        }
+        return fridge;
+    }
+
+    private int takeFridgeIdOfUser(User user){
+        /**
+         * return fridge's id of a user
+         */
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + TABLE_USER + " WHERE " +  COLUMN_USERNAME + " = '" + user.getUsername() + "'";
+
+        Log.e(String.valueOf(LOG), selectQuery);
+
+        Cursor c = db.rawQuery(selectQuery, null);
+
+        if (c != null)
+            c.moveToFirst();
+
+        return c.getInt(c.getColumnIndex(COLUMN_FRIDGE_ID));
+    }
 }

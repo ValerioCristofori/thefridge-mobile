@@ -19,13 +19,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.controller.AddFoodController;
 import it.valeriocristofori.thefridgemobile.model.utility.ListAllFood;
 
 public class ListFoodActivity extends AppCompatActivity {
 
     private String category;
     private int imageOfCategory;
-    private ArrayList arrayList;
+    private ArrayList<String> arrayList;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -76,9 +77,14 @@ public class ListFoodActivity extends AppCompatActivity {
 
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Toast.makeText(ListFoodActivity.this, arrayList.get(position).toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(ListFoodActivity.this, arrayList.get(position), Toast.LENGTH_SHORT).show();
 
             //call query to insert food
+            String foodName = arrayList.get(position);
+            AddFoodController addFoodController = new AddFoodController();
+            addFoodController.insertFood(foodName);
+
+
         }
 
 
