@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.model.customize.RecyclerCustom;
+import it.valeriocristofori.thefridgemobile.model.customize.RecyclerCategoryCustom;
 
 public class AddFoodActivity extends AppCompatActivity {
 
@@ -53,8 +53,8 @@ public class AddFoodActivity extends AppCompatActivity {
 
             //init recycler
             str = getResources().getStringArray(R.array.food_categories);
-            RecyclerCustom recyclerCustom = new RecyclerCustom(this.context,this.str,this.images);
-            rvCategories.setAdapter(recyclerCustom);
+            RecyclerCategoryCustom recyclerCategoryCustom = new RecyclerCategoryCustom(this.context,this.str,this.images);
+            rvCategories.setAdapter(recyclerCategoryCustom);
             rvCategories.setLayoutManager(new LinearLayoutManager(this.context));
 
 

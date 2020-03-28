@@ -15,13 +15,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.ListFoodActivity;
 
-public class RecyclerCustom extends RecyclerView.Adapter<RecyclerCustom.MyViewHolder> {
+public class RecyclerCategoryCustom extends RecyclerView.Adapter<RecyclerCategoryCustom.MyViewHolder> {
 
-    String data[];
-    int images[];
-    Context context;
+    private String data[];
+    private int images[];
+    private Context context;
 
-    public RecyclerCustom(Context context, String str[], int images[]) {
+    public RecyclerCategoryCustom(Context context, String str[], int images[]) {
         this.context = context;
         this.data = str;
         this.images = images;
@@ -29,7 +29,7 @@ public class RecyclerCustom extends RecyclerView.Adapter<RecyclerCustom.MyViewHo
 
     @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerCategoryCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
         View view = layoutInflater.inflate(R.layout.category_row_layout,parent,false);
 
