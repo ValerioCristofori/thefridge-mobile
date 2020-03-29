@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.activity;
+package it.valeriocristofori.thefridgemobile.activity.sign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,10 +13,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
 import it.valeriocristofori.thefridgemobile.controller.LoginController;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
 import it.valeriocristofori.thefridgemobile.db.init.DatabaseHelper;

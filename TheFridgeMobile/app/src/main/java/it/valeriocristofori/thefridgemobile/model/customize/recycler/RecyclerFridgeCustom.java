@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.model.customize;
+package it.valeriocristofori.thefridgemobile.model.customize.recycler;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -32,7 +32,7 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
     @Override
     public RecyclerFridgeCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.food_box_layout,parent,false);
+        View view = layoutInflater.inflate(R.layout.food_box_cardview,parent,false);
 
         return new MyViewHolder(view);
     }
@@ -56,8 +56,8 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvFridgeFood = itemView.findViewById(R.id.tvFridgeFood);
-            ivFridgeFood = itemView.findViewById(R.id.ivFridgeFood);
+            tvFridgeFood = itemView.findViewById(R.id.tvRecipe);
+            ivFridgeFood = itemView.findViewById(R.id.ivRecipe);
 
         }
     }

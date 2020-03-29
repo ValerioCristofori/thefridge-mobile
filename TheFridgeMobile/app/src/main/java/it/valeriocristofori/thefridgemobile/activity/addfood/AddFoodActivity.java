@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.activity;
+package it.valeriocristofori.thefridgemobile.activity.addfood;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.model.customize.RecyclerCategoryCustom;
+import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
+import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
+import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivity;
+import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerCategoryCustom;
 
 public class AddFoodActivity extends AppCompatActivity {
 
@@ -32,7 +35,7 @@ public class AddFoodActivity extends AppCompatActivity {
         private Intent intent;
 
         //data for initialize recycler view
-        RecyclerView rvCategories;
+        private RecyclerView rvCategories;
         String str[];
         int images[] = {R.drawable.category_fruit,R.drawable.category_vegetable,R.drawable.category_meat,
                 R.drawable.category_fish,R.drawable.category_cereal,R.drawable.category_bread,R.drawable.category_legume,
@@ -45,11 +48,11 @@ public class AddFoodActivity extends AppCompatActivity {
             this.context = context;
 
             //init image buttons
-            this.ibtnFridge = (ImageButton)findViewById(R.id.ibtnFridge);
+            this.ibtnFridge = findViewById(R.id.ibtnFridge);
             this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
-            this.ibtnProfile = (ImageButton)findViewById(R.id.ibtnProfile);
+            this.ibtnProfile = findViewById(R.id.ibtnProfile);
 
-            this.rvCategories = (RecyclerView)findViewById(R.id.rvCategories);
+            this.rvCategories = findViewById(R.id.rvCategories);
 
             //init recycler
             str = getResources().getStringArray(R.array.food_categories);
@@ -80,7 +83,7 @@ public class AddFoodActivity extends AppCompatActivity {
                     break;
 
                 case R.id.ibtnRecipes:
-                    intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
+                    intent = new Intent(v.getContext(), SearchRecipesActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

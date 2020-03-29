@@ -3,7 +3,6 @@ package it.valeriocristofori.thefridgemobile.activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -15,8 +14,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.activity.addfood.AddFoodActivity;
+import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
+import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivity;
 import it.valeriocristofori.thefridgemobile.controller.ViewFridgeController;
-import it.valeriocristofori.thefridgemobile.model.customize.RecyclerFridgeCustom;
+import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerFridgeCustom;
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
 
 public class HomeActivity extends AppCompatActivity {
@@ -85,7 +87,7 @@ public class HomeActivity extends AppCompatActivity {
                     break;
 
                 case R.id.ibtnRecipes:
-                    intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
+                    intent = new Intent(v.getContext(), SearchRecipesActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

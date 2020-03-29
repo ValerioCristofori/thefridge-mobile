@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.activity;
+package it.valeriocristofori.thefridgemobile.activity.profile;
 
 import android.content.Intent;
 import android.os.Bundle;

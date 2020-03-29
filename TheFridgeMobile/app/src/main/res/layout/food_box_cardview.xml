@@ -21,7 +21,7 @@
 
 
             <ImageView
-                android:id="@+id/ivFridgeFood"
+                android:id="@+id/ivRecipe"
                 android:layout_width="42dp"
                 android:layout_height="41dp"
                 android:layout_marginTop="30dp"
@@ -31,7 +31,7 @@
                 app:srcCompat="@drawable/category_bread" />
 
             <TextView
-                android:id="@+id/tvFridgeFood"
+                android:id="@+id/tvRecipe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -41,7 +41,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ivFridgeFood" />
+                app:layout_constraintTop_toBottomOf="@+id/ivRecipe" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.activity;
+package it.valeriocristofori.thefridgemobile.activity.addfood;
 
 import android.content.Context;
 import android.content.Intent;

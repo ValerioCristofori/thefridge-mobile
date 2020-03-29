@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.sign.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.RegisterActivity">
+        <activity android:name=".activity.sign.RegisterActivity">
             <intent-filter>
                 <action android:name="android.intent.action.INSERT" />
 
@@ -32,19 +32,20 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.AddFoodActivity">
+        <activity android:name=".activity.addfood.AddFoodActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.ListFoodActivity" />
+        <activity android:name=".activity.addfood.ListFoodActivity" />
 
-        <activity android:name=".activity.ChooseRecipesActivity" />
+        <activity android:name=".activity.recipe.SearchRecipesActivity" />
+        <activity android:name=".activity.recipe.ChooseRecipesActivity" />
 
-        <activity android:name=".activity.ProfileActivity" />
-        <activity android:name=".activity.DeleteAccount" />
+        <activity android:name=".activity.profile.ProfileActivity" />
+        <activity android:name=".activity.profile.DeleteAccount" />
 
 
         <meta-data

@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.model.customize;
+package it.valeriocristofori.thefridgemobile.model.customize.recycler;
 
 import android.content.Context;
 import android.content.Intent;
@@ -13,7 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.activity.ListFoodActivity;
+import it.valeriocristofori.thefridgemobile.activity.addfood.ListFoodActivity;
 
 public class RecyclerCategoryCustom extends RecyclerView.Adapter<RecyclerCategoryCustom.MyViewHolder> {
 
@@ -31,7 +31,7 @@ public class RecyclerCategoryCustom extends RecyclerView.Adapter<RecyclerCategor
     @Override
     public RecyclerCategoryCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.category_row_layout,parent,false);
+        View view = layoutInflater.inflate(R.layout.category_row_cardview,parent,false);
 
         return new MyViewHolder(view);
     }

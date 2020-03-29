@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.activity;
+package it.valeriocristofori.thefridgemobile.activity.sign;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
 import it.valeriocristofori.thefridgemobile.controller.RegistrationController;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
 

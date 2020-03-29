@@ -1,40 +1,47 @@
-package it.valeriocristofori.thefridgemobile.activity;
+package it.valeriocristofori.thefridgemobile.activity.profile;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
+import it.valeriocristofori.thefridgemobile.activity.addfood.AddFoodActivity;
+import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivity;
 
-public class ChooseRecipesActivity extends AppCompatActivity {
+public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choose_recipes);
+        setContentView(R.layout.profile);
 
         Holder holder = new Holder();
     }
 
     class Holder implements View.OnClickListener{
         private ImageButton ibtnAddFood;
-        private ImageButton ibtnProfile;
+        private ImageButton ibtnRecipes;
         private ImageButton ibtnFrifge;
+        private Button btnDelete;
         private Intent intent;
 
         public Holder(){
             //init image buttons
+            this.btnDelete = findViewById(R.id.btnDelete);
             this.ibtnAddFood = (ImageButton)findViewById(R.id.ibtnAddFood);
-            this.ibtnProfile = (ImageButton)findViewById(R.id.ibtnProfile);
+            this.ibtnRecipes = (ImageButton)findViewById(R.id.ibtnRecipes);
             this.ibtnFrifge = (ImageButton)findViewById(R.id.ibtnFridge);
 
             //assign listener
+            this.btnDelete.setOnClickListener(this);
             this.ibtnAddFood.setOnClickListener(this);
-            this.ibtnProfile.setOnClickListener(this);
+            this.ibtnRecipes.setOnClickListener(this);
             this.ibtnFrifge.setOnClickListener(this);
         }
 
@@ -43,8 +50,13 @@ public class ChooseRecipesActivity extends AppCompatActivity {
 
             switch(v.getId()) {
 
-                case R.id.ibtnProfile:
-                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                case R.id.btnDelete:
+                    intent = new Intent(v.getContext(), DeleteAccount.class);
+                    startActivityForResult(intent,0);
+                    break;
+
+                case R.id.ibtnRecipes:
+                    intent = new Intent(v.getContext(), SearchRecipesActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
