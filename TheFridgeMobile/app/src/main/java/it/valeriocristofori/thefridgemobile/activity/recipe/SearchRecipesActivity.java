@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,8 @@ import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
 
 public class SearchRecipesActivity extends AppCompatActivity {
 
+    private int numRecipes;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +29,10 @@ public class SearchRecipesActivity extends AppCompatActivity {
         Holder holder = new Holder(this);
     }
 
-    class Holder implements View.OnClickListener{
+    class Holder implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
+        //radio group
+        private RadioGroup rgNumRecipe;
+
         private Button btnSearch;
         private ImageButton ibtnAddFood;
         private ImageButton ibtnProfile;
@@ -38,9 +45,12 @@ public class SearchRecipesActivity extends AppCompatActivity {
             this.context = context;
 
             //init image buttons
-            this.ibtnAddFood = (ImageButton)findViewById(R.id.ibtnAddFood);
-            this.ibtnProfile = (ImageButton)findViewById(R.id.ibtnProfile);
-            this.ibtnFrifge = (ImageButton)findViewById(R.id.ibtnFridge);
+            this.ibtnAddFood = findViewById(R.id.ibtnAddFood);
+            this.ibtnProfile = findViewById(R.id.ibtnProfile);
+            this.ibtnFrifge = findViewById(R.id.ibtnFridge);
+
+            //init radios
+            this.rgNumRecipe = findViewById(R.id.rgNumRecipe);
 
             this.btnSearch = findViewById(R.id.btnSearch);
 
@@ -49,6 +59,9 @@ public class SearchRecipesActivity extends AppCompatActivity {
             this.ibtnProfile.setOnClickListener(this);
             this.ibtnFrifge.setOnClickListener(this);
             this.btnSearch.setOnClickListener(this);
+
+            rgNumRecipe.setOnCheckedChangeListener(this);
+
         }
 
         @Override
@@ -72,13 +85,36 @@ public class SearchRecipesActivity extends AppCompatActivity {
                     break;
 
                 case R.id.btnSearch:
+
                     intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
+                    intent.putExtra("num_recipes", numRecipes);
                     startActivityForResult(intent,0);
                     break;
 
             }
 
 
+        }
+
+        @Override
+        public void onCheckedChanged(RadioGroup group, int checkedId) {
+            switch (checkedId){
+                case R.id.rbtn1:
+                    numRecipes=1;
+                    break;
+                case R.id.rbtn2:
+                    numRecipes=2;
+                    break;
+                case R.id.rbtn3:
+                    numRecipes=3;
+                    break;
+                case R.id.rbtn4:
+                    numRecipes=4;
+                    break;
+                case R.id.rbtn5:
+                    numRecipes=5;
+                    break;
+            }
         }
     }
 

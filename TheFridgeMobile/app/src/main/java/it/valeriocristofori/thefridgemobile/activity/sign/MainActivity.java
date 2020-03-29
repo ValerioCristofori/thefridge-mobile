@@ -37,31 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         db = DatabaseHelper.getDatabaseInstance(getApplicationContext());
 
-        /**
-        listFood = new ArrayList<>();
-        view_content_fridge();
-        */
-
     }
-
-    /**
-    private void view_content_fridge(){
-        //Cursor cursor = db.take_data();
-
-        if(cursor.getCount() == 0){
-            //fridge empty
-        }else{
-            while(cursor.movetoNext()){
-                Food food = new Food();
-                food.setName(cursor.getString(0));
-                food.setQuantity(cursor.getString(1));
-                food.setExpirationDate(cursor.getString(2));
-                listFood.add(food);
-
-            }
-        }
-    }
-    */
 
     class Holder implements View.OnClickListener{
         private EditText tfUsername;

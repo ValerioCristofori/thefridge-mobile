@@ -10,11 +10,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.ArrayList;
+
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
+import it.valeriocristofori.thefridgemobile.controller.ChooseRecipesController;
+import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
 
 public class ChooseRecipesActivity extends AppCompatActivity {
+
+    private int numRecipes;
+    private ArrayList<Recipe> arrayRecipes;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +51,9 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             this.ibtnFridge = findViewById(R.id.ibtnFridge);
             this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
             this.ibtnProfile = findViewById(R.id.ibtnProfile);
+
+            this.getData();
+            this.setData();
 
             this.rvRecipe = findViewById(R.id.rvRecipe);
 
@@ -76,6 +87,17 @@ public class ChooseRecipesActivity extends AppCompatActivity {
                     break;
 
             }
+        }
+
+
+        private void getData() {
+            //default provide 1 recipe
+            numRecipes = getIntent().getIntExtra("num_recipes", 1);
+        }
+
+        private void setData(){
+            ChooseRecipesController chooseRecipesController = new ChooseRecipesController();
+            arrayRecipes = chooseRecipesController.takeRecipesList( numRecipes );
         }
     }
 }
