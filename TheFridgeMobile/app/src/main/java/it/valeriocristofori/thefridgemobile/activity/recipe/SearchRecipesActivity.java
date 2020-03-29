@@ -1,8 +1,10 @@
 package it.valeriocristofori.thefridgemobile.activity.recipe;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
@@ -20,25 +22,33 @@ public class SearchRecipesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_recipes);
 
-        Holder holder = new Holder();
+        Holder holder = new Holder(this);
     }
 
     class Holder implements View.OnClickListener{
+        private Button btnSearch;
         private ImageButton ibtnAddFood;
         private ImageButton ibtnProfile;
         private ImageButton ibtnFrifge;
         private Intent intent;
+        private Context context;
 
-        public Holder(){
+        public Holder(Context context){
+            //init context
+            this.context = context;
+
             //init image buttons
             this.ibtnAddFood = (ImageButton)findViewById(R.id.ibtnAddFood);
             this.ibtnProfile = (ImageButton)findViewById(R.id.ibtnProfile);
             this.ibtnFrifge = (ImageButton)findViewById(R.id.ibtnFridge);
 
+            this.btnSearch = findViewById(R.id.btnSearch);
+
             //assign listener
             this.ibtnAddFood.setOnClickListener(this);
             this.ibtnProfile.setOnClickListener(this);
             this.ibtnFrifge.setOnClickListener(this);
+            this.btnSearch.setOnClickListener(this);
         }
 
         @Override
@@ -58,6 +68,11 @@ public class SearchRecipesActivity extends AppCompatActivity {
 
                 case R.id.ibtnFridge:
                     intent = new Intent(v.getContext(), HomeActivity.class);
+                    startActivityForResult(intent,0);
+                    break;
+
+                case R.id.btnSearch:
+                    intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
