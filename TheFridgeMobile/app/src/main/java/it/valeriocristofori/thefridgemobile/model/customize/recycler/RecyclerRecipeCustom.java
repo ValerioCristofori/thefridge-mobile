@@ -10,6 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
@@ -35,8 +37,13 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerRecipeCustom.MyViewHolder holder, int position) {
-        //holder.ivRecipe.setImageResource(recipes.get(position).getImage());
+        //setting image use Picasso for link
+        Picasso.with(this.context)
+                .load( recipes.get(position).getImage() )
+                .into(holder.ivRecipe);
+
         holder.tvRecipe.setText(recipes.get(position).getTitle());
+
 
         //set click on item listener
         //.............

@@ -8,14 +8,17 @@ import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.concurrent.ExecutionException;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
 import it.valeriocristofori.thefridgemobile.controller.ChooseRecipesController;
+import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerRecipeCustom;
 import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
 
 public class ChooseRecipesActivity extends AppCompatActivity {
@@ -58,7 +61,9 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             this.rvRecipe = findViewById(R.id.rvRecipe);
 
             //init recycler
-
+            RecyclerRecipeCustom recyclerCategoryCustom = new RecyclerRecipeCustom(this.context, arrayRecipes);
+            rvRecipe.setAdapter(recyclerCategoryCustom);
+            rvRecipe.setLayoutManager(new LinearLayoutManager(this.context));
 
 
             //assign listener
@@ -96,8 +101,14 @@ public class ChooseRecipesActivity extends AppCompatActivity {
         }
 
         private void setData(){
-            ChooseRecipesController chooseRecipesController = new ChooseRecipesController();
-            arrayRecipes = chooseRecipesController.takeRecipesList( numRecipes );
+            try {
+                arrayRecipes = new ChooseRecipesController().execute(numRecipes).get();
+            } catch (ExecutionException e) {
+                e.printStackTrace();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
         }
     }
 }

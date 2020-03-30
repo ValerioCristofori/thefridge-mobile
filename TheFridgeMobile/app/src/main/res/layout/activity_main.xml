@@ -24,7 +24,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tvDescription"
+        android:id="@+id/tvIngredients"
         android:layout_width="224dp"
         android:layout_height="131dp"
         android:fontFamily="@font/comfortaa"
@@ -79,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDescription"
+        app:layout_constraintTop_toBottomOf="@+id/tvIngredients"
         app:layout_constraintVertical_bias="0.341" />
 
     <EditText
