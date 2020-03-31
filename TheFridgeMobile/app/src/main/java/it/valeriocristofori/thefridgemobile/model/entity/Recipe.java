@@ -1,8 +1,9 @@
 package it.valeriocristofori.thefridgemobile.model.entity;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Recipe {
+public class Recipe implements Serializable {
     private ArrayList<Food> ingredients;
     private String image;
     private String title;

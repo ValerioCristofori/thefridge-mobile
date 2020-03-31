@@ -1,6 +1,8 @@
 package it.valeriocristofori.thefridgemobile.model.customize.recycler;
 
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -15,6 +18,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.activity.recipe.ShowRecipeActivity;
 import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
 
 public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCustom.MyViewHolder> {
@@ -36,7 +40,7 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerRecipeCustom.MyViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerRecipeCustom.MyViewHolder holder, final int position) {
         //setting image use Picasso for link
         Picasso.with(this.context)
                 .load( recipes.get(position).getImage() )
@@ -46,7 +50,18 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
 
 
         //set click on item listener
-        //.............
+        //assign onClick method of MyViewHolder
+        holder.clRecipe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //remand to list food
+                Intent intent = new Intent(context, ShowRecipeActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("recipe", recipes.get(position));
+                intent.putExtras( bundle );
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -58,11 +73,13 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
 
         ImageView ivRecipe;
         TextView tvRecipe;
+        ConstraintLayout clRecipe;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             ivRecipe = itemView.findViewById(R.id.ivRecipe);
             tvRecipe = itemView.findViewById(R.id.tvRecipe);
+            clRecipe = itemView.findViewById(R.id.clRecipe);
         }
     }
 }

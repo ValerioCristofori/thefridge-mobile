@@ -48,6 +48,7 @@
 
         <activity android:name=".activity.profile.ProfileActivity" />
         <activity android:name=".activity.profile.DeleteAccount" />
+        <activity android:name=".activity.recipe.ShowRecipeActivity" />
 
 
         <meta-data
