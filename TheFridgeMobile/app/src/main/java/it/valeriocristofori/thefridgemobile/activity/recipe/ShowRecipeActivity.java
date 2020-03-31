@@ -3,6 +3,7 @@ package it.valeriocristofori.thefridgemobile.activity.recipe;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -13,8 +14,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
+
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.controller.ChooseRecipesController;
+import it.valeriocristofori.thefridgemobile.model.entity.Food;
 import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
 
 public class ShowRecipeActivity extends AppCompatActivity {
@@ -34,7 +38,8 @@ public class ShowRecipeActivity extends AppCompatActivity {
 
         private Context context;
         private ImageView ivRecipe;
-        private TextView tvIngredients;
+        private TextView tvUsedIngredients;
+        private TextView tvMissedIngredients;
         private TextView tvDescription;
         private TextView tvTitle;
         private ImageButton ibtnLeftArrow;
@@ -46,7 +51,8 @@ public class ShowRecipeActivity extends AppCompatActivity {
             this.ivRecipe = findViewById(R.id.ivRecipe);
             this.tvTitle = findViewById(R.id.tvTitle);
             this.tvDescription = findViewById(R.id.tvDescription);
-            this.tvIngredients = findViewById(R.id.tvIngredients);
+            this.tvUsedIngredients = findViewById(R.id.tvUsedIngredients);
+            this.tvMissedIngredients = findViewById(R.id.tvMissedIngredients);
             this.ibtnLeftArrow = findViewById(R.id.ibtnLeftArrow);
 
             this.getData();
@@ -65,13 +71,23 @@ public class ShowRecipeActivity extends AppCompatActivity {
 
         private void setData() {
             tvTitle.setText(recipe.getTitle());
-            tvIngredients.setText((CharSequence) recipe.getIngredients());
+            tvUsedIngredients.setText( this.bld_ingredients_string( recipe.getUsedIngredients() ) );
+            tvMissedIngredients.setText( this.bld_ingredients_string( recipe.getMissedIngredients() ) );
             tvDescription.setText(recipe.getDescription());
 
             Picasso.with(this.context)
                     .load( recipe.getImage() )
                     .into( ivRecipe );
 
+        }
+
+        private String bld_ingredients_string(ArrayList<Food> usedIngredients) {
+        StringBuilder str = new StringBuilder();
+        for( Food food : usedIngredients ){
+            str.append(food.getName() + "\n");
+        }
+        Log.e("builder", str.toString());
+        return str.toString();
         }
 
         @Override

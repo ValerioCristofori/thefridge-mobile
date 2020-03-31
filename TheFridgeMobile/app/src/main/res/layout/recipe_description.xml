@@ -54,12 +54,19 @@
                 app:srcCompat="@drawable/ricette" />
 
             <TextView
-                android:id="@+id/tvIngredients"
+                android:id="@+id/tvUsedIngredients"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:padding="10dp"
                 android:text="Ingredients..ddddddddddddddddddddddddddddddddddddd." />
+
+            <TextView
+                android:id="@+id/tvMissedIngredients"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="TextView" />
 
         </LinearLayout>
 

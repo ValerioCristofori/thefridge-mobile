@@ -1,8 +1,10 @@
 package it.valeriocristofori.thefridgemobile.model.entity;
 
+import java.io.Serializable;
+
 import it.valeriocristofori.thefridgemobile.model.utility.ListAllFood;
 
-public class Food {
+public class Food implements Serializable {
     private String name;
     private int quantity;
     private String expirationDate;
@@ -152,6 +154,8 @@ public class Food {
                 return;
             }
         }
+
+        this.category = "unknown";
     }
 
 }

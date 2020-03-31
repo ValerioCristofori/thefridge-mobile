@@ -13,6 +13,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+import it.valeriocristofori.thefridgemobile.model.entity.Food;
 import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
 
 public class SpoonacularAPI {
@@ -38,20 +39,27 @@ public class SpoonacularAPI {
 
 
 
-        ArrayList<String> content = new ArrayList<>();
+        ArrayList<Food> usedIngredients = new ArrayList<>(jaUsed.length());
+        ArrayList<Food> missedIngredients = new ArrayList<>(jaMissed.length());
         // setting content
 
         for( int i = 0; i< jaUsed.length(); i++) {
 
             JSONObject joUsed = jaUsed.getJSONObject(i);
-            content.add( (String) joUsed.get("original"));
+            //setting food entity with taken parameters
+            Food food = new Food();
+            food.setName( (String) joUsed.get("original") );
+            usedIngredients.add( food );
 
         }
 
         for( int i = 0; i< jaMissed.length(); i++) {
 
             JSONObject joMissed = jaMissed.getJSONObject(i);
-            content.add( (String) joMissed.get("original"));
+            //setting food entity with taken parameters
+            Food food = new Food();
+            food.setName( (String) joMissed.get("original") );
+            missedIngredients.add( food );
 
         }
 
@@ -69,6 +77,10 @@ public class SpoonacularAPI {
         //set description of recipe
 
         //set ingredients
+        recipe.setUsedIngredients(usedIngredients);
+        recipe.setMissedIngredients(missedIngredients);
+
+
 
         return recipe;
     }

@@ -4,18 +4,27 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Recipe implements Serializable {
-    private ArrayList<Food> ingredients;
+    private ArrayList<Food> usedIngredients;
+    private ArrayList<Food> missedIngredients;
     private String image;
     private String title;
     private String description;
     private String srcLink;
 
-    public ArrayList<Food> getIngredients() {
-        return ingredients;
+    public ArrayList<Food> getUsedIngredients() {
+        return usedIngredients;
     }
 
-    public void setIngredients(ArrayList<Food> ingredients) {
-        this.ingredients = ingredients;
+    public void setUsedIngredients(ArrayList<Food> usedIngredients) {
+        this.usedIngredients = usedIngredients;
+    }
+
+    public ArrayList<Food> getMissedIngredients() {
+        return missedIngredients;
+    }
+
+    public void setMissedIngredients(ArrayList<Food> missedIngredients) {
+        this.missedIngredients = missedIngredients;
     }
 
     public String getImage() {
