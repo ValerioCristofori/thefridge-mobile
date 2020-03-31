@@ -19,6 +19,7 @@ import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
 public class SpoonacularAPI {
 
     private HttpResponse<JsonNode> request;
+    private HttpResponse<JsonNode> requestLink;
 
     public Recipe searchRecipe(ArrayList<String> threeIngredients) throws JSONException {
 
@@ -80,9 +81,27 @@ public class SpoonacularAPI {
         recipe.setUsedIngredients(usedIngredients);
         recipe.setMissedIngredients(missedIngredients);
 
+        //take recipe id
+        Integer recipeId = (Integer) request.getBody().getArray().getJSONObject(0).get("id");
+        //setting source recipe link through id
+        recipe.setSrcLink( this.queryLink( recipeId ) );
 
 
         return recipe;
+    }
+
+    private String queryLink( Integer recipeId ) throws JSONException {
+        try {
+            this.requestLink = Unirest.get( String.format( "https://api.spoonacular.com/recipes/%d/information?includeNutrition=false", recipeId ) )
+                    .header("accept", "application/json")
+                    .queryString("apiKey", "6aec8f6e45084389b9517809a647ba83")
+                    .asJson();
+        } catch (UnirestException e) {
+
+            e.printStackTrace();
+        }
+        return (String) requestLink.getBody().getArray().getJSONObject(0).get("sourceUrl");
+
     }
 
     private void queryApi(String query) {

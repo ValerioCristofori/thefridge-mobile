@@ -40,7 +40,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         private ImageView ivRecipe;
         private TextView tvUsedIngredients;
         private TextView tvMissedIngredients;
-        private TextView tvDescription;
+        private TextView tvSrcLink;
         private TextView tvTitle;
         private ImageButton ibtnLeftArrow;
 
@@ -50,7 +50,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
             // init views
             this.ivRecipe = findViewById(R.id.ivRecipe);
             this.tvTitle = findViewById(R.id.tvTitle);
-            this.tvDescription = findViewById(R.id.tvDescription);
+            this.tvSrcLink = findViewById(R.id.tvSrcLink);
             this.tvUsedIngredients = findViewById(R.id.tvUsedIngredients);
             this.tvMissedIngredients = findViewById(R.id.tvMissedIngredients);
             this.ibtnLeftArrow = findViewById(R.id.ibtnLeftArrow);
@@ -73,7 +73,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
             tvTitle.setText(recipe.getTitle());
             tvUsedIngredients.setText( this.bld_ingredients_string( recipe.getUsedIngredients() ) );
             tvMissedIngredients.setText( this.bld_ingredients_string( recipe.getMissedIngredients() ) );
-            tvDescription.setText(recipe.getDescription());
+            tvSrcLink.setText(recipe.getSrcLink());
 
             Picasso.with(this.context)
                     .load( recipe.getImage() )

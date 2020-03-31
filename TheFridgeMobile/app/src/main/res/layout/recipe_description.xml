@@ -94,11 +94,16 @@
             app:layout_constraintTop_toBottomOf="@+id/llIngredients">
 
             <TextView
-                android:id="@+id/tvDescription"
+                android:id="@+id/tvSrcLink"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="30dp"
-                android:text="Description..." />
+                android:text="Description..."
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
