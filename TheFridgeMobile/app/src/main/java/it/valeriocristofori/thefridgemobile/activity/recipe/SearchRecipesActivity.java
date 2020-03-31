@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -39,6 +40,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
         private ImageButton ibtnFrifge;
         private Intent intent;
         private Context context;
+        private ProgressBar progressBar;
 
         public Holder(Context context){
             //init context
@@ -53,6 +55,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
             this.rgNumRecipe = findViewById(R.id.rgNumRecipe);
 
             this.btnSearch = findViewById(R.id.btnSearch);
+            this.progressBar = findViewById(R.id.progressBar);
 
             //assign listener
             this.ibtnAddFood.setOnClickListener(this);
@@ -85,7 +88,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
                     break;
 
                 case R.id.btnSearch:
-
+                    this.progressBar.setVisibility(View.GONE);
                     intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
                     intent.putExtra("num_recipes", numRecipes);
                     startActivityForResult(intent,0);

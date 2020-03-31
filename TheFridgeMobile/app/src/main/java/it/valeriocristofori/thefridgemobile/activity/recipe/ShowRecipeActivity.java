@@ -2,9 +2,11 @@ package it.valeriocristofori.thefridgemobile.activity.recipe;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -40,8 +42,8 @@ public class ShowRecipeActivity extends AppCompatActivity {
         private ImageView ivRecipe;
         private TextView tvUsedIngredients;
         private TextView tvMissedIngredients;
-        private TextView tvSrcLink;
         private TextView tvTitle;
+        private Button btnLink;
         private ImageButton ibtnLeftArrow;
 
         public Holder(Context context){
@@ -50,16 +52,19 @@ public class ShowRecipeActivity extends AppCompatActivity {
             // init views
             this.ivRecipe = findViewById(R.id.ivRecipe);
             this.tvTitle = findViewById(R.id.tvTitle);
-            this.tvSrcLink = findViewById(R.id.tvSrcLink);
+            this.btnLink = findViewById(R.id.btnLink);
             this.tvUsedIngredients = findViewById(R.id.tvUsedIngredients);
             this.tvMissedIngredients = findViewById(R.id.tvMissedIngredients);
             this.ibtnLeftArrow = findViewById(R.id.ibtnLeftArrow);
 
+            //set listener
+            this.ibtnLeftArrow.setOnClickListener( this );
+            this.btnLink.setOnClickListener( this );
+
             this.getData();
             this.setData();
 
-            //set listener
-            this.ibtnLeftArrow.setOnClickListener( this );
+
 
 
         }
@@ -73,7 +78,6 @@ public class ShowRecipeActivity extends AppCompatActivity {
             tvTitle.setText(recipe.getTitle());
             tvUsedIngredients.setText( this.bld_ingredients_string( recipe.getUsedIngredients() ) );
             tvMissedIngredients.setText( this.bld_ingredients_string( recipe.getMissedIngredients() ) );
-            tvSrcLink.setText(recipe.getSrcLink());
 
             Picasso.with(this.context)
                     .load( recipe.getImage() )
@@ -97,6 +101,15 @@ public class ShowRecipeActivity extends AppCompatActivity {
                     Intent intent = new Intent( v.getContext(), ChooseRecipesController.class);
                     startActivityForResult( intent, 0);
                     break;
+
+                case R.id.btnLink:
+                    String url = recipe.getSrcLink();
+
+                    Intent i = new Intent(Intent.ACTION_VIEW);
+                    i.setData(Uri.parse(url));
+                    startActivity(i);
+                    break;
+                    
             }
         }
 
