@@ -16,7 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
+import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.controller.LoginController;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
 import it.valeriocristofori.thefridgemobile.db.init.DatabaseHelper;

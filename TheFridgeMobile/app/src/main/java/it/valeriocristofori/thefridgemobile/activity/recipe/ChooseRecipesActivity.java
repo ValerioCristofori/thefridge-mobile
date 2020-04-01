@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
+import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
 import it.valeriocristofori.thefridgemobile.controller.ChooseRecipesController;
 import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerRecipeCustom;

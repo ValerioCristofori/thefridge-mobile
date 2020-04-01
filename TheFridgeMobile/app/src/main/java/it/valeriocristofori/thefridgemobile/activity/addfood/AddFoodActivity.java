@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
+import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
 import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivity;
 import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerCategoryCustom;

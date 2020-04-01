@@ -16,7 +16,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.activity.HomeActivity;
+import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.controller.RegistrationController;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
 
