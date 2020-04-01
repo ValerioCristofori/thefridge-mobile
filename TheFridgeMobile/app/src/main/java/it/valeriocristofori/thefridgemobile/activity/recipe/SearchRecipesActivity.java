@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
@@ -69,6 +70,8 @@ public class SearchRecipesActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+            v.startAnimation(AnimationUtils.loadAnimation(this.context, R.anim.on_click));
+
 
             switch(v.getId()) {
 
@@ -88,7 +91,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
                     break;
 
                 case R.id.btnSearch:
-                    this.progressBar.setVisibility(View.GONE);
+                    this.progressBar.setVisibility(View.VISIBLE);
                     intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
                     intent.putExtra("num_recipes", numRecipes);
                     startActivityForResult(intent,0);

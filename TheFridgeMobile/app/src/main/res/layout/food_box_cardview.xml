@@ -32,11 +32,12 @@
 
             <TextView
                 android:id="@+id/tvRecipe"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="128dp"
+                android:layout_height="35dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/comfortaa"
+                android:gravity="center"
                 android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

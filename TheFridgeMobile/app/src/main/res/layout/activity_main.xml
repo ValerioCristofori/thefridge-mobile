@@ -4,9 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/white"
     tools:context=".activity.sign.MainActivity">
-
-<!-- android:background="@drawable/background_the_fridge_mobile" -->
 
 
     <Button
@@ -22,31 +21,6 @@
         app:layout_constraintBottom_toTopOf="@+id/btnSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvUsedIngredients"
-        android:layout_width="224dp"
-        android:layout_height="131dp"
-        android:fontFamily="@font/comfortaa"
-        android:text=" Some description..."
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFridgeLogo"
-        app:layout_constraintVertical_bias="0.132" />
-
-    <ImageView
-        android:id="@+id/ivFridgeLogo"
-        android:layout_width="252dp"
-        android:layout_height="144dp"
-        android:src="@drawable/fridge_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.133" />
-
 
     <Button
         android:id="@+id/btnSignup"
@@ -82,6 +56,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvUsedIngredients"
         app:layout_constraintVertical_bias="0.341" />
 
+
     <EditText
         android:id="@+id/tfPassword"
         android:layout_width="0dp"
@@ -97,6 +72,30 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tfUsername"
         app:layout_constraintVertical_bias="0.372" />
+
+    <ImageView
+        android:id="@+id/ivFridgeLogo"
+        android:layout_width="252dp"
+        android:layout_height="144dp"
+        android:src="@drawable/fridge_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133" />
+
+    <TextView
+        android:id="@+id/tvUsedIngredients"
+        android:layout_width="224dp"
+        android:layout_height="131dp"
+        android:fontFamily="@font/comfortaa"
+        android:text=" Some description..."
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivFridgeLogo"
+        app:layout_constraintVertical_bias="0.132" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

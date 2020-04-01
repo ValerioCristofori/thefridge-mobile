@@ -98,8 +98,8 @@ public class ShowRecipeActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.ibtnLeftArrow:
-                    Intent intent = new Intent( v.getContext(), ChooseRecipesController.class);
-                    startActivityForResult( intent, 0);
+                    Intent intent = new Intent( this.context, ChooseRecipesController.class);
+                    startActivity( intent );
                     break;
 
                 case R.id.btnLink:
