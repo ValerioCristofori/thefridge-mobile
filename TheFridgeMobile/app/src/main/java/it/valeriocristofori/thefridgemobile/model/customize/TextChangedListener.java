@@ -1,4 +1,4 @@
-package it.valeriocristofori.thefridgemobile.activity.home;
+package it.valeriocristofori.thefridgemobile.model.customize;
 
 import android.text.Editable;
 import android.text.TextWatcher;

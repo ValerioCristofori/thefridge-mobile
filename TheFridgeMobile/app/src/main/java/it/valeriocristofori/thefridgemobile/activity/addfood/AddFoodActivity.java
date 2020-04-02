@@ -16,6 +16,7 @@ import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
 import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivity;
+import it.valeriocristofori.thefridgemobile.implementation.instance.Instance;
 import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerCategoryCustom;
 
 public class AddFoodActivity extends AppCompatActivity {
@@ -33,15 +34,13 @@ public class AddFoodActivity extends AppCompatActivity {
         private ImageButton ibtnFridge;
         private ImageButton ibtnRecipes;
         private ImageButton ibtnProfile;
+        private ImageButton ibtnSearch;
         private Intent intent;
 
         //data for initialize recycler view
         private RecyclerView rvCategories;
         String str[];
-        int images[] = {R.drawable.category_fruit,R.drawable.category_vegetable,R.drawable.category_meat,
-                R.drawable.category_fish,R.drawable.category_cereal,R.drawable.category_bread,R.drawable.category_legume,
-                R.drawable.category_mushroom,R.drawable.category_dairy_product,R.drawable.category_dessert,R.drawable.category_spices,
-                R.drawable.category_sauces,R.drawable.category_beverage,R.drawable.category_vegan,R.drawable.category_oil};
+        int images[] = Instance.getSingletonInstance().getImages();
 
 
         public Holder(Context context){
@@ -52,8 +51,9 @@ public class AddFoodActivity extends AppCompatActivity {
             this.ibtnFridge = findViewById(R.id.ibtnFridge);
             this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
             this.ibtnProfile = findViewById(R.id.ibtnProfile);
+            this.ibtnSearch = findViewById(R.id.ibtnSearch);
 
-            this.rvCategories = findViewById(R.id.rvCategories);
+            this.rvCategories = findViewById(R.id.rvSearchFood);
 
             //init recycler
             str = getResources().getStringArray(R.array.food_categories);
@@ -66,6 +66,7 @@ public class AddFoodActivity extends AppCompatActivity {
             this.ibtnFridge.setOnClickListener(this);
             this.ibtnRecipes.setOnClickListener(this);
             this.ibtnProfile.setOnClickListener(this);
+            this.ibtnSearch.setOnClickListener(this);
         }
 
         @Override
@@ -86,6 +87,11 @@ public class AddFoodActivity extends AppCompatActivity {
 
                 case R.id.ibtnRecipes:
                     intent = new Intent(v.getContext(), SearchRecipesActivity.class);
+                    startActivityForResult(intent,0);
+                    break;
+
+                case R.id.ibtnSearch:
+                    intent = new Intent(v.getContext(), SearchFoodActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

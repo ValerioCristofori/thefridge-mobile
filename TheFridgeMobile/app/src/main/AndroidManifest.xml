@@ -49,6 +49,7 @@
         <activity android:name=".activity.profile.ProfileActivity" />
         <activity android:name=".activity.profile.DeleteAccount" />
         <activity android:name=".activity.recipe.ShowRecipeActivity" />
+        <activity android:name=".activity.addfood.SearchFoodActivity" />
 
 
         <meta-data
