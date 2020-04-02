@@ -5,4 +5,7 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="myBlack">#272727</color>
     <color name="mySkyBlue">#1f618d</color>
+    <color name="myDarkBlue">#154360</color>
+    <color name="myWhite">#f0f3f4</color>
+    <color name="myGrey">#bfc9ca</color>
 </resources>

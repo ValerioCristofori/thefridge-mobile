@@ -8,7 +8,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewTop"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
+        android:background="@color/myDarkBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -27,8 +28,8 @@
 
         <ImageView
             android:id="@+id/ivSpecificCategory"
-            android:layout_width="41dp"
-            android:layout_height="41dp"
+            android:layout_width="31dp"
+            android:layout_height="34dp"
             android:layout_marginStart="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ibtnLeftArrow"
@@ -42,8 +43,9 @@
             android:layout_marginStart="15dp"
             android:fontFamily="@font/comfortaa"
             android:text="TextView"
-            android:textSize="18sp"
             android:textStyle="bold"
+            android:textColor="@color/myWhite"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivSpecificCategory"
             app:layout_constraintTop_toTopOf="parent"
