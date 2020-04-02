@@ -15,7 +15,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.activity.addfood.ListFoodActivity;
 import it.valeriocristofori.thefridgemobile.controller.AddFoodController;
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
 
@@ -36,7 +35,7 @@ public class RecyclerSearchFoodCustom extends RecyclerView.Adapter<RecyclerSearc
     @Override
     public RecyclerSearchFoodCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.food_box_cardview,parent,false);
+        View view = layoutInflater.inflate(R.layout.food_box_for_add,parent,false);
 
         return new RecyclerSearchFoodCustom.MyViewHolder(view);
     }

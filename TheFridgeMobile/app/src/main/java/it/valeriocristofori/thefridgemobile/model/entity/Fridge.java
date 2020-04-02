@@ -53,4 +53,11 @@ public class Fridge {
         }
         return String.format("Fridge = id: %s \nlist of food: %s", this.id, printable_list);
     }
+
+    public void deleteFood(Food food) {
+        //control if there isnt the food
+        //..........
+
+        this.listFood.remove(food);
+    }
 }

@@ -5,6 +5,7 @@ import android.text.Editable;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
+import it.valeriocristofori.thefridgemobile.db.init.DatabaseHelper;
 import it.valeriocristofori.thefridgemobile.implementation.instance.Instance;
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
 import it.valeriocristofori.thefridgemobile.model.entity.Fridge;
@@ -28,5 +29,16 @@ public class ViewFridgeController {
             }
         }
         return trueList;
+    }
+
+    public void deleteFood(Food food) {
+        //update fridge instance
+        Instance instance = Instance.getSingletonInstance();
+        Fridge fridge = instance.getCurrentUser().getFridge();
+        fridge.deleteFood(food);
+        instance.updateFridge(fridge);
+
+        //call query to db
+        DatabaseHelper.getDatabaseInstance().deleteFood(fridge, food);
     }
 }

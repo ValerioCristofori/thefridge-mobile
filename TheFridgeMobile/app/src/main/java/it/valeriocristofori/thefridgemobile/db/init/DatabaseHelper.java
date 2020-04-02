@@ -217,4 +217,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         return c.getInt(c.getColumnIndex(COLUMN_FRIDGE_ID));
     }
+
+    public void deleteFood(Fridge fridge, Food food) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_FOOD,COLUMN_FRIDGE_ID + "=? and " + COLUMN_FOOD_NAME + "=?",new String[]{(String.valueOf(fridge.getId())), food.getName()});
+        Log.e(String.valueOf(LOG), String.format("delete %s", food.getName()) );
+    }
 }

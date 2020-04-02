@@ -16,8 +16,10 @@ import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
 import it.valeriocristofori.thefridgemobile.R;
+import it.valeriocristofori.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
+import it.valeriocristofori.thefridgemobile.controller.AddFoodController;
 import it.valeriocristofori.thefridgemobile.controller.ChooseRecipesController;
 import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerRecipeCustom;
 import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
@@ -42,6 +44,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
         private ImageButton ibtnFridge;
         private ImageButton ibtnRecipes;
         private ImageButton ibtnProfile;
+        private ImageButton ibtnAddFood;
         private Intent intent;
         private RecyclerView rvRecipe;
 
@@ -55,6 +58,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             this.ibtnFridge = findViewById(R.id.ibtnFridge);
             this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
             this.ibtnProfile = findViewById(R.id.ibtnProfile);
+            this.ibtnAddFood = findViewById(R.id.ibtnAddFood);
 
             this.getData();
             this.setData();
@@ -71,6 +75,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             this.ibtnFridge.setOnClickListener(this);
             this.ibtnRecipes.setOnClickListener(this);
             this.ibtnProfile.setOnClickListener(this);
+            this.ibtnAddFood.setOnClickListener(this);
         }
 
         @Override
@@ -81,6 +86,11 @@ public class ChooseRecipesActivity extends AppCompatActivity {
 
                 case R.id.ibtnProfile:
                     intent = new Intent(v.getContext(), ProfileActivity.class);
+                    startActivityForResult(intent,0);
+                    break;
+
+                case R.id.ibtnAddFood:
+                    intent = new Intent(v.getContext(), AddFoodActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

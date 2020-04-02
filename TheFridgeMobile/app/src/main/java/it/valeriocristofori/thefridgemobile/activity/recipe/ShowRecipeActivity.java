@@ -32,7 +32,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recipe_description);
 
-        Holder holder = new Holder( this );
+        new Holder( this );
 
     }
 
@@ -98,7 +98,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.ibtnLeftArrow:
-                    Intent intent = new Intent( this.context, ChooseRecipesController.class);
+                    Intent intent = new Intent( this.context, ShowRecipeActivity.class);
                     startActivity( intent );
                     break;
 

@@ -47,6 +47,7 @@ public class SearchFoodActivity extends AppCompatActivity {
         private ImageButton ibtnFridge;
         private ImageButton ibtnRecipes;
         private ImageButton ibtnProfile;
+        private ImageButton ibtnAddFood;
         private EditText etSearchBar;
 
         //declare attr for recycler
@@ -60,6 +61,7 @@ public class SearchFoodActivity extends AppCompatActivity {
             this.ibtnFridge = findViewById(R.id.ibtnFridge);
             this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
             this.ibtnProfile = findViewById(R.id.ibtnProfile);
+            this.ibtnAddFood = findViewById(R.id.ibtnAddFood);
             this.etSearchBar = findViewById(R.id.etSearchBar);
 
             //init for recycler
@@ -94,6 +96,7 @@ public class SearchFoodActivity extends AppCompatActivity {
             this.ibtnFridge.setOnClickListener(this);
             this.ibtnRecipes.setOnClickListener(this);
             this.ibtnProfile.setOnClickListener(this);
+            this.ibtnAddFood.setOnClickListener(this);
         }
 
         private int[] createImagesArray(ArrayList<Food> data) {
@@ -139,6 +142,11 @@ public class SearchFoodActivity extends AppCompatActivity {
 
                 case R.id.ibtnFridge:
                     intent = new Intent(v.getContext(), HomeActivity.class);
+                    startActivityForResult(intent,0);
+                    break;
+
+                case R.id.ibtnAddFood:
+                    intent = new Intent(v.getContext(), AddFoodActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

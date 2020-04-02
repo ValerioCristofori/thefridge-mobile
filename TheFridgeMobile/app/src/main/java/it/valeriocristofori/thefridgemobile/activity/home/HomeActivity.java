@@ -45,7 +45,6 @@ public class HomeActivity extends AppCompatActivity {
         private RecyclerView rvFridge;
         private Intent intent;
         private Context context;
-        private int images[] = Instance.getSingletonInstance().getImages();
 
         public Holder(final Context context) {
 
@@ -63,8 +62,7 @@ public class HomeActivity extends AppCompatActivity {
             //create and populate the recycler
             final ViewFridgeController viewFridgeController = new ViewFridgeController();
             ArrayList<Food> data = viewFridgeController.takeContent();
-            int[] arrayImages = this.createImagesArray(data);
-            RecyclerFridgeCustom recyclerFridgeCustom = new RecyclerFridgeCustom( this.context, data, arrayImages );
+            RecyclerFridgeCustom recyclerFridgeCustom = new RecyclerFridgeCustom( this.context, data );
 
             //setting
             rvFridge.setAdapter(recyclerFridgeCustom);
@@ -87,8 +85,7 @@ public class HomeActivity extends AppCompatActivity {
                     ArrayList<Food> substringData = viewFridgeController.takeContentWithSubstring(input);
                     Log.e("substrings", substringData.toArray().toString());
                     //init the recycler
-                    int[] arrayImages = createImagesArray(substringData);
-                    RecyclerFridgeCustom recyclerFridgeCustom = new RecyclerFridgeCustom( context, substringData, arrayImages );
+                    RecyclerFridgeCustom recyclerFridgeCustom = new RecyclerFridgeCustom( context, substringData);
 
                     //setting
                     rvFridge.setAdapter(recyclerFridgeCustom);
@@ -124,34 +121,7 @@ public class HomeActivity extends AppCompatActivity {
 
         }
 
-        private int[] createImagesArray(ArrayList<Food> data) {
-            int arrayImages[] = new int[data.size()];
-            for(int i = 0; i < data.size(); i++ ){
-                arrayImages[i] = this.selectImage(data.get(i));
-            }
-            return arrayImages;
-        }
 
-        private int selectImage(Food food) {
-            switch(food.getCategory()){
-                case "fruit": return images[0];
-                case "vegetable": return images[1];
-                case "meat": return images[2];
-                case "fish": return images[3];
-                case "cereal_flour": return images[4];
-                case "pasta_bread": return images[5];
-                case "legumes": return images[6];
-                case "mushrooms": return images[7];
-                case "dairy_product": return images[8];
-                case "dessert": return images[9];
-                case "spices": return images[10];
-                case "sauces": return images[11];
-                case "beverages": return images[12];
-                case "vegan": return images[13];
-                case "oils": return images[14];
-                default: return images[0];
-            }
-        }
     }
 
 }
