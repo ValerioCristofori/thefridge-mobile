@@ -88,7 +88,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         private String bld_ingredients_string(ArrayList<Food> usedIngredients) {
         StringBuilder str = new StringBuilder();
         for( Food food : usedIngredients ){
-            str.append(food.getName() + "\n");
+            str.append("- " + food.getName() + "\n");
         }
         Log.e("builder", str.toString());
         return str.toString();
@@ -98,7 +98,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         public void onClick(View v) {
             switch(v.getId()){
                 case R.id.ibtnLeftArrow:
-                    Intent intent = new Intent( this.context, ShowRecipeActivity.class);
+                    Intent intent = new Intent( this.context, SearchRecipesActivity.class);
                     startActivity( intent );
                     break;
 

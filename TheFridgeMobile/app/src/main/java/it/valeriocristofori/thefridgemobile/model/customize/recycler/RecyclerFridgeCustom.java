@@ -72,6 +72,7 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
         holder.ibtnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                holder.ibtnDelete.setVisibility(View.INVISIBLE);
                 //call query to db for delete
                 ViewFridgeController viewFridgeController = new ViewFridgeController();
                 viewFridgeController.deleteFood(listFood.get(position));
@@ -105,6 +106,7 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
             ivFridgeFood = itemView.findViewById(R.id.ivRecipe);
             ibtnDelete = itemView.findViewById(R.id.ibtnDelete);
             mainLayout = itemView.findViewById(R.id.mainLayout);
+
 
         }
     }

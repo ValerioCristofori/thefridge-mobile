@@ -21,6 +21,7 @@ import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
 public class SearchRecipesActivity extends AppCompatActivity {
 
     private int numRecipes;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,6 +29,16 @@ public class SearchRecipesActivity extends AppCompatActivity {
         setContentView(R.layout.search_recipes);
 
         Holder holder = new Holder(this);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 0) {
+            //reset
+            this.progressBar.setVisibility(View.INVISIBLE);
+        }
     }
 
     class Holder implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
@@ -40,7 +51,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
         private ImageButton ibtnFrifge;
         private Intent intent;
         private Context context;
-        private ProgressBar progressBar;
+
 
         public Holder(Context context){
             //init context
@@ -55,7 +66,8 @@ public class SearchRecipesActivity extends AppCompatActivity {
             this.rgNumRecipe = findViewById(R.id.rgNumRecipe);
 
             this.btnSearch = findViewById(R.id.btnSearch);
-            this.progressBar = findViewById(R.id.progressBar);
+            progressBar = findViewById(R.id.progressBar);
+
 
             //assign listener
             this.ibtnAddFood.setOnClickListener(this);
@@ -90,13 +102,15 @@ public class SearchRecipesActivity extends AppCompatActivity {
                     break;
 
                 case R.id.btnSearch:
-                    this.progressBar.setVisibility(View.VISIBLE);
+                    progressBar.setVisibility(View.VISIBLE);
                     intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
                     intent.putExtra("num_recipes", numRecipes);
                     startActivityForResult(intent,0);
+
                     break;
 
             }
+
 
 
         }
