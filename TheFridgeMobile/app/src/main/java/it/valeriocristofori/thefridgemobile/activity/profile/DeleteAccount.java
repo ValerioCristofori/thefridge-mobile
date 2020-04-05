@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.sign.RegisterActivity;
+import it.valeriocristofori.thefridgemobile.activity.sign.MainActivity;
+import it.valeriocristofori.thefridgemobile.activity.sign.RegisterActivity;
+import it.valeriocristofori.thefridgemobile.controller.DeleteAccountController;
+import it.valeriocristofori.thefridgemobile.controller.LoginController;
 
 public class DeleteAccount extends AppCompatActivity {
 
@@ -58,12 +62,17 @@ public class DeleteAccount extends AppCompatActivity {
                     break;
 
                 case R.id.btnYes:
-                    //cancella dati da DB
-                    intent = new Intent(v.getContext(), RegisterActivity.class);
+                    //delete user from DB
+                    DeleteAccountController deleteAccountController;
+                    deleteAccountController = new DeleteAccountController();
+                    deleteAccountController.deleteAccount();
+                    //return to register menu
+                    intent = new Intent(v.getContext(), MainActivity.class);
                     startActivityForResult(intent, 0);
                     break;
             }
         }
     }
+
 }
     

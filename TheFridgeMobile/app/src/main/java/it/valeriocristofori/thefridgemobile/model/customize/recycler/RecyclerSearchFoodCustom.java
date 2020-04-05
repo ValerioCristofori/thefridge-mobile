@@ -1,9 +1,12 @@
 package it.valeriocristofori.thefridgemobile.model.customize.recycler;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -12,7 +15,10 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.controller.AddFoodController;
@@ -48,13 +54,45 @@ public class RecyclerSearchFoodCustom extends RecyclerView.Adapter<RecyclerSearc
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //add food in current fridge
-                Toast.makeText(context, listFood.get(position).getName(), Toast.LENGTH_SHORT).show();
 
-                //call query to insert food
-                String foodName = listFood.get(position).getName();
-                AddFoodController addFoodController = new AddFoodController();
-                addFoodController.insertFood(foodName);
+                Toast.makeText( context , listFood.get(position).getName(), Toast.LENGTH_SHORT).show();
+
+                //create calendar
+                Calendar calendar = Calendar.getInstance();
+                int day = calendar.get(Calendar.DAY_OF_MONTH);
+                int month = calendar.get(Calendar.MONTH);
+                int year = calendar.get(Calendar.YEAR);
+
+                final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+                DatePickerDialog dpd = new DatePickerDialog( context ,android.R.style.Theme_DeviceDefault_Light_Dialog, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int mYear, int mMonth, int mDay) {
+
+                        String expirationDate = sdf.format(new Date(mYear-1900,mMonth,mDay));
+                        //call query to insert food
+                        String foodName = listFood.get(position).getName();
+                        AddFoodController addFoodController = new AddFoodController();
+                        addFoodController.insertFood(foodName,expirationDate);
+                    }
+
+
+                }, year, month, day);
+
+                //when click on skip button
+                dpd.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                    @Override
+                    public void onCancel(DialogInterface dialogInterface) {
+
+                        String expirationDate = "-";
+                        String foodName = listFood.get(position).getName();
+                        AddFoodController addFoodController = new AddFoodController();
+                        addFoodController.insertFood(foodName,expirationDate);
+                    }
+                });
+
+                dpd.show();
+                dpd.getButton(DatePickerDialog.BUTTON_NEGATIVE).setText("skip");
             }
         });
 

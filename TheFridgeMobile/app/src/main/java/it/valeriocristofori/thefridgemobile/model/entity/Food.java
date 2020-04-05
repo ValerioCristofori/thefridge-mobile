@@ -1,7 +1,6 @@
 package it.valeriocristofori.thefridgemobile.model.entity;
 
 import java.io.Serializable;
-
 import it.valeriocristofori.thefridgemobile.model.utility.ListAllFood;
 
 public class Food implements Serializable {
@@ -36,9 +35,7 @@ public class Food implements Serializable {
         return expirationDate;
     }
 
-    public void setExpirationDate(String expirationDate) {
-        this.expirationDate = expirationDate;
-    }
+    public void setExpirationDate(String expirationDate) { this.expirationDate = expirationDate; }
 
     public String getCategory() {
         return category;

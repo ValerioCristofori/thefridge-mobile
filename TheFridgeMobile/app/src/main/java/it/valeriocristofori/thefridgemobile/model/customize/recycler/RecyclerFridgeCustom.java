@@ -85,6 +85,8 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
             }
         });
 
+        holder.tvExpirationDate.setText(listFood.get(position).getExpirationDate());
+
     }
 
     @Override
@@ -95,6 +97,7 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvFridgeFood;
+        TextView tvExpirationDate;
         ImageView ivFridgeFood;
         ConstraintLayout mainLayout;
         ImageButton ibtnDelete;
@@ -103,6 +106,7 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
             super(itemView);
 
             tvFridgeFood = itemView.findViewById(R.id.tvRecipe);
+            tvExpirationDate = itemView.findViewById(R.id.tvExpirationDate);
             ivFridgeFood = itemView.findViewById(R.id.ivRecipe);
             ibtnDelete = itemView.findViewById(R.id.ibtnDelete);
             mainLayout = itemView.findViewById(R.id.mainLayout);

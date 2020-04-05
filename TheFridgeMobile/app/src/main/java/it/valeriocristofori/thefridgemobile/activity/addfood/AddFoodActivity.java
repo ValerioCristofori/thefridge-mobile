@@ -96,7 +96,6 @@ public class AddFoodActivity extends AppCompatActivity {
                     break;
 
             }
-
         }
     }
 
