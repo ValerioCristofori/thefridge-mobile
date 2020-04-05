@@ -41,6 +41,7 @@ public class Fridge {
         //..........
 
         this.listFood.add(food);
+
     }
 
     @Override

@@ -7,9 +7,10 @@ import it.valeriocristofori.thefridgemobile.model.entity.Fridge;
 
 public class AddFoodController {
 
-    public void insertFood( String foodName ){
+    public void insertFood(String foodName, String expirationDate){
         Food food = new Food();
         food.setName(foodName);
+        food.setExpirationDate(expirationDate);
 
         //take fridge instance of the current user
         //there is a singleton instance

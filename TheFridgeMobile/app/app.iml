@@ -101,15 +101,15 @@
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:core:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test:monitor:1.2.0@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: androidx.test.espresso:espresso-idling-resource:3.2.0@aar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/httpclient-4.3.6.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/httpcore-nio-4.3.2.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/commons-codec-1.6.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/commons-logging-1.1.3.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/unirest-java-1.4.7.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/httpasyncclient-4.0.2.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/httpmime-4.3.6.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/json-20140107.jar:unspecified@jar" level="project" />
-    <orderEntry type="library" name="Gradle: __local_aars__:./app/libs/httpcore-4.3.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/commons-codec-1.6.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/commons-logging-1.1.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/httpasyncclient-4.0.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/httpclient-4.3.6.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/httpcore-4.3.3.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/httpcore-nio-4.3.2.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/httpmime-4.3.6.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/json-20140107.jar:unspecified@jar" level="project" />
+    <orderEntry type="library" name="Gradle: __local_aars__:C./Users/mattia/Desktop/thefridge-mobile/TheFridgeMobile/app/libs/unirest-java-1.4.7.jar:unspecified@jar" level="project" />
     <orderEntry type="library" name="Gradle: com.squareup.picasso:picasso:2.5.2@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.collection:collection:1.1.0@jar" level="project" />
     <orderEntry type="library" name="Gradle: androidx.lifecycle:lifecycle-common:2.1.0@jar" level="project" />

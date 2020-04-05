@@ -40,6 +40,7 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
     @Override
     public void onBindViewHolder(@NonNull RecyclerFridgeCustom.MyViewHolder holder, int position) {
         holder.tvFridgeFood.setText(listFood.get(position).getName());
+        holder.tvExpirationDate.setText(listFood.get(position).getExpirationDate());
         holder.ivFridgeFood.setImageResource(images[position]);
     }
 
@@ -51,12 +52,14 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
     public class MyViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvFridgeFood;
+        TextView tvExpirationDate;
         ImageView ivFridgeFood;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvFridgeFood = itemView.findViewById(R.id.tvRecipe);
+            tvExpirationDate = itemView.findViewById(R.id.tvExpirationDate);
             ivFridgeFood = itemView.findViewById(R.id.ivRecipe);
 
         }

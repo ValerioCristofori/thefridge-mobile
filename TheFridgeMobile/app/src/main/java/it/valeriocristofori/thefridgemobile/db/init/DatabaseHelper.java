@@ -7,6 +7,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
+import java.util.Date;
+
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
 import it.valeriocristofori.thefridgemobile.model.entity.Fridge;
 import it.valeriocristofori.thefridgemobile.model.entity.User;
@@ -95,7 +97,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    public void deleteUser(User user){
 
+        SQLiteDatabase db = this.getWritableDatabase();
+        // delete row
+        db.execSQL("DELETE FROM " + TABLE_USER+ " WHERE "+COLUMN_USERNAME+"='"+user.getUsername()+"'");
+    }
     public void insertUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -112,7 +119,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(COLUMN_FOOD_NAME, food.getName() );
-        values.put(COLUMN_EXPIRATION_DATE, food.getExpirationDate() );
+        values.put(COLUMN_EXPIRATION_DATE, food.getExpirationDate());
         //values.put(COLUMN_QUANTITY, food.getQuantity() );
         values.put(COLUMN_FRIDGE_ID, fridge.getId() );
 
@@ -193,7 +200,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             do{
                 Food food = new Food();
                 food.setName(c.getString( c.getColumnIndex(COLUMN_FOOD_NAME)));
-
+                food.setExpirationDate(c.getString( c.getColumnIndex(COLUMN_EXPIRATION_DATE)));
                 fridge.addFood(food);
             }while(c.moveToNext());
         }
