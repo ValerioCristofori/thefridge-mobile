@@ -1,0 +1,2 @@
+1- usare file di res ----> soprattutto strings.xml con tutte le stringhe dell'app
+	e con qualificatori

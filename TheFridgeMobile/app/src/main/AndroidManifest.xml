@@ -11,6 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <receiver android:name=".model.customize.receiver.BroadcastReceiverCustom"></receiver>
+
         <activity android:name=".activity.sign.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

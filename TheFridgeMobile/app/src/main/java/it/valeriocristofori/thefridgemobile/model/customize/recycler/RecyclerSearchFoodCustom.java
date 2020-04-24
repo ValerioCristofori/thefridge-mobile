@@ -55,7 +55,6 @@ public class RecyclerSearchFoodCustom extends RecyclerView.Adapter<RecyclerSearc
             @Override
             public void onClick(View v) {
 
-                Toast.makeText( context , listFood.get(position).getName(), Toast.LENGTH_SHORT).show();
 
                 //create calendar
                 Calendar calendar = Calendar.getInstance();
@@ -74,6 +73,11 @@ public class RecyclerSearchFoodCustom extends RecyclerView.Adapter<RecyclerSearc
                         String foodName = listFood.get(position).getName();
                         AddFoodController addFoodController = new AddFoodController();
                         addFoodController.insertFood(foodName,expirationDate);
+
+                        //add the notification
+                        //when delete a food delete the related notification
+
+
                     }
 
 

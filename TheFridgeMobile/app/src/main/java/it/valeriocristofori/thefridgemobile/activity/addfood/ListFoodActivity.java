@@ -29,6 +29,7 @@ import java.util.Date;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.controller.AddFoodController;
+import it.valeriocristofori.thefridgemobile.controller.NotificationController;
 import it.valeriocristofori.thefridgemobile.model.utility.ListAllFood;
 
 public class ListFoodActivity extends AppCompatActivity {
@@ -47,6 +48,7 @@ public class ListFoodActivity extends AppCompatActivity {
 
     class Holder implements View.OnClickListener, AdapterView.OnItemClickListener {
 
+        Context context;
         ImageButton ibtnLeftArrow;
         ImageView ivSpecificCategory;
         TextView tvSpecificCategory;
@@ -60,6 +62,7 @@ public class ListFoodActivity extends AppCompatActivity {
 
         public Holder(Context context){
 
+            this.context = context;
             ibtnLeftArrow = findViewById(R.id.ibtnLeftArrow);
             ivSpecificCategory = findViewById(R.id.ivSpecificCategory);
             tvSpecificCategory = findViewById(R.id.tvSpecificCategory);
@@ -90,7 +93,6 @@ public class ListFoodActivity extends AppCompatActivity {
         @RequiresApi(api = Build.VERSION_CODES.O)
         @Override
         public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-            Toast.makeText(ListFoodActivity.this, arrayList.get(position), Toast.LENGTH_SHORT).show();
 
             //create calendar
             calendar = Calendar.getInstance();
@@ -104,11 +106,19 @@ public class ListFoodActivity extends AppCompatActivity {
                 @Override
                 public void onDateSet(DatePicker datePicker, int mYear, int mMonth, int mDay) {
 
-                    expirationDate = sdf.format(new Date(mYear-1900,mMonth,mDay));
+                    Date date = new Date(mYear-1900,mMonth,mDay);
+                    expirationDate = sdf.format(date);
                     //call query to insert food
                     foodName = arrayList.get(position);
                     AddFoodController addFoodController = new AddFoodController();
                     addFoodController.insertFood(foodName,expirationDate);
+
+                    //add the notification
+                    NotificationController notificationController = new NotificationController();
+                    notificationController.createNotification(context, foodName, date);
+                    //when delete a food delete the related notification
+
+
                 }
 
 
