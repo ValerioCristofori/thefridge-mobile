@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
@@ -24,7 +23,6 @@ import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivit
 import it.valeriocristofori.thefridgemobile.controller.AddFoodController;
 import it.valeriocristofori.thefridgemobile.implementation.instance.Instance;
 import it.valeriocristofori.thefridgemobile.model.customize.TextChangedListener;
-import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerFridgeCustom;
 import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerSearchFoodCustom;
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
 
@@ -42,26 +40,20 @@ public class SearchFoodActivity extends AppCompatActivity {
     class Holder implements View.OnClickListener{
 
         private Context context;
-        private Intent intent;
-
-        private ImageButton ibtnFridge;
-        private ImageButton ibtnRecipes;
-        private ImageButton ibtnProfile;
-        private ImageButton ibtnAddFood;
         private EditText etSearchBar;
 
         //declare attr for recycler
         private RecyclerView rvSearchFood;
-        private int images[] = Instance.getSingletonInstance().getImages();
+        private int[] images = Instance.getSingletonInstance().getImages();
 
-        public Holder(final Context context){
+        Holder(final Context context){
             //init
             this.context = context;
             //init image buttons
-            this.ibtnFridge = findViewById(R.id.ibtnFridge);
-            this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
-            this.ibtnProfile = findViewById(R.id.ibtnProfile);
-            this.ibtnAddFood = findViewById(R.id.ibtnAddFood);
+            ImageButton ibtnFridge = findViewById(R.id.ibtnFridge);
+            ImageButton ibtnRecipes = findViewById(R.id.ibtnRecipes);
+            ImageButton ibtnProfile = findViewById(R.id.ibtnProfile);
+            ImageButton ibtnAddFood = findViewById(R.id.ibtnAddFood);
             this.etSearchBar = findViewById(R.id.etSearchBar);
 
             //init for recycler
@@ -93,14 +85,14 @@ public class SearchFoodActivity extends AppCompatActivity {
             });
 
             //assign listener
-            this.ibtnFridge.setOnClickListener(this);
-            this.ibtnRecipes.setOnClickListener(this);
-            this.ibtnProfile.setOnClickListener(this);
-            this.ibtnAddFood.setOnClickListener(this);
+            ibtnFridge.setOnClickListener(this);
+            ibtnRecipes.setOnClickListener(this);
+            ibtnProfile.setOnClickListener(this);
+            ibtnAddFood.setOnClickListener(this);
         }
 
         private int[] createImagesArray(ArrayList<Food> data) {
-            int arrayImages[] = new int[data.size()];
+            int[] arrayImages = new int[data.size()];
             for(int i = 0; i < data.size(); i++ ){
                 arrayImages[i] = this.selectImage(data.get(i));
             }
@@ -136,7 +128,7 @@ public class SearchFoodActivity extends AppCompatActivity {
             switch(v.getId()) {
 
                 case R.id.ibtnProfile:
-                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                    Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

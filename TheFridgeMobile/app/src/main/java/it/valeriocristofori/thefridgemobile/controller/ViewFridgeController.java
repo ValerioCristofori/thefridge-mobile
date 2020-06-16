@@ -1,7 +1,5 @@
 package it.valeriocristofori.thefridgemobile.controller;
 
-import android.text.Editable;
-
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 

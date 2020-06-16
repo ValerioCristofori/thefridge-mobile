@@ -10,11 +10,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.activity.sign.RegisterActivity;
 import it.valeriocristofori.thefridgemobile.activity.sign.MainActivity;
-import it.valeriocristofori.thefridgemobile.activity.sign.RegisterActivity;
 import it.valeriocristofori.thefridgemobile.controller.DeleteAccountController;
-import it.valeriocristofori.thefridgemobile.controller.LoginController;
 
 public class DeleteAccount extends AppCompatActivity {
 
@@ -30,24 +27,21 @@ public class DeleteAccount extends AppCompatActivity {
         int width = dm.widthPixels;
         int height = dm.heightPixels;
 
-        getWindow().setLayout((int) (width * .7), (int) (height * .5));
+        getWindow().setLayout((int) (width * .9), (int) (height * .4));
 
-        Holder holder = new Holder();
+        new Holder();
 
     }
 
     class Holder implements View.OnClickListener {
-        private Button btnYes;
-        private Button btnNo;
-        private Intent intent;
 
-        public Holder() {
+        Holder() {
 
-            this.btnYes = findViewById(R.id.btnYes);
-            this.btnNo = findViewById(R.id.btnNo);
+            Button btnYes = findViewById(R.id.btnYes);
+            Button btnNo = findViewById(R.id.btnNo);
 
-            this.btnYes.setOnClickListener(this);
-            this.btnNo.setOnClickListener(this);
+            btnYes.setOnClickListener(this);
+            btnNo.setOnClickListener(this);
 
         }
 
@@ -57,7 +51,7 @@ public class DeleteAccount extends AppCompatActivity {
             switch (v.getId()) {
 
                 case R.id.btnNo:
-                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                    Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     startActivityForResult(intent, 0);
                     break;
 

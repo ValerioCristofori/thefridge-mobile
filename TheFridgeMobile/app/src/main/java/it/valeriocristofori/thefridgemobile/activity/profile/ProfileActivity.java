@@ -14,6 +14,7 @@ import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivity;
+import it.valeriocristofori.thefridgemobile.implementation.instance.Instance;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -22,50 +23,52 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.profile);
 
-        Holder holder = new Holder();
+        new Holder();
 
     }
 
     class Holder implements View.OnClickListener{
-        private ImageButton ibtnAddFood;
-        private ImageButton ibtnRecipes;
-        private ImageButton ibtnFrifge;
-        private Button btnDelete;
-        private TextView tvUsername;
-        private TextView tvEmail;
-        private Intent intent;
-        private String welcome = "Hi ";
-        private String username, text;
 
-        public Holder(){
+        Holder(){
             //init image buttons
-            this.btnDelete = findViewById(R.id.btnDelete);
-            this.ibtnAddFood = (ImageButton)findViewById(R.id.ibtnAddFood);
-            this.ibtnRecipes = (ImageButton)findViewById(R.id.ibtnRecipes);
-            this.ibtnFrifge = (ImageButton)findViewById(R.id.ibtnFridge);
+            Button btnDelete = findViewById(R.id.btnDelete);
+            ImageButton ibtnAddFood = findViewById(R.id.ibtnAddFood);
+            ImageButton ibtnRecipes = findViewById(R.id.ibtnRecipes);
+            ImageButton ibtnFrifge = findViewById(R.id.ibtnFridge);
+            Button btnAboutUs = findViewById(R.id.btnAboutUs);
 
-            this.tvUsername = findViewById(R.id.tvUsername);
+            TextView tvUsername = findViewById(R.id.tvUsername);
             //query DB per sapere username
-            username = "Carl";
+            String username = Instance.getSingletonInstance().getCurrentUser().getUsername();
             //////////
-            text = welcome.concat(username);
+            String welcome = "Welcome back ";
+            String text = welcome.concat(username);
             tvUsername.setText(text);
 
-            this.tvEmail = findViewById(R.id.tvEmail);
+            TextView tvEmail = findViewById(R.id.tvEmail);
             //query DB per sapere email
-            tvEmail.setText("email@gmail.com");
+            String email = "Email: ";
+            text = email.concat(Instance.getSingletonInstance().getCurrentUser().getEmail());
+
+            tvEmail.setText(text);
 
             //assign listener
-            this.btnDelete.setOnClickListener(this);
-            this.ibtnAddFood.setOnClickListener(this);
-            this.ibtnRecipes.setOnClickListener(this);
-            this.ibtnFrifge.setOnClickListener(this);
+            btnDelete.setOnClickListener(this);
+            ibtnAddFood.setOnClickListener(this);
+            ibtnRecipes.setOnClickListener(this);
+            ibtnFrifge.setOnClickListener(this);
+            btnAboutUs.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View v) {
 
             switch(v.getId()) {
+
+                case R.id.btnAboutUs:
+                    Intent intent = new Intent(v.getContext(), AboutUs.class);
+                    startActivityForResult(intent,0);
+                    break;
 
                 case R.id.btnDelete:
                     intent = new Intent(v.getContext(), DeleteAccount.class);

@@ -26,34 +26,28 @@ public class AddFoodActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_food);
 
-        Holder holder = new Holder(this);
+        new Holder(this);
     }
 
     class Holder implements View.OnClickListener{
         private Context context;
-        private ImageButton ibtnFridge;
-        private ImageButton ibtnRecipes;
-        private ImageButton ibtnProfile;
-        private ImageButton ibtnSearch;
-        private Intent intent;
 
-        //data for initialize recycler view
-        private RecyclerView rvCategories;
-        String str[];
-        int images[] = Instance.getSingletonInstance().getImages();
+        String[] str;
+        int[] images = Instance.getSingletonInstance().getImages();
 
 
-        public Holder(Context context){
+        Holder(Context context){
             //take context
             this.context = context;
 
             //init image buttons
-            this.ibtnFridge = findViewById(R.id.ibtnFridge);
-            this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
-            this.ibtnProfile = findViewById(R.id.ibtnProfile);
-            this.ibtnSearch = findViewById(R.id.ibtnSearch);
+            ImageButton ibtnFridge = findViewById(R.id.ibtnFridge);
+            ImageButton ibtnRecipes = findViewById(R.id.ibtnRecipes);
+            ImageButton ibtnProfile = findViewById(R.id.ibtnProfile);
+            ImageButton ibtnSearch = findViewById(R.id.ibtnSearch);
 
-            this.rvCategories = findViewById(R.id.rvSearchFood);
+            //data for initialize recycler view
+            RecyclerView rvCategories = findViewById(R.id.rvSearchFood);
 
             //init recycler
             str = getResources().getStringArray(R.array.food_categories);
@@ -63,10 +57,10 @@ public class AddFoodActivity extends AppCompatActivity {
 
 
             //assign listener
-            this.ibtnFridge.setOnClickListener(this);
-            this.ibtnRecipes.setOnClickListener(this);
-            this.ibtnProfile.setOnClickListener(this);
-            this.ibtnSearch.setOnClickListener(this);
+            ibtnFridge.setOnClickListener(this);
+            ibtnRecipes.setOnClickListener(this);
+            ibtnProfile.setOnClickListener(this);
+            ibtnSearch.setOnClickListener(this);
         }
 
         @Override
@@ -76,7 +70,7 @@ public class AddFoodActivity extends AppCompatActivity {
             switch(v.getId()) {
 
                 case R.id.ibtnProfile:
-                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                    Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

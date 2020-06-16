@@ -1,5 +1,6 @@
 package it.valeriocristofori.thefridgemobile.api;
 
+import android.annotation.SuppressLint;
 import android.util.Log;
 
 import com.mashape.unirest.http.HttpResponse;
@@ -26,7 +27,7 @@ public class SpoonacularAPI {
         //format string for query
         StringBuilder bld = new StringBuilder();
         for( String string : threeIngredients ) {
-            bld.append( string + "," );
+            bld.append(string).append(",");
         }
 
         this.queryApi(bld.toString());
@@ -90,7 +91,8 @@ public class SpoonacularAPI {
         return recipe;
     }
 
-    private String queryLink( Integer recipeId ) throws JSONException {
+    @SuppressLint("DefaultLocale")
+    private String queryLink(Integer recipeId ) throws JSONException {
         try {
             this.requestLink = Unirest.get( String.format( "https://api.spoonacular.com/recipes/%d/information?includeNutrition=false", recipeId ) )
                     .header("accept", "application/json")

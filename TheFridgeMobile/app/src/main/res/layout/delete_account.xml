@@ -4,42 +4,54 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/myColorForBackground"
     android:foregroundTint="#FFC107">
 
     <TextView
         android:id="@+id/tvConfirmation"
-        android:layout_width="191dp"
-        android:layout_height="80dp"
+        android:layout_width="224dp"
+        android:layout_height="98dp"
         android:layout_marginStart="179dp"
         android:layout_marginEnd="179dp"
-        android:layout_marginBottom="244dp"
-        android:text="Once you delete your profile you will lose all your data you are sure you want to continue ?"
-        android:textSize="16sp"
+        android:fontFamily="@font/comfortaa"
+        android:text="Once you delete your profile you will lose all your data, are you sure to continue ?"
+        android:textAlignment="center"
+        android:textColor="@color/myWhite"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.402" />
 
     <Button
         android:id="@+id/btnYes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="120dp"
-        android:backgroundTint="#4CAF50"
+        android:layout_width="97dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="28dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="@font/comfortaa"
         android:foregroundTint="#279F30"
         android:text="Yes"
+        android:textColor="@color/myWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmation"
+        app:layout_constraintVertical_bias="0.278" />
 
     <Button
         android:id="@+id/btnNo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="120dp"
-        android:backgroundTint="#F12415"
+        android:layout_width="97dp"
+        android:layout_height="39dp"
+        android:layout_marginEnd="28dp"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:fontFamily="@font/comfortaa"
         android:text="No"
+        android:textColor="@color/myWhite"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConfirmation"
+        app:layout_constraintVertical_bias="0.278" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,7 @@ package it.valeriocristofori.thefridgemobile.activity.sign;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -17,53 +18,44 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
+import java.util.Objects;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.controller.LoginController;
 import it.valeriocristofori.thefridgemobile.controller.SyntaxValidation;
 import it.valeriocristofori.thefridgemobile.db.init.DatabaseHelper;
-import it.valeriocristofori.thefridgemobile.model.entity.Food;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ArrayList<Food> listFood;
-    private DatabaseHelper db;
     private SharedPreferences preferences;
     private SharedPreferences.Editor editor;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        db = DatabaseHelper.getDatabaseInstance(getApplicationContext());
+        DatabaseHelper.getDatabaseInstance(getApplicationContext());
 
         //create this.Holder
-        Holder holder = new Holder();
-
-
+        new Holder();
 
     }
 
     class Holder implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
         private EditText tfUsername;
         private EditText tfPassword;
-        private Button btnLogin;
-        private Button btnSignup;
-        private CheckBox cbRemember;
 
-        public Holder(){
+        @SuppressLint("CommitPrefEdits")
+        Holder(){
             //init login button
-            this.btnLogin = findViewById(R.id.btnLogin);
+            Button btnLogin = findViewById(R.id.btnLogin);
             //init sign up button
-            this.btnSignup = findViewById(R.id.btnSignup);
+            Button btnSignup = findViewById(R.id.btnSignup);
             //binding xml components and java components
             this.tfUsername = findViewById(R.id.tfUsername);
             this.tfPassword = findViewById(R.id.tfPassword);
-            this.cbRemember = findViewById(R.id.cbRemember);
+            CheckBox cbRemember = findViewById(R.id.cbRemember);
 
             //try to remember me status
             preferences = getSharedPreferences( "checkbox", MODE_PRIVATE);
@@ -71,15 +63,15 @@ public class MainActivity extends AppCompatActivity {
             this.trylogin();
 
             //assign click listener
-            this.btnLogin.setOnClickListener(this);
-            this.btnSignup.setOnClickListener(this);
-            this.cbRemember.setOnCheckedChangeListener(this);
+            btnLogin.setOnClickListener(this);
+            btnSignup.setOnClickListener(this);
+            cbRemember.setOnCheckedChangeListener(this);
 
         }
 
         private void trylogin() {
             String res = preferences.getString("remember", "");
-            if( res.equals("true")){
+            if (res != null && res.equals("true")) {
                 //automatic login
                 String username = preferences.getString("username", "");
                 String password = preferences.getString("password", "");
@@ -88,12 +80,12 @@ public class MainActivity extends AppCompatActivity {
                 Log.e("password", password);
 
                 LoginController loginController = new LoginController();
-                if( loginController.isValidUser( username, password ) ) {
+                if (loginController.isValidUser(username, password)) {
                     //remand home GUI
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
                 }
-             }
+            }
         }
 
         @Override
@@ -117,7 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 LoginController loginController = new LoginController();
                 if( loginController.isValidUser( tfUsername.getText().toString(), tfPassword.getText().toString() )) {
 
-                    if(preferences.getString("remember", "").equals("true")){ //if the checkbox is checked
+                    if(Objects.equals(preferences.getString("remember", ""), "true")){ //if the checkbox is checked
                         //put username and pass in the shared preferences
                         //not good in the point of view of security ---> pass not in md5()
                         editor.putString( "username", tfUsername.getText().toString() );
@@ -126,11 +118,11 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     //remand home GUI
+
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
                 }else{
                     this.displayErrorMessage("Username/Password not valid");
-                    return;
                 }
 
             }
@@ -149,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
             View layout = inflater.inflate(R.layout.custom_alert_layout,
                     (ViewGroup) findViewById(R.id.custom_toast_container));
 
-            TextView text = (TextView) layout.findViewById(R.id.text);
+            TextView text = layout.findViewById(R.id.text);
             text.setText(message);
 
 

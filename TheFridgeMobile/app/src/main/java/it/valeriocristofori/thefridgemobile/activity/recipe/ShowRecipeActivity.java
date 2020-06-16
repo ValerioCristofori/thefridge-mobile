@@ -19,7 +19,6 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import it.valeriocristofori.thefridgemobile.R;
-import it.valeriocristofori.thefridgemobile.controller.ChooseRecipesController;
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
 import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
 
@@ -43,35 +42,32 @@ public class ShowRecipeActivity extends AppCompatActivity {
         private TextView tvUsedIngredients;
         private TextView tvMissedIngredients;
         private TextView tvTitle;
-        private Button btnLink;
-        private ImageButton ibtnLeftArrow;
 
-        public Holder(Context context){
+        Holder(Context context){
             this.context = context;
 
             // init views
             this.ivRecipe = findViewById(R.id.ivRecipe);
             this.tvTitle = findViewById(R.id.tvTitle);
-            this.btnLink = findViewById(R.id.btnLink);
+            Button btnLink = findViewById(R.id.btnLink);
             this.tvUsedIngredients = findViewById(R.id.tvUsedIngredients);
             this.tvMissedIngredients = findViewById(R.id.tvMissedIngredients);
-            this.ibtnLeftArrow = findViewById(R.id.ibtnLeftArrow);
+            ImageButton ibtnLeftArrow = findViewById(R.id.ibtnLeftArrow);
 
             //set listener
-            this.ibtnLeftArrow.setOnClickListener( this );
-            this.btnLink.setOnClickListener( this );
+            ibtnLeftArrow.setOnClickListener( this );
+            btnLink.setOnClickListener( this );
 
             this.getData();
             this.setData();
-
-
-
 
         }
 
         private void getData() {
             Bundle bundle = getIntent().getExtras();
-            recipe = (Recipe) bundle.getSerializable("recipe");
+            if (bundle != null) {
+                recipe = (Recipe) bundle.getSerializable("recipe");
+            }
         }
 
         private void setData() {
@@ -88,7 +84,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         private String bld_ingredients_string(ArrayList<Food> usedIngredients) {
         StringBuilder str = new StringBuilder();
         for( Food food : usedIngredients ){
-            str.append("- " + food.getName() + "\n");
+            str.append("- ").append(food.getName()).append("\n");
         }
         Log.e("builder", str.toString());
         return str.toString();

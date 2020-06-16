@@ -19,7 +19,6 @@ import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.valeriocristofori.thefridgemobile.activity.home.HomeActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
-import it.valeriocristofori.thefridgemobile.controller.AddFoodController;
 import it.valeriocristofori.thefridgemobile.controller.ChooseRecipesController;
 import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerRecipeCustom;
 import it.valeriocristofori.thefridgemobile.model.entity.Recipe;
@@ -34,36 +33,28 @@ public class ChooseRecipesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.choose_recipes);
 
-        Holder holder = new Holder(this);
+        new Holder(this);
     }
 
 
     class Holder implements View.OnClickListener{
 
         private Context context;
-        private ImageButton ibtnFridge;
-        private ImageButton ibtnRecipes;
-        private ImageButton ibtnProfile;
-        private ImageButton ibtnAddFood;
-        private Intent intent;
-        private RecyclerView rvRecipe;
 
-
-
-        public Holder(Context context) {
+        Holder(Context context) {
             //take context
             this.context = context;
 
             //init image buttons
-            this.ibtnFridge = findViewById(R.id.ibtnFridge);
-            this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
-            this.ibtnProfile = findViewById(R.id.ibtnProfile);
-            this.ibtnAddFood = findViewById(R.id.ibtnAddFood);
+            ImageButton ibtnFridge = findViewById(R.id.ibtnFridge);
+            ImageButton ibtnRecipes = findViewById(R.id.ibtnRecipes);
+            ImageButton ibtnProfile = findViewById(R.id.ibtnProfile);
+            ImageButton ibtnAddFood = findViewById(R.id.ibtnAddFood);
 
             this.getData();
             this.setData();
 
-            this.rvRecipe = findViewById(R.id.rvRecipe);
+            RecyclerView rvRecipe = findViewById(R.id.rvRecipe);
 
             //init recycler
             RecyclerRecipeCustom recyclerCategoryCustom = new RecyclerRecipeCustom(this.context, arrayRecipes);
@@ -72,10 +63,10 @@ public class ChooseRecipesActivity extends AppCompatActivity {
 
 
             //assign listener
-            this.ibtnFridge.setOnClickListener(this);
-            this.ibtnRecipes.setOnClickListener(this);
-            this.ibtnProfile.setOnClickListener(this);
-            this.ibtnAddFood.setOnClickListener(this);
+            ibtnFridge.setOnClickListener(this);
+            ibtnRecipes.setOnClickListener(this);
+            ibtnProfile.setOnClickListener(this);
+            ibtnAddFood.setOnClickListener(this);
         }
 
         @Override
@@ -85,7 +76,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             switch(v.getId()) {
 
                 case R.id.ibtnProfile:
-                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                    Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
@@ -116,9 +107,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
         private void setData(){
             try {
                 arrayRecipes = new ChooseRecipesController().execute(numRecipes).get();
-            } catch (ExecutionException e) {
-                e.printStackTrace();
-            } catch (InterruptedException e) {
+            } catch (ExecutionException | InterruptedException e) {
                 e.printStackTrace();
             }
 

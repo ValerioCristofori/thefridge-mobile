@@ -30,11 +30,13 @@ public class LoginController {
     private void initUserInstance(User user){
         //take fridge instance from db
         Fridge fridge = DatabaseHelper.getDatabaseInstance().takeFridgeOfUser(user);
+        DatabaseHelper databaseHelper = DatabaseHelper.getDatabaseInstance();
+        databaseHelper.getEmailUser(user);
         //print the printable
         Log.i("login_fridge", fridge.toString());
         //assign fridge to user
         user.setFridge(fridge);
-
+        //user.setEmail(email);
         //populate Instance class with current user
         Instance.getSingletonInstance().setCurrentUser(user);
     }

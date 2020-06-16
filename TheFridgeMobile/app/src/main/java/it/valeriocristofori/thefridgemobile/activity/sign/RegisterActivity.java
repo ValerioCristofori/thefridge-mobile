@@ -25,26 +25,23 @@ public class RegisterActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.signup);
-        Holder holder = new Holder();
+        new Holder();
     }
 
     class Holder implements View.OnClickListener{
         private EditText tfUsername;
         private EditText tfEmail;
         private EditText tfPassword;
-        private Button btnSignup;
 
-
-        public Holder(){
+        Holder(){
             //binding xml components and java components
-            this.tfUsername = (EditText)findViewById(R.id.tfUsername);
-            this.tfEmail = (EditText)findViewById(R.id.tfEmail);
-            this.tfPassword = (EditText)findViewById(R.id.tfPassword);
-            this.btnSignup = (Button)findViewById(R.id.btnSignup);
+            this.tfUsername = findViewById(R.id.tfUsername);
+            this.tfEmail = findViewById(R.id.tfEmail);
+            this.tfPassword = findViewById(R.id.tfPassword);
+            Button btnSignup = findViewById(R.id.btnSignup);
 
             //assign click listener
-            this.btnSignup.setOnClickListener(this);
-
+            btnSignup.setOnClickListener(this);
 
         }
 
@@ -86,9 +83,7 @@ public class RegisterActivity extends AppCompatActivity {
                 }
                 else{
                     this.displayErrorMessage("Username already used");
-                    return;
                 }
-
 
             }
 
@@ -102,9 +97,8 @@ public class RegisterActivity extends AppCompatActivity {
             View layout = inflater.inflate(R.layout.custom_alert_layout,
                     (ViewGroup) findViewById(R.id.custom_toast_container));
 
-            TextView text = (TextView) layout.findViewById(R.id.text);
+            TextView text = layout.findViewById(R.id.text);
             text.setText(message);
-
 
             Toast toast = new Toast(getApplicationContext());
             toast.setGravity(Gravity.TOP, 0, 0);
@@ -116,9 +110,4 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
-
-
-
-
-
 }

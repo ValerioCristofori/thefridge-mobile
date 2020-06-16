@@ -26,8 +26,7 @@ public class RegistrationController {
         return false;
     }
 
-
-    public void registration( String username, String password, String email) throws Exception {
+    public void registration( String username, String password, String email) {
         //build user entity
         User user = new User();
         user.setUsername(username);
@@ -52,8 +51,8 @@ public class RegistrationController {
     }
 
     private void setDefaultFridge( Fridge fridge ) {
-        /**
-         * set default random id from 1 to 10'000 according to the db
+        /*
+          set default random id from 1 to 10'000 according to the db
          */
 
         try {
@@ -72,7 +71,7 @@ public class RegistrationController {
     }
 
 
-    private void setFridgeThroughId( Fridge fridge, int id ) throws Exception {
+    private void setFridgeThroughId( Fridge fridge, int id ) {
         DatabaseHelper databaseHelper = DatabaseHelper.getDatabaseInstance();
         fridge.setId( id );
 

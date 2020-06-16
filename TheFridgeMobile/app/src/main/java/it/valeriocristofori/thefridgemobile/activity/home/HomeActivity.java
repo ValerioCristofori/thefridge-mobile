@@ -16,13 +16,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import it.valeriocristofori.thefridgemobile.R;
 import it.valeriocristofori.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.valeriocristofori.thefridgemobile.activity.profile.ProfileActivity;
 import it.valeriocristofori.thefridgemobile.activity.recipe.SearchRecipesActivity;
 import it.valeriocristofori.thefridgemobile.controller.ViewFridgeController;
-import it.valeriocristofori.thefridgemobile.implementation.instance.Instance;
 import it.valeriocristofori.thefridgemobile.model.customize.TextChangedListener;
 import it.valeriocristofori.thefridgemobile.model.customize.recycler.RecyclerFridgeCustom;
 import it.valeriocristofori.thefridgemobile.model.entity.Food;
@@ -34,29 +34,24 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.home);
 
-        Holder holder = new Holder(this);
+        new Holder(this);
     }
 
     class Holder implements View.OnClickListener{
-        private ImageButton ibtnAddFood;
-        private ImageButton ibtnRecipes;
-        private ImageButton ibtnProfile;
         private EditText etSearchBar;
         private RecyclerView rvFridge;
-        private Intent intent;
         private Context context;
 
-        public Holder(final Context context) {
+        Holder(final Context context) {
 
             //take context
             this.context = context;
             //init image buttons
-            this.ibtnAddFood = findViewById(R.id.ibtnAddFood);
-            this.ibtnRecipes = findViewById(R.id.ibtnRecipes);
-            this.ibtnProfile = findViewById(R.id.ibtnProfile);
+            ImageButton ibtnAddFood = findViewById(R.id.ibtnAddFood);
+            ImageButton ibtnRecipes = findViewById(R.id.ibtnRecipes);
+            ImageButton ibtnProfile = findViewById(R.id.ibtnProfile);
             this.etSearchBar = findViewById(R.id.etSearchBar);
             this.rvFridge = findViewById(R.id.rvFridge);
-
 
             //take content of fridge
             //create and populate the recycler
@@ -69,9 +64,9 @@ public class HomeActivity extends AppCompatActivity {
             rvFridge.setLayoutManager(new GridLayoutManager(this.context, 3));
 
             //assign listener
-            this.ibtnAddFood.setOnClickListener(this);
-            this.ibtnRecipes.setOnClickListener(this);
-            this.ibtnProfile.setOnClickListener(this);
+            ibtnAddFood.setOnClickListener(this);
+            ibtnRecipes.setOnClickListener(this);
+            ibtnProfile.setOnClickListener(this);
 
             //assign text watcher
             //override for searching in this instance
@@ -83,7 +78,7 @@ public class HomeActivity extends AppCompatActivity {
                     String input = target.getText().toString();
                     //query all food that contains input as substring
                     ArrayList<Food> substringData = viewFridgeController.takeContentWithSubstring(input);
-                    Log.e("substrings", substringData.toArray().toString());
+                    Log.e("substrings", Arrays.toString(substringData.toArray()));
                     //init the recycler
                     RecyclerFridgeCustom recyclerFridgeCustom = new RecyclerFridgeCustom( context, substringData);
 
@@ -102,7 +97,7 @@ public class HomeActivity extends AppCompatActivity {
             switch(v.getId()) {
 
                 case R.id.ibtnProfile:
-                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                    Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     startActivityForResult(intent,0);
                     break;
 

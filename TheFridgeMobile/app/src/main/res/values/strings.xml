@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">The Fridge Mobile</string>
     <string name="username" />
+    <string name="skip_button_calendar">skip</string>
 
     <string-array name="food_categories">
         <item>Fruit</item>

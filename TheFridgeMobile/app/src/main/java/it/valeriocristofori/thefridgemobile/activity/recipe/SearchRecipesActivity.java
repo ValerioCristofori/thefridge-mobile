@@ -28,7 +28,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_recipes);
 
-        Holder holder = new Holder(this);
+        new Holder(this);
     }
 
     @Override
@@ -42,38 +42,31 @@ public class SearchRecipesActivity extends AppCompatActivity {
     }
 
     class Holder implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
-        //radio group
-        private RadioGroup rgNumRecipe;
 
-        private Button btnSearch;
-        private ImageButton ibtnAddFood;
-        private ImageButton ibtnProfile;
-        private ImageButton ibtnFrifge;
-        private Intent intent;
         private Context context;
 
-
-        public Holder(Context context){
+        Holder(Context context){
             //init context
             this.context = context;
 
             //init image buttons
-            this.ibtnAddFood = findViewById(R.id.ibtnAddFood);
-            this.ibtnProfile = findViewById(R.id.ibtnProfile);
-            this.ibtnFrifge = findViewById(R.id.ibtnFridge);
+            ImageButton ibtnAddFood = findViewById(R.id.ibtnAddFood);
+            ImageButton ibtnProfile = findViewById(R.id.ibtnProfile);
+            ImageButton ibtnFrifge = findViewById(R.id.ibtnFridge);
 
             //init radios
-            this.rgNumRecipe = findViewById(R.id.rgNumRecipe);
+            //radio group
+            RadioGroup rgNumRecipe = findViewById(R.id.rgNumRecipe);
 
-            this.btnSearch = findViewById(R.id.btnSearch);
+            Button btnSearch = findViewById(R.id.btnSearch);
             progressBar = findViewById(R.id.progressBar);
 
 
             //assign listener
-            this.ibtnAddFood.setOnClickListener(this);
-            this.ibtnProfile.setOnClickListener(this);
-            this.ibtnFrifge.setOnClickListener(this);
-            this.btnSearch.setOnClickListener(this);
+            ibtnAddFood.setOnClickListener(this);
+            ibtnProfile.setOnClickListener(this);
+            ibtnFrifge.setOnClickListener(this);
+            btnSearch.setOnClickListener(this);
 
             rgNumRecipe.setOnCheckedChangeListener(this);
 
@@ -87,7 +80,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
             switch(v.getId()) {
 
                 case R.id.ibtnProfile:
-                    intent = new Intent(v.getContext(), ProfileActivity.class);
+                    Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
