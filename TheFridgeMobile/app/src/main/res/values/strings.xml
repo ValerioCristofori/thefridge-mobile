@@ -1,7 +1,27 @@
 <resources>
-    <string name="app_name">The Fridge Mobile</string>
-    <string name="username" />
+    <string name="app_name" translatable="false">The Fridge Mobile</string>
     <string name="skip_button_calendar">skip</string>
+    <string name="about_us">About us</string>
+    <string name="login">LOGIN</string>
+    <string name="log_in">Log in</string>
+    <string name="signup">signup</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="or">or</string>
+    <string name="add_food">Add Food</string>
+    <string name="your_fridge">Your Fridge</string>
+    <string name="recipes">Recipes</string>
+    <string name="profile">Profile</string>
+    <string name="choose_recipe">Choose Recipe</string>
+    <string name="warning">Once you delete your profile you will lose all your data, are you sure to continue ?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="search_food">Search food</string>
+    <string name="search_recipes">Search Recipes</string>
+    <string name="search">Search</string>
+    <string name="your_profile">Your profile</string>
+    <string name="delete_account">Delete account</string>
 
     <string-array name="food_categories">
         <item>Fruit</item>

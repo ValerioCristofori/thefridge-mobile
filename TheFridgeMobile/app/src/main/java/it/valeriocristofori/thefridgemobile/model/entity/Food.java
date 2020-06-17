@@ -5,12 +5,10 @@ import it.valeriocristofori.thefridgemobile.model.utility.ListAllFood;
 
 public class Food implements Serializable {
     private String name;
-    private int quantity;
     private String expirationDate;
     private String category;
 
     public Food(){
-        this.quantity = 1;
         this.expirationDate = null;
     }
 
@@ -23,14 +21,6 @@ public class Food implements Serializable {
         this.select_category();
     }
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public String getExpirationDate() {
         return expirationDate;
     }
@@ -39,10 +29,6 @@ public class Food implements Serializable {
 
     public String getCategory() {
         return category;
-    }
-
-    public void setCategory(String category) {
-        this.category = category;
     }
 
     private void select_category(){
@@ -154,5 +140,4 @@ public class Food implements Serializable {
 
         this.category = "unknown";
     }
-
 }

@@ -1,5 +1,7 @@
 package it.valeriocristofori.thefridgemobile.model.entity;
 
+import android.annotation.SuppressLint;
+
 public class User {
     private String username;
     private String email;
@@ -38,9 +40,10 @@ public class User {
         this.fridge = fridge;
     }
 
+    @SuppressLint("DefaultLocale")
     @Override
     public String toString(){
-        return String.format("User = username: %s , Email: %s, Id: %d", this.username, this.email, this.fridge.getId() );
+        return String.format("User = username: %s , Email: %s, Id: %d", this.username, this.email, this.fridge.getId());
     }
 
 }

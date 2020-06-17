@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="44dp"
             android:fontFamily="@font/comfortaa"
-            android:text="About us"
+            android:text="@string/about_us"
             android:textColor="@color/myWhite"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -45,7 +45,8 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp" />
+            app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
+            tools:ignore="ContentDescription" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

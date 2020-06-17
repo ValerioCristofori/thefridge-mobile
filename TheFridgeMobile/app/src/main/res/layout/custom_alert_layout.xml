@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:paddingVertical="3dp"
     android:paddingHorizontal="10dp"
     android:id="@+id/custom_toast_container"
-    android:background="#d9534f"
+    android:background="@color/alert"
     android:orientation="horizontal">
 
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginEnd="8dp"
-        android:src="@drawable/alert_icon" />
+        android:src="@drawable/alert_icon"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/text"

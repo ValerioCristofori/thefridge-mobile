@@ -20,7 +20,7 @@ android:layout_height="match_parent">
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Choose Recipe"
+            android:text="@string/choose_recipe"
             android:textStyle="bold"
             android:textColor="@color/myWhite"
             android:textSize="18sp"
@@ -72,8 +72,8 @@ android:layout_height="match_parent">
         android:layout_marginStart="28dp"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Your Fridge"
-        android:textSize="8sp"
+        android:text="@string/your_fridge"
+        android:textSize="@dimen/dimension_text_title_menu"
         android:textStyle="bold"
         android:textColor="@color/myGrey"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,8 +85,8 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Recipes"
-        android:textSize="8sp"
+        android:text="@string/recipes"
+        android:textSize="@dimen/dimension_text_title_menu"
         android:textStyle="bold"
         android:textColor="@color/myWhite"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -101,8 +101,8 @@ android:layout_height="match_parent">
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Profile"
-        android:textSize="8sp"
+        android:text="@string/profile"
+        android:textSize="@dimen/dimension_text_title_menu"
         android:textStyle="bold"
         android:textColor="@color/myGrey"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,8 +114,8 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/comfortaa"
-        android:text="Add Food"
-        android:textSize="8sp"
+        android:text="@string/add_food"
+        android:textSize="@dimen/dimension_text_title_menu"
         android:textStyle="bold"
         android:textColor="@color/myGrey"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -132,7 +132,8 @@ android:layout_height="match_parent">
         android:src="@drawable/ic_fridge_grey"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/ibtnAddFood"
@@ -143,7 +144,8 @@ android:layout_height="match_parent">
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/ibtnRecipes"
         app:layout_constraintStart_toEndOf="@+id/ibtnFridge"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/ibtnRecipes"
@@ -155,7 +157,8 @@ android:layout_height="match_parent">
         app:layout_constraintEnd_toStartOf="@+id/ibtnProfile"
         app:layout_constraintHorizontal_bias="0.717"
         app:layout_constraintStart_toEndOf="@+id/ibtnFridge"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
     <ImageButton
         android:id="@+id/ibtnProfile"
@@ -166,7 +169,8 @@ android:layout_height="match_parent">
         android:src="@drawable/ic_account"
         app:layout_constraintBottom_toTopOf="@+id/textView3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

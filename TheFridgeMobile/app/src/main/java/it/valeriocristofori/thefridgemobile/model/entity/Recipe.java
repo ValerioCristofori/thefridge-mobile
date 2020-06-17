@@ -8,7 +8,6 @@ public class Recipe implements Serializable {
     private ArrayList<Food> missedIngredients;
     private String image;
     private String title;
-    private String description;
     private String srcLink;
 
     public ArrayList<Food> getUsedIngredients() {
@@ -41,14 +40,6 @@ public class Recipe implements Serializable {
 
     public void setTitle(String title) {
         this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
     }
 
     public String getSrcLink() {
