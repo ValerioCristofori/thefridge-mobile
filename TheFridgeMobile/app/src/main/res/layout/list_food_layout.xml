@@ -45,7 +45,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp" />
+            app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
+            tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/ivSpecificCategory"
@@ -55,7 +56,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ibtnLeftArrow"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/category_vegan" />
+            app:srcCompat="@drawable/category_vegan"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tvSpecificCategory"
@@ -63,10 +65,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:fontFamily="@font/comfortaa"
-            android:text="TextView"
-            android:textStyle="bold"
             android:textColor="@color/myWhite"
             android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ivSpecificCategory"
             app:layout_constraintTop_toTopOf="parent"

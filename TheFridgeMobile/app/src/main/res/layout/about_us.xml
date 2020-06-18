@@ -50,5 +50,92 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/tvPresentation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/green_color_card"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/description"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="@color/myWhite"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/clTop" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/green_color_card"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/taglienti_tiziano"
+        android:textColor="@color/myWhite"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/green_color_card"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/professor_regoli_massimo"
+        android:textAlignment="viewStart"
+        android:textColor="@color/myWhite"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPresentation" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/green_color_card"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/students"
+        android:textColor="@color/myWhite"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/green_color_card"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/cristofori_valerio"
+        android:textColor="@color/myWhite"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/green_color_card"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/di_battista_mattia"
+        android:textColor="@color/myWhite"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

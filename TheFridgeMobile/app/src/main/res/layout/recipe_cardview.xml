@@ -29,7 +29,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvRecipe"
-                app:srcCompat="@drawable/ic_chef_white" />
+                app:srcCompat="@drawable/ic_chef_white"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvRecipe"
@@ -38,7 +39,6 @@
                 android:background="@color/mySkyBlue"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
-                android:text="Title"
                 android:textColor="@color/myBlack"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -56,7 +56,7 @@
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 android:paddingVertical="10dp"
-                android:text="View More"
+                android:text="@string/view_more"
                 android:textColor="@color/myBlack"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@+id/ivRecipe"

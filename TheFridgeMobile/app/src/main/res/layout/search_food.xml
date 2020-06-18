@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Search Food"
+            android:text="@string/search_food"
             android:textStyle="bold"
             android:textColor="@color/myWhite"
             android:textSize="18sp"
@@ -56,7 +56,7 @@
                 android:layout_height="36dp"
                 android:ems="10"
                 android:fontFamily="@font/comfortaa"
-                android:hint="Search food"
+                android:hint="@string/search_food"
                 android:inputType="textPersonName"
                 android:textColor="@color/myWhite"
                 android:textColorHint="@color/myGrey"
@@ -64,7 +64,8 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0" />
+                app:layout_constraintVertical_bias="0"
+                tools:ignore="Autofill" />
 
             <ImageView
                 android:id="@+id/ivSearch"
@@ -74,7 +75,8 @@
                 app:layout_constraintEnd_toStartOf="@+id/etSearchBar"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_youtube_searched_for_black_24dp" />
+                app:srcCompat="@drawable/ic_youtube_searched_for_black_24dp"
+                tools:ignore="ContentDescription" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -109,7 +111,7 @@
             android:layout_marginStart="28dp"
             android:layout_marginBottom="4dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Your Fridge"
+            android:text="@string/your_fridge"
             android:textSize="8sp"
             android:textStyle="bold"
             android:textColor="@color/myGrey"
@@ -122,7 +124,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Recipes"
+            android:text="@string/recipes"
             android:textSize="8sp"
             android:textStyle="bold"
             android:textColor="@color/myGrey"
@@ -138,7 +140,7 @@
             android:layout_marginEnd="36dp"
             android:layout_marginBottom="4dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Profile"
+            android:text="@string/profile"
             android:textSize="8sp"
             android:textStyle="bold"
             android:textColor="@color/myGrey"
@@ -151,7 +153,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:fontFamily="@font/comfortaa"
-            android:text="Add Food"
+            android:text="@string/add_food"
             android:textSize="8sp"
             android:textStyle="bold"
             android:textColor="@color/myWhite"
@@ -169,7 +171,8 @@
             android:src="@drawable/ic_fridge_grey"
             app:layout_constraintBottom_toTopOf="@+id/textView5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/ibtnAddFood"
@@ -180,7 +183,8 @@
             app:layout_constraintBottom_toTopOf="@+id/textView4"
             app:layout_constraintEnd_toStartOf="@+id/ibtnRecipes"
             app:layout_constraintStart_toEndOf="@+id/ibtnFridge"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <ImageButton
             android:id="@+id/ibtnRecipes"

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
-        app:cardBackgroundColor="#16a085 "
+        app:cardBackgroundColor="@color/green_color_card"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,8 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/category_bread" />
+                app:srcCompat="@drawable/category_bread"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/tvRecipe"
@@ -39,7 +40,6 @@
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
-                android:text="TextView"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -53,14 +53,14 @@
                 android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_clear_black_24dp" />
+                app:srcCompat="@drawable/ic_clear_black_24dp"
+                tools:ignore="ContentDescription,PrivateResource" />
 
             <TextView
                 android:id="@+id/tvExpirationDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="TextView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvRecipe" />
