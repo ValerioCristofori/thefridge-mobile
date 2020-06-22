@@ -155,7 +155,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-            if( buttonView.isChecked() ){
+
+            if( buttonView.isChecked()){
 
                 editor.putString( "remember", "true");
                 editor.commit();

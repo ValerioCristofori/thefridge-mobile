@@ -1,7 +1,10 @@
 package it.Trilogia.thefridgemobile.activity.profile;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -14,7 +17,11 @@ import it.Trilogia.thefridgemobile.R;
 import it.Trilogia.thefridgemobile.activity.home.HomeActivity;
 import it.Trilogia.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.Trilogia.thefridgemobile.activity.recipe.SearchRecipesActivity;
+import it.Trilogia.thefridgemobile.activity.sign.MainActivity;
+import it.Trilogia.thefridgemobile.controller.DeleteAccountController;
+import it.Trilogia.thefridgemobile.controller.LoginController;
 import it.Trilogia.thefridgemobile.implementation.instance.Instance;
+import it.Trilogia.thefridgemobile.model.entity.User;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -27,6 +34,10 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     class Holder implements View.OnClickListener{
 
         Holder(){
@@ -36,6 +47,7 @@ public class ProfileActivity extends AppCompatActivity {
             ImageButton ibtnRecipes = findViewById(R.id.ibtnRecipes);
             ImageButton ibtnFrifge = findViewById(R.id.ibtnFridge);
             Button btnAboutUs = findViewById(R.id.btnAboutUs);
+            Button btnLogout = findViewById(R.id.btnLogout);
 
             TextView tvUsername = findViewById(R.id.tvUsername);
             //query DB per sapere username
@@ -58,6 +70,7 @@ public class ProfileActivity extends AppCompatActivity {
             ibtnRecipes.setOnClickListener(this);
             ibtnFrifge.setOnClickListener(this);
             btnAboutUs.setOnClickListener(this);
+            btnLogout.setOnClickListener(this);
         }
 
         @Override
@@ -65,8 +78,19 @@ public class ProfileActivity extends AppCompatActivity {
 
             switch(v.getId()) {
 
+                case R.id.btnLogout:
+
+                    SharedPreferences pref = getApplicationContext().getSharedPreferences("checkbox", ProfileActivity.MODE_PRIVATE);
+                    SharedPreferences.Editor editor = pref.edit();
+                    editor.clear();
+                    editor.commit();
+
+                    Intent intent = new Intent(v.getContext(), MainActivity.class);
+                    startActivityForResult(intent, 0);
+                    break;
+
                 case R.id.btnAboutUs:
-                    Intent intent = new Intent(v.getContext(), AboutUs.class);
+                    intent = new Intent(v.getContext(), AboutUs.class);
                     startActivityForResult(intent,0);
                     break;
 

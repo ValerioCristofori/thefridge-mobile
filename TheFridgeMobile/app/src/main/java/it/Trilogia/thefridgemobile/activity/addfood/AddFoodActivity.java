@@ -28,6 +28,9 @@ public class AddFoodActivity extends AppCompatActivity {
 
         new Holder(this);
     }
+    @Override
+    public void onBackPressed() {
+    }
 
     class Holder implements View.OnClickListener{
         private Context context;

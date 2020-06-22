@@ -10,8 +10,6 @@ IMPORTANTE!
 
 5- mettere 'menu' invece della barra sotto ogni layout
 
-6- cambiare nome package
-
 7- fare icona applicazione
 
 8- fare apk

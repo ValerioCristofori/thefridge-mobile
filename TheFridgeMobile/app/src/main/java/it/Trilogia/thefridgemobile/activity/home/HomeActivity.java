@@ -38,9 +38,12 @@ public class HomeActivity extends AppCompatActivity {
         new Holder(this);
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     class Holder implements View.OnClickListener{
         private EditText etSearchBar;
-        private TextView tvEmptyAdvertisment;
         private RecyclerView rvFridge;
         private Context context;
 
@@ -54,15 +57,12 @@ public class HomeActivity extends AppCompatActivity {
             ImageButton ibtnProfile = findViewById(R.id.ibtnProfile);
             this.etSearchBar = findViewById(R.id.etSearchBar);
             this.rvFridge = findViewById(R.id.rvFridge);
-            this.tvEmptyAdvertisment = findViewById(R.id.tvEmptyAdvertisment);
+            TextView tvEmptyAdvertisment = findViewById(R.id.tvEmptyAdvertisment);
             //take content of fridge
             //create and populate the recycler
             final ViewFridgeController viewFridgeController = new ViewFridgeController();
             ArrayList<Food> data = viewFridgeController.takeContent();
 
-            if(!data.isEmpty()){
-                tvEmptyAdvertisment.setVisibility(View.INVISIBLE);
-            }
             RecyclerFridgeCustom recyclerFridgeCustom = new RecyclerFridgeCustom( this.context, data );
 
             //setting
@@ -73,6 +73,11 @@ public class HomeActivity extends AppCompatActivity {
             ibtnAddFood.setOnClickListener(this);
             ibtnRecipes.setOnClickListener(this);
             ibtnProfile.setOnClickListener(this);
+
+
+            if(!data.isEmpty()){
+                tvEmptyAdvertisment.setVisibility(View.INVISIBLE);
+            }
 
             //assign text watcher
             //override for searching in this instance

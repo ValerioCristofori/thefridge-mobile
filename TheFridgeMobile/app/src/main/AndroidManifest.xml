@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver android:name=".model.customize.receiver.BroadcastReceiverCustom"></receiver>
+        <receiver android:name=".model.customize.receiver.BroadcastReceiverCustom" />
 
         <activity android:name=".activity.sign.MainActivity" android:screenOrientation="portrait">
             <intent-filter>

@@ -75,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
                     try {
                         registrationController.registration( tfUsername.getText().toString(),tfPassword.getText().toString(),tfEmail.getText().toString() );
                         //remand home GUI
-                        startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
+                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
