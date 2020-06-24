@@ -74,8 +74,7 @@ public class RecyclerSearchFoodCustom extends RecyclerView.Adapter<RecyclerSearc
                         AddFoodController addFoodController = new AddFoodController();
                         addFoodController.insertFood(foodName,expirationDate);
 
-                        //add the notification
-                        //when delete a food delete the related notification
+
 
 
                     }

@@ -3,6 +3,8 @@ package it.Trilogia.thefridgemobile.activity.sign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Calendar;
 import java.util.Objects;
 
 import it.Trilogia.thefridgemobile.R;
@@ -25,6 +28,7 @@ import it.Trilogia.thefridgemobile.activity.home.HomeActivity;
 import it.Trilogia.thefridgemobile.controller.LoginController;
 import it.Trilogia.thefridgemobile.controller.SyntaxValidation;
 import it.Trilogia.thefridgemobile.db.init.DatabaseHelper;
+import it.Trilogia.thefridgemobile.model.customize.receiver.BroadcastService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,8 +41,23 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         DatabaseHelper.getDatabaseInstance(getApplicationContext());
 
+        Intent intent=new Intent(MainActivity.this, BroadcastService.class);
+        startService(intent);
+        boolean alarm = (PendingIntent.getBroadcast(this, 0, new Intent("ALARM"), PendingIntent.FLAG_NO_CREATE) == null);
+
         //create this.Holder
         new Holder();
+
+        if(alarm){
+            Intent itAlarm = new Intent("ALARM");
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0,itAlarm,0);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTimeInMillis(System.currentTimeMillis());
+            calendar.add(Calendar.SECOND, 3);
+            AlarmManager alarme = (AlarmManager) getSystemService(ALARM_SERVICE);
+            alarme.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),60000, pendingIntent);
+        }
+
 
     }
 

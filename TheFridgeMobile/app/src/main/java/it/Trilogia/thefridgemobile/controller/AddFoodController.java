@@ -1,5 +1,7 @@
 package it.Trilogia.thefridgemobile.controller;
 
+import android.content.Context;
+
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
@@ -28,6 +30,8 @@ public class AddFoodController {
 
         //update fridge in db with query
         DatabaseHelper.getDatabaseInstance().insertFood(fridge, food);
+
+
 
     }
 

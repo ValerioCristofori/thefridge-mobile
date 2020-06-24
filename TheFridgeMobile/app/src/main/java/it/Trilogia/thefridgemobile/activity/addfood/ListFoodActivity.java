@@ -111,10 +111,6 @@ public class ListFoodActivity extends AppCompatActivity {
                     AddFoodController addFoodController = new AddFoodController();
                     addFoodController.insertFood(foodName,expirationDate);
 
-                    //add the notification
-                    NotificationController notificationController = new NotificationController();
-                    notificationController.createNotification(context);
-                    //when delete a food delete the related notification
 
 
                 }
