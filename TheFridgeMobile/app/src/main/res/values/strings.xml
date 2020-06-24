@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name" translatable="false">The Fridge Mobile</string>
+    <string name="app_name" translatable="false">The Fridge</string>
     <string name="skip_button_calendar">Skip</string>
     <string name="about_us">About us</string>
     <string name="login">LOGIN</string>
