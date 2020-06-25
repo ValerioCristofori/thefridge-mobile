@@ -4,11 +4,12 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
@@ -39,9 +40,9 @@ public class ShowRecipeActivity extends AppCompatActivity {
 
         private Context context;
         private ImageView ivRecipe;
-        private TextView tvUsedIngredients;
-        private TextView tvMissedIngredients;
         private TextView tvTitle;
+        private ListView lvIngredientsUsed;
+        private ListView lvIngredientsMissed;
 
         Holder(Context context){
             this.context = context;
@@ -50,12 +51,10 @@ public class ShowRecipeActivity extends AppCompatActivity {
             this.ivRecipe = findViewById(R.id.ivRecipe);
             this.tvTitle = findViewById(R.id.tvTitle);
             Button btnLink = findViewById(R.id.btnLink);
-            this.tvUsedIngredients = findViewById(R.id.tvUsedIngredients);
-            this.tvMissedIngredients = findViewById(R.id.tvMissedIngredients);
-            ImageButton ibtnLeftArrow = findViewById(R.id.ibtnLeftArrow);
+            lvIngredientsUsed = findViewById(R.id.lvIngredientsUsed);
+            lvIngredientsMissed = findViewById(R.id.lvIngredientsMissed);
 
             //set listener
-            ibtnLeftArrow.setOnClickListener( this );
             btnLink.setOnClickListener( this );
 
             this.getData();
@@ -71,32 +70,31 @@ public class ShowRecipeActivity extends AppCompatActivity {
         }
 
         private void setData() {
+            ArrayList<String> listIngredientsUsed = this.bld_ingredients_string( recipe.getUsedIngredients());
+            ArrayList<String> listIngredientsMissed = this.bld_ingredients_string( recipe.getMissedIngredients());
             tvTitle.setText(recipe.getTitle());
-            tvUsedIngredients.setText( this.bld_ingredients_string( recipe.getUsedIngredients() ) );
-            tvMissedIngredients.setText( this.bld_ingredients_string( recipe.getMissedIngredients() ) );
+            ArrayAdapter<String> adapterUsed = new ArrayAdapter<>(this.context, R.layout.my_text_view,  listIngredientsUsed);
+            ArrayAdapter<String> adapterMissed = new ArrayAdapter<>(this.context, R.layout.my_text_view,  listIngredientsMissed);
 
             Picasso.with(this.context)
                     .load( recipe.getImage() )
                     .into( ivRecipe );
 
+            lvIngredientsUsed.setAdapter(adapterUsed);
+            lvIngredientsMissed.setAdapter(adapterMissed);
         }
 
-        private String bld_ingredients_string(ArrayList<Food> usedIngredients) {
-        StringBuilder str = new StringBuilder();
-        for( Food food : usedIngredients ){
-            str.append("- ").append(food.getName()).append("\n");
-        }
-        Log.e("builder", str.toString());
-        return str.toString();
+        private ArrayList<String> bld_ingredients_string( ArrayList<Food> ingredients ) {
+            ArrayList<String> listIngredients = new ArrayList<>();
+            for( Food food : ingredients  ){
+                listIngredients.add(String.format("• %s", food.getName()));
+            }
+            return listIngredients;
         }
 
         @Override
         public void onClick(View v) {
             switch(v.getId()){
-                case R.id.ibtnLeftArrow:
-                    Intent intent = new Intent( this.context, SearchRecipesActivity.class);
-                    startActivity( intent );
-                    break;
 
                 case R.id.btnLink:
                     String url = recipe.getSrcLink();

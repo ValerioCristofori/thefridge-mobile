@@ -96,7 +96,7 @@ public class SpoonacularAPI {
         try {
             this.requestLink = Unirest.get( String.format( "https://api.spoonacular.com/recipes/%d/information?includeNutrition=false", recipeId ) )
                     .header("accept", "application/json")
-                    .queryString("apiKey", "6aec8f6e45084389b9517809a647ba83")
+                    .queryString("apiKey", "17ec274ea20147df98d287e352ec51c2")
                     .asJson();
         } catch (UnirestException e) {
 
@@ -110,7 +110,7 @@ public class SpoonacularAPI {
         try {
             this.request = Unirest.get( String.format( "https://api.spoonacular.com/recipes/findByIngredients?number=1&ranking=1&ignorePantry=false&ingredients=%s", query ) )
                     .header("accept", "application/json")
-                    .queryString("apiKey", "6aec8f6e45084389b9517809a647ba83")
+                    .queryString("apiKey", "17ec274ea20147df98d287e352ec51c2")
                     .asJson();
         } catch (UnirestException e) {
 

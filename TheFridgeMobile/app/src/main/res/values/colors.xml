@@ -9,7 +9,8 @@
     <color name="myGrey">#bfc9ca</color>
     <color name="myColorForBackground">#1f618d</color>
     <color name="mySkyBlue">#868EBD</color>
-    <color name="green_color_card">#16a085</color>
+    <color name="green_color">#5F9EA0</color>
     <color name="add_food_card_color">#5499c7</color>
     <color name="alert">#d9534f</color>
+    <color name="my_error">#642D31</color>
 </resources>

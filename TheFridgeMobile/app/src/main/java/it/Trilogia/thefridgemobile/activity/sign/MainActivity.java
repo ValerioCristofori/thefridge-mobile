@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         //create this.Holder
         new Holder();
-
+        // mettere action on date changed --------------------------------------------------
         if(alarm){
             Intent itAlarm = new Intent("ALARM");
             PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0,itAlarm,0);

@@ -71,8 +71,9 @@ public class ListFoodActivity extends AppCompatActivity {
             this.setData();
 
             //build adapter
-            ArrayAdapter arrayAdapter = new ArrayAdapter(context, android.R.layout.simple_spinner_dropdown_item, arrayList);
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(context, R.layout.my_text_view, arrayList);
             lvFood.setAdapter(arrayAdapter);
+
 
             //assign click listener
             ibtnLeftArrow.setOnClickListener(this);

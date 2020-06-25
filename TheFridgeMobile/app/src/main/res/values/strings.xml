@@ -2,11 +2,11 @@
     <string name="app_name" translatable="false">The Fridge</string>
     <string name="skip_button_calendar">Skip</string>
     <string name="about_us">About us</string>
-    <string name="login">LOGIN</string>
-    <string name="log_in">Log in</string>
-    <string name="signup">signup</string>
+    <string name="login" translatable="false">LOGIN</string>
+    <string name="log_in" translatable="false">Log in</string>
+    <string name="signup" >signup</string>
     <string name="remember_me">Remember Me</string>
-    <string name="password">Password</string>
+    <string name="password" translatable="false">Password</string>
     <string name="username">Username</string>
     <string name="or">or</string>
     <string name="add_food">Add Food</string>
@@ -16,26 +16,36 @@
     <string name="choose_recipe">Choose Recipe</string>
     <string name="warning">Once you delete your profile you will lose all your data, are you sure to continue ?</string>
     <string name="yes">Yes</string>
-    <string name="no">No</string>
+    <string name="no" translatable="false">No</string>
     <string name="search_food">Search food</string>
     <string name="search_recipes">Search Recipes</string>
     <string name="search">Search</string>
     <string name="your_profile">Your profile</string>
     <string name="delete_account">Delete account</string>
-    <string name="owned_ingredients">Owned Ingredients:</string>
-    <string name="missed_ingredients">Missed Ingredients:</string>
+    <string name="ingredients">Ingredients</string>
     <string name="title">Title</string>
     <string name="go_to_the_recipe">Go to the recipe</string>
     <string name="view_more">View More</string>
     <string name="sign_up">SIGN UP</string>
     <string name="email_address">Email address</string>
     <string name="description">This application is the final project of Mobile Programming course 2019/2020 from the university of Rome Tor Vergata.</string>
-    <string name="taglienti_tiziano">Taglienti Tiziano</string>
-    <string name="professor_regoli_massimo">Professor: Regoli Massimo</string>
+    <string name="taglienti_tiziano" translatable="false">Taglienti Tiziano</string>
+    <string name="professor_regoli_massimo" translatable="false">Professor: Regoli Massimo</string>
     <string name="students">Students :</string>
-    <string name="cristofori_valerio">Cristofori Valerio</string>
-    <string name="di_battista_mattia">Di Battista Mattia</string>
+    <string name="cristofori_valerio" translatable="false">Cristofori Valerio</string>
+    <string name="di_battista_mattia" translatable="false">Di Battista Mattia</string>
     <string name="set_button">Set expiration</string>
+    <string name="share">Share</string>
+    <string name="more">More</string>
+    <string name="welcome">Welcome back </string>
+    <string name="howmanyrecipes">How many recipes ?</string>
+    <string name="description_functionality">We offer you some recipes that you can make with food in your fridge !</string>
+    <string name="emptyfridge">Your fridge is empty, add some food !</string>
+    <string name="one" translatable="false">1</string>
+    <string name="two" translatable="false">2</string>
+    <string name="three" translatable="false">3</string>
+    <string name="four" translatable="false">4</string>
+    <string name="five" translatable="false">5</string>
 
     <string-array name="food_categories">
         <item>Fruit</item>

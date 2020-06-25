@@ -9,8 +9,12 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
+        android:layout_margin="6dp"
+        android:layout_marginLeft="3dp"
+        android:layout_marginRight="3dp"
         app:cardBackgroundColor="#0016A085"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,51 +22,111 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_margin="6dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp">
 
 
-            <ImageView
-                android:id="@+id/ivRecipe"
-                android:layout_width="300dp"
-                android:layout_height="210dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clImage"
+                android:layout_width="210dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/layout_rounded_borders"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tvRecipe"
-                app:srcCompat="@drawable/ic_chef_white"
-                tools:ignore="ContentDescription" />
+                app:layout_constraintTop_toBottomOf="@+id/tvRecipe">
+
+                <ImageView
+                    android:id="@+id/ivRecipe"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_chef_white"
+                    tools:ignore="ContentDescription" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <TextView
                 android:id="@+id/tvRecipe"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/mySkyBlue"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@android:color/transparent"
                 android:fontFamily="@font/comfortaa"
-                android:gravity="center"
-                android:textColor="@color/myBlack"
+                android:gravity="clip_vertical"
+
+                android:text="example text"
+                android:textColor="@color/myWhite"
                 android:textSize="18dp"
                 android:textStyle="bold"
-
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageButton
+                android:id="@+id/ibtnRecipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="88dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/ibtnShare"
+                app:layout_constraintTop_toBottomOf="@+id/clImage"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_open_in_new_24" />
+
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="#6BF0F3F4"
+                android:layout_marginStart="2dp"
                 android:fontFamily="@font/comfortaa"
-                android:gravity="center"
-                android:paddingVertical="10dp"
-                android:text="@string/view_more"
-                android:textColor="@color/myBlack"
+                android:gravity="clip_vertical"
+                android:text="@string/share"
+                android:textColor="@color/myWhite"
+                android:textSize="12sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@+id/ivRecipe"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/ibtnShare"
+                app:layout_constraintStart_toEndOf="@+id/ibtnShare"
+                app:layout_constraintTop_toTopOf="@+id/ibtnShare" />
+
+            <ImageButton
+                android:id="@+id/ibtnShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"
+                android:background="@android:color/transparent"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/ivRecipe" />
+                app:layout_constraintTop_toBottomOf="@+id/clImage"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_share_24" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="clip_vertical"
+                android:text="@string/more"
+                android:textColor="@color/myWhite"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/ibtnRecipe"
+                app:layout_constraintStart_toEndOf="@+id/ibtnRecipe"
+                app:layout_constraintTop_toTopOf="@+id/ibtnRecipe" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

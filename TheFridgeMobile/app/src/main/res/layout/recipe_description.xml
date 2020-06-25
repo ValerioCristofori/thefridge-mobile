@@ -6,138 +6,84 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/viewTop"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/myDarkBlue"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageButton
-            android:id="@+id/ibtnLeftArrow"
-            android:layout_width="52dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
-            tools:ignore="ContentDescription" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewMain"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
         android:background="@color/myColorForBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/viewTop"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintStart_toStartOf="parent">
 
-        <ImageView
-            android:id="@+id/ivRecipe"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clImage"
             android:layout_width="300dp"
             android:layout_height="210dp"
-            android:layout_marginTop="5dp"
-            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/layout_rounded_borders"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-            app:srcCompat="@drawable/ic_chef_white"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle">
+
+            <ImageView
+                android:id="@+id/ivRecipe"
+                android:layout_width="300dp"
+                android:layout_height="210dp"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_chef_white"
+                tools:ignore="ContentDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:id="@+id/llIngredients"
-            android:layout_width="338dp"
-            android:layout_height="259dp"
+            android:layout_width="362dp"
+            android:layout_height="312dp"
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:orientation="horizontal"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/clDescription"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivRecipe"
+            app:layout_constraintTop_toBottomOf="@+id/clImage"
             tools:ignore="DisableBaselineAlignment">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/textView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/comfortaa"
-                    android:gravity="center"
-                    android:text="@string/owned_ingredients"
-                    android:textColor="@color/myWhite"
-                    android:textSize="14dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SpUsage" />
-
-                <TextView
-                    android:id="@+id/tvUsedIngredients"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/comfortaa"
-                    android:padding="10dp"
-                    android:textColor="@color/myBlack"
-                    android:textSize="12dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
+            <TextView
+                android:id="@+id/tvIngredientsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
                 android:layout_weight="1"
-                android:background="#B14B44">
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/comfortaa"
+                android:gravity="clip_vertical"
+                android:text="@string/ingredients"
+                android:textColor="@color/myWhite"
+                android:textSize="14sp"
+                android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textView7"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="239dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <ListView
+                    android:id="@+id/lvIngredientsUsed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:fontFamily="@font/comfortaa"
-                    android:gravity="center"
-                    android:text="@string/missed_ingredients"
-                    android:textColor="@color/myWhite"
-                    android:textSize="14dp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:background="@color/green_color" />
 
-                <TextView
-                    android:id="@+id/tvMissedIngredients"
+                <ListView
+                    android:id="@+id/lvIngredientsMissed"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="20dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/comfortaa"
-                    android:padding="10dp"
-                    android:textColor="@color/myBlack"
-                    android:textSize="12dp"
-                    android:textStyle="bold"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_height="wrap_content"
+                    android:background="@color/my_error" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -148,12 +94,12 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
-            android:background="@color/mySkyBlue"
+            android:background="@android:color/transparent"
             android:fontFamily="@font/comfortaa"
+            android:gravity="clip_vertical"
             android:text="@string/title"
-            android:textAlignment="center"
-            android:textColor="@color/myBlack"
-            android:textSize="18dp"
+            android:textColor="@color/myWhite"
+            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -161,21 +107,20 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clDescription"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="413dp"
+            android:layout_height="78dp"
             android:layout_weight="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/llIngredients">
+            app:layout_constraintStart_toStartOf="parent">
 
             <Button
                 android:id="@+id/btnLink"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
-                android:layout_marginStart="5dp"
-                android:layout_marginEnd="5dp"
-                android:background="#28a745"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@color/myWhite"
                 android:fontFamily="@font/comfortaa"
                 android:text="@string/go_to_the_recipe"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"

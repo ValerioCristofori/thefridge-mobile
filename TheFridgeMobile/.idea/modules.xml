@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/TheFridgeMobile-The_Fridge_Mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/TheFridgeMobile-The_Fridge_Mobile.iml" group="The_Fridge_Mobile" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/The_Fridge_Mobile.iml" filepath="$PROJECT_DIR$/.idea/modules/The_Fridge_Mobile.iml" group="The_Fridge_Mobile" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="The Fridge Mobile/app" />
     </modules>

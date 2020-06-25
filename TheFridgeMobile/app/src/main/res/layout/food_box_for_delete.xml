@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
-        app:cardBackgroundColor="@color/green_color_card"
+        app:cardBackgroundColor="@color/green_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,13 +47,13 @@
 
             <ImageButton
                 android:id="@+id/ibtnDelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:background="@android:color/transparent"
                 android:visibility="invisible"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_clear_black_24dp"
+                app:srcCompat="@drawable/ic_baseline_delete_24"
                 tools:ignore="ContentDescription,PrivateResource" />
 
             <TextView

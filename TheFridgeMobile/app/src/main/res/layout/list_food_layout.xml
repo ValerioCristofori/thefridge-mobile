@@ -48,30 +48,43 @@
             app:srcCompat="@drawable/ic_keyboard_backspace_black_24dp"
             tools:ignore="ContentDescription" />
 
-        <ImageView
-            android:id="@+id/ivSpecificCategory"
-            android:layout_width="31dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="30dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clImage"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="26dp"
+            android:background="@color/green_color"
+            android:elevation="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ibtnLeftArrow"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/category_vegan"
-            tools:ignore="ContentDescription" />
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/ivSpecificCategory"
+                android:layout_width="31dp"
+                android:layout_height="34dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/category_vegan"
+                tools:ignore="ContentDescription" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/tvSpecificCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
             android:fontFamily="@font/comfortaa"
+            android:text="category"
             android:textColor="@color/myWhite"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ivSpecificCategory"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.518" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.151"
+            app:layout_constraintStart_toEndOf="@+id/clImage"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -34,9 +34,6 @@ public class ProfileActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    public void onBackPressed() {
-    }
 
     class Holder implements View.OnClickListener{
 
@@ -50,15 +47,15 @@ public class ProfileActivity extends AppCompatActivity {
             Button btnLogout = findViewById(R.id.btnLogout);
 
             TextView tvUsername = findViewById(R.id.tvUsername);
-            //query DB per sapere username
+            //query per sapere username
             String username = Instance.getSingletonInstance().getCurrentUser().getUsername();
             //////////
-            String welcome = "Welcome back ";
+            String welcome = getString(R.string.welcome);
             String text = welcome.concat(username);
             tvUsername.setText(text);
 
             TextView tvEmail = findViewById(R.id.tvEmail);
-            //query DB per sapere email
+            //query per sapere email
             String email = "Email: ";
             text = email.concat(Instance.getSingletonInstance().getCurrentUser().getEmail());
 

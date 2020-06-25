@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -51,7 +52,7 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
 
         //set click on item listener
         //assign onClick method of MyViewHolder
-        holder.clRecipe.setOnClickListener(new View.OnClickListener() {
+        holder.ibtnRecipe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //remand to list food
@@ -60,6 +61,14 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
                 bundle.putSerializable("recipe", recipes.get(position));
                 intent.putExtras( bundle );
                 context.startActivity(intent);
+            }
+        });
+
+        holder.ibtnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //provide a recipe sharing
+
             }
         });
     }
@@ -74,12 +83,17 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
         ImageView ivRecipe;
         TextView tvRecipe;
         ConstraintLayout clRecipe;
+        ImageButton ibtnRecipe;
+        ImageButton ibtnShare;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             ivRecipe = itemView.findViewById(R.id.ivRecipe);
             tvRecipe = itemView.findViewById(R.id.tvRecipe);
             clRecipe = itemView.findViewById(R.id.clRecipe);
+            ibtnRecipe = itemView.findViewById(R.id.ibtnRecipe);
+            ibtnShare = itemView.findViewById(R.id.ibtnShare);
+
         }
     }
 }

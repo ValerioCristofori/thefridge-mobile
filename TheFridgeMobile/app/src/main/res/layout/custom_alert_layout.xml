@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/custom_toast_container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:paddingVertical="3dp"
+    android:background="@drawable/layout_bourder_radious_alarm"
+    android:orientation="horizontal"
     android:paddingHorizontal="10dp"
-    android:id="@+id/custom_toast_container"
-    android:background="@color/alert"
-    android:orientation="horizontal">
+    android:paddingVertical="3dp">
 
-    <ImageView
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginEnd="8dp"
-        android:src="@drawable/alert_icon"
-        tools:ignore="ContentDescription" />
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/my_error">
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:fontFamily="@font/comfortaa"
-        android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
-        android:textColor="@android:color/white" />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginEnd="8dp"
+            android:src="@drawable/alert_icon"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:fontFamily="@font/comfortaa"
+            android:textAppearance="@style/TextAppearance.AppCompat.Subhead"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+
 </LinearLayout>
