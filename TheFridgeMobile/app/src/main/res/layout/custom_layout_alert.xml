@@ -4,7 +4,7 @@
     android:id="@+id/custom_toast_container"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/layout_bourder_radious_alarm"
+    android:background="@drawable/layout_rounded_borders_alarm"
     android:orientation="horizontal"
     android:paddingHorizontal="10dp"
     android:paddingVertical="3dp">

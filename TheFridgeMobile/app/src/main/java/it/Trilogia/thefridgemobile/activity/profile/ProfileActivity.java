@@ -17,6 +17,7 @@ import it.Trilogia.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.Trilogia.thefridgemobile.activity.recipe.SearchRecipesActivity;
 import it.Trilogia.thefridgemobile.activity.sign.MainActivity;
 import it.Trilogia.thefridgemobile.implementation.instance.Instance;
+import it.Trilogia.thefridgemobile.model.customize.animation.AnimationCustom;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -32,6 +33,8 @@ public class ProfileActivity extends AppCompatActivity {
 
     class Holder implements View.OnClickListener{
 
+        private View vFridge, vAddFood, vRecipe, vProfile;
+
         Holder(){
             //init image buttons
             Button btnDelete = findViewById(R.id.btnDelete);
@@ -40,6 +43,11 @@ public class ProfileActivity extends AppCompatActivity {
             ImageButton ibtnFrifge = findViewById(R.id.ibtnFridge);
             Button btnAboutUs = findViewById(R.id.btnAboutUs);
             Button btnLogout = findViewById(R.id.btnLogout);
+
+            vFridge = findViewById(R.id.vFridge);
+            vAddFood = findViewById(R.id.vAddFood);
+            vRecipe = findViewById(R.id.vRecipe);
+            vProfile = findViewById(R.id.vProfile);
 
             TextView tvUsername = findViewById(R.id.tvUsername);
             //query per sapere username
@@ -92,16 +100,19 @@ public class ProfileActivity extends AppCompatActivity {
                     break;
 
                 case R.id.ibtnRecipes:
+                    AnimationCustom.start_circular_reveal_anim( vRecipe );
                     intent = new Intent(v.getContext(), SearchRecipesActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
                 case R.id.ibtnAddFood:
+                    AnimationCustom.start_circular_reveal_anim( vAddFood );
                     intent = new Intent(v.getContext(), AddFoodActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
                 case R.id.ibtnFridge:
+                    AnimationCustom.start_circular_reveal_anim( vFridge );
                     intent = new Intent(v.getContext(), HomeActivity.class);
                     startActivityForResult(intent,0);
                     break;

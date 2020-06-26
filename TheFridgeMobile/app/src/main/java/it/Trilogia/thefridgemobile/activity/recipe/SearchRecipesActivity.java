@@ -1,9 +1,12 @@
 package it.Trilogia.thefridgemobile.activity.recipe;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewAnimationUtils;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -17,6 +20,7 @@ import it.Trilogia.thefridgemobile.R;
 import it.Trilogia.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.Trilogia.thefridgemobile.activity.home.HomeActivity;
 import it.Trilogia.thefridgemobile.activity.profile.ProfileActivity;
+import it.Trilogia.thefridgemobile.model.customize.animation.AnimationCustom;
 
 public class SearchRecipesActivity extends AppCompatActivity {
 
@@ -48,6 +52,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
     class Holder implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
         private Context context;
+        private View vFridge, vAddFood, vRecipe, vProfile;
 
         Holder(Context context){
             //init context
@@ -56,7 +61,14 @@ public class SearchRecipesActivity extends AppCompatActivity {
             //init image buttons
             ImageButton ibtnAddFood = findViewById(R.id.ibtnAddFood);
             ImageButton ibtnProfile = findViewById(R.id.ibtnProfile);
-            ImageButton ibtnFrifge = findViewById(R.id.ibtnFridge);
+            ImageButton ibtnFridge = findViewById(R.id.ibtnFridge);
+            vFridge = findViewById(R.id.vFridge);
+            vAddFood = findViewById(R.id.vAddFood);
+            vRecipe = findViewById(R.id.vRecipe);
+            vProfile = findViewById(R.id.vProfile);
+
+
+
 
             //init radios
             //radio group
@@ -69,7 +81,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
             //assign listener
             ibtnAddFood.setOnClickListener(this);
             ibtnProfile.setOnClickListener(this);
-            ibtnFrifge.setOnClickListener(this);
+            ibtnFridge.setOnClickListener(this);
             btnSearch.setOnClickListener(this);
 
             rgNumRecipe.setOnCheckedChangeListener(this);
@@ -80,20 +92,22 @@ public class SearchRecipesActivity extends AppCompatActivity {
         public void onClick(View v) {
             v.startAnimation(AnimationUtils.loadAnimation(this.context, R.anim.on_click));
 
-
             switch(v.getId()) {
 
                 case R.id.ibtnProfile:
+                    AnimationCustom.start_circular_reveal_anim( vProfile );
                     Intent intent = new Intent(v.getContext(), ProfileActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
                 case R.id.ibtnAddFood:
+                    AnimationCustom.start_circular_reveal_anim( vAddFood );
                     intent = new Intent(v.getContext(), AddFoodActivity.class);
                     startActivityForResult(intent,0);
                     break;
 
                 case R.id.ibtnFridge:
+                    AnimationCustom.start_circular_reveal_anim( vFridge );
                     intent = new Intent(v.getContext(), HomeActivity.class);
                     startActivityForResult(intent,0);
                     break;
@@ -111,6 +125,8 @@ public class SearchRecipesActivity extends AppCompatActivity {
 
 
         }
+
+
 
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
