@@ -27,8 +27,8 @@
 
             <ImageView
                 android:id="@+id/ivRecipe"
-                android:layout_width="300dp"
-                android:layout_height="210dp"
+                android:layout_width="@dimen/width_photo_recipe"
+                android:layout_height="@dimen/height_photo_recipe"
                 android:layout_weight="1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -55,14 +55,14 @@
             <TextView
                 android:id="@+id/tvIngredientsTitle"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
+                android:layout_height="@dimen/height_box_recipe"
                 android:layout_weight="1"
                 android:background="@android:color/transparent"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="clip_vertical"
                 android:text="@string/ingredients"
                 android:textColor="@color/myWhite"
-                android:textSize="14sp"
+                android:textSize="@dimen/text_ingredients"
                 android:textStyle="bold" />
 
             <LinearLayout
@@ -91,15 +91,15 @@
             android:id="@+id/tvTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_marginStart="@dimen/margin_title_layout"
+            android:layout_marginTop="@dimen/margin_top_title_recipe"
+            android:layout_marginEnd="@dimen/margin_end_title_recipe"
             android:background="@android:color/transparent"
             android:fontFamily="@font/comfortaa"
             android:gravity="clip_vertical"
             android:text="@string/title"
             android:textColor="@color/myWhite"
-            android:textSize="24sp"
+            android:textSize="@dimen/text_dimension_btnLogin"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -107,8 +107,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clDescription"
-            android:layout_width="413dp"
-            android:layout_height="78dp"
+            android:layout_width="@dimen/box_button_goto"
+            android:layout_height="@dimen/height_box_button_goto"
             android:layout_weight="1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -117,9 +117,9 @@
             <Button
                 android:id="@+id/btnLink"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_height="@dimen/layout_height_singup_singup"
+                android:layout_marginStart="@dimen/margin_button_search"
+                android:layout_marginEnd="@dimen/margin_button_search"
                 android:background="@color/green_color"
                 android:fontFamily="@font/comfortaa"
                 android:text="@string/go_to_the_recipe"
