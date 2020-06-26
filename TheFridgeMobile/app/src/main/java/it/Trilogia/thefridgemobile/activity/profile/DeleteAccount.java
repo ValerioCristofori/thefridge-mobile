@@ -18,7 +18,7 @@ public class DeleteAccount extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.delete_account);
+        setContentView(R.layout.custom_layout_delete_account);
 
         //creazione pop up
         DisplayMetrics dm = new DisplayMetrics();

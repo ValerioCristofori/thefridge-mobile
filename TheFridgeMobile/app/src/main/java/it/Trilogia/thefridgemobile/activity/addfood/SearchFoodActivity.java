@@ -32,7 +32,7 @@ public class SearchFoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.search_food);
+        setContentView(R.layout.layout_search_food);
 
         new Holder(this);
     }

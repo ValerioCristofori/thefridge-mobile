@@ -26,7 +26,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.search_recipes);
+        setContentView(R.layout.layout_search_recipes);
 
         new Holder(this);
     }

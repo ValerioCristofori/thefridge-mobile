@@ -1,7 +1,6 @@
 package it.Trilogia.thefridgemobile.model.customize.recycler;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,7 +35,7 @@ public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCus
     @Override
     public RecyclerFridgeCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.food_box_for_delete,parent,false);
+        View view = layoutInflater.inflate(R.layout.cardview_box_delete,parent,false);
 
         return new MyViewHolder(view);
     }

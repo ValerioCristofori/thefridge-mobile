@@ -34,7 +34,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_chef_white"
+                app:srcCompat="@drawable/ic_chef_green"
                 tools:ignore="ContentDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -120,11 +120,11 @@
                 android:layout_height="45dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginEnd="20dp"
-                android:background="@color/myWhite"
+                android:background="@color/green_color"
                 android:fontFamily="@font/comfortaa"
                 android:text="@string/go_to_the_recipe"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textColor="@color/myBlack"
+                android:textColor="@color/myWhite"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

@@ -15,21 +15,11 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <receiver
-            android:name=".model.customize.receiver.BroadcastReceiverCustom"
-            android:label="BroadcastReceiverAux">
-            <intent-filter>
-                <action android:name="ALARM" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </receiver>
-
         <service
             android:name=".model.customize.receiver.BroadcastService"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.media.action.DISPLAY_NOTIFICATION" />
+                <action android:name="android.media.action.DATE_CHANGED" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

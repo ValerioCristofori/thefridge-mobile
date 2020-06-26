@@ -14,57 +14,46 @@ android:layout_height="match_parent">
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/ibtnSearch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:background="@android:color/transparent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_youtube_searched_for_black_24dp"
-            tools:ignore="ContentDescription" />
-
         <TextView
             android:id="@+id/tvAboutUs"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:fontFamily="@font/comfortaa"
-            android:text="@string/add_food"
+            android:text="@string/choose_recipe"
             android:textStyle="bold"
             android:textColor="@color/myWhite"
-            android:textSize="@dimen/text_dimension_btnLogin"
+            android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/clCenter"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/clCenter"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:background="@color/myColorForBackground"
+    app:layout_constraintBottom_toTopOf="@+id/clBottom"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/clTop">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvRecipe"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/myColorForBackground"
-        app:layout_constraintBottom_toTopOf="@+id/clBottom"
+        android:layout_height="match_parent"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/clTop">
+        app:layout_constraintTop_toTopOf="parent" />
 
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvSearchFood"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="40dp" />
 
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
 
 <androidx.constraintlayout.widget.ConstraintLayout
     android:id="@+id/clBottom"
@@ -82,11 +71,11 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginStart="28dp"
         android:layout_marginBottom="4dp"
-        android:textColor="@color/myGrey"
-        android:textStyle="bold"
         android:fontFamily="@font/comfortaa"
         android:text="@string/your_fridge"
         android:textSize="@dimen/dimension_text_title_menu"
+        android:textStyle="bold"
+        android:textColor="@color/myGrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -97,7 +86,7 @@ android:layout_height="match_parent">
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/recipes"
-        android:textColor="@color/myGrey"
+        android:textColor="@color/green_color"
         android:textSize="@dimen/dimension_text_title_menu"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -113,9 +102,9 @@ android:layout_height="match_parent">
         android:layout_marginBottom="4dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/profile"
-        android:textColor="@color/myGrey"
         android:textSize="@dimen/dimension_text_title_menu"
         android:textStyle="bold"
+        android:textColor="@color/myGrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -127,8 +116,8 @@ android:layout_height="match_parent">
         android:fontFamily="@font/comfortaa"
         android:text="@string/add_food"
         android:textSize="@dimen/dimension_text_title_menu"
-        android:textColor="@color/myWhite"
         android:textStyle="bold"
+        android:textColor="@color/myGrey"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/textView2"
         app:layout_constraintHorizontal_bias="0.470"
@@ -151,7 +140,7 @@ android:layout_height="match_parent">
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/ic_supermarket_white"
+        android:src="@drawable/ic_supermarket_grey"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toStartOf="@+id/ibtnRecipes"
         app:layout_constraintStart_toEndOf="@+id/ibtnFridge"
@@ -163,7 +152,7 @@ android:layout_height="match_parent">
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@android:color/transparent"
-        android:src="@drawable/ic_chef_grey"
+        android:src="@drawable/ic_chef_green"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
         app:layout_constraintEnd_toStartOf="@+id/ibtnProfile"
         app:layout_constraintHorizontal_bias="0.717"

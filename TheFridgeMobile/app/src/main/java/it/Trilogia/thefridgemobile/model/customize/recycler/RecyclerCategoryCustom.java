@@ -31,7 +31,7 @@ public class RecyclerCategoryCustom extends RecyclerView.Adapter<RecyclerCategor
     @Override
     public RecyclerCategoryCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.category_row_cardview,parent,false);
+        View view = layoutInflater.inflate(R.layout.cardview_category_row,parent,false);
 
         return new MyViewHolder(view);
     }

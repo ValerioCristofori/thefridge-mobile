@@ -24,9 +24,12 @@
     <string name="delete_account">Delete account</string>
     <string name="ingredients">Ingredients</string>
     <string name="title">Title</string>
-    <string name="go_to_the_recipe">Go to the recipe</string>
+    <string name="go_to_the_recipe">GO TO THE RECIPE</string>
     <string name="view_more">View More</string>
     <string name="sign_up">SIGN UP</string>
+    <string name="notification1">Oh no! Your</string>
+    <string name="notification2">is expired!!!</string>
+    <string name="titleNotification">Expiration message</string>
     <string name="email_address">Email address</string>
     <string name="description">This application is the final project of Mobile Programming course 2019/2020 from the university of Rome Tor Vergata.</string>
     <string name="taglienti_tiziano" translatable="false">Taglienti Tiziano</string>

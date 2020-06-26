@@ -14,7 +14,7 @@ public class ToastCustom extends AppCompatActivity {
 
     public void buildToast(Toast toast, String message ){
         LayoutInflater inflater = getLayoutInflater(); // this call to getLayoutInflater gives errors ----> build a Activity manager
-        View layout = inflater.inflate(R.layout.custom_alert_layout,
+        View layout = inflater.inflate(R.layout.custom_layout_alert,
                 (ViewGroup) findViewById(R.id.custom_toast_container));
 
         TextView text = (TextView) layout.findViewById(R.id.text);

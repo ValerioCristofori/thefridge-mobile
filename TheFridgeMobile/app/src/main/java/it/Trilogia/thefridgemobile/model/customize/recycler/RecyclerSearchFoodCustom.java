@@ -9,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -41,7 +40,7 @@ public class RecyclerSearchFoodCustom extends RecyclerView.Adapter<RecyclerSearc
     @Override
     public RecyclerSearchFoodCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.food_box_for_add,parent,false);
+        View view = layoutInflater.inflate(R.layout.cardview_box_add,parent,false);
 
         return new RecyclerSearchFoodCustom.MyViewHolder(view);
     }

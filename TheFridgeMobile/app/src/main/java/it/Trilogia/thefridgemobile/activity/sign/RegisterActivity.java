@@ -16,7 +16,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import it.Trilogia.thefridgemobile.R;
-import it.Trilogia.thefridgemobile.activity.home.HomeActivity;
 import it.Trilogia.thefridgemobile.controller.RegistrationController;
 import it.Trilogia.thefridgemobile.controller.SyntaxValidation;
 
@@ -24,7 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.signup);
+        setContentView(R.layout.layout_signup);
         new Holder();
     }
 
@@ -74,7 +73,7 @@ public class RegisterActivity extends AppCompatActivity {
                     //all syntax error verified
                     try {
                         registrationController.registration( tfUsername.getText().toString(),tfPassword.getText().toString(),tfEmail.getText().toString() );
-                        //remand home GUI
+                        //remand layout_fridge GUI
                         startActivity(new Intent(RegisterActivity.this, MainActivity.class));
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -94,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
             //refactor this in the ToastCustom class!
 
             LayoutInflater inflater = getLayoutInflater();
-            View layout = inflater.inflate(R.layout.custom_alert_layout,
+            View layout = inflater.inflate(R.layout.custom_layout_alert,
                     (ViewGroup) findViewById(R.id.custom_toast_container));
 
             TextView text = layout.findViewById(R.id.text);

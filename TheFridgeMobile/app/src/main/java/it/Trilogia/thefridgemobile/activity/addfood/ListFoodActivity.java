@@ -28,7 +28,6 @@ import java.util.Date;
 
 import it.Trilogia.thefridgemobile.R;
 import it.Trilogia.thefridgemobile.controller.AddFoodController;
-import it.Trilogia.thefridgemobile.controller.NotificationController;
 import it.Trilogia.thefridgemobile.model.utility.ListAllFood;
 
 public class ListFoodActivity extends AppCompatActivity {
@@ -40,7 +39,7 @@ public class ListFoodActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.list_food_layout);
+        setContentView(R.layout.layout_list_food);
 
         new Holder(this);
     }
@@ -71,7 +70,7 @@ public class ListFoodActivity extends AppCompatActivity {
             this.setData();
 
             //build adapter
-            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(context, R.layout.my_text_view, arrayList);
+            ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(context, R.layout.custom_text_view, arrayList);
             lvFood.setAdapter(arrayAdapter);
 
 

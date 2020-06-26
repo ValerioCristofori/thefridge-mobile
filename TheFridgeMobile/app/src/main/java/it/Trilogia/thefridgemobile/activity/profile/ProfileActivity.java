@@ -1,10 +1,8 @@
 package it.Trilogia.thefridgemobile.activity.profile;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -18,17 +16,14 @@ import it.Trilogia.thefridgemobile.activity.home.HomeActivity;
 import it.Trilogia.thefridgemobile.activity.addfood.AddFoodActivity;
 import it.Trilogia.thefridgemobile.activity.recipe.SearchRecipesActivity;
 import it.Trilogia.thefridgemobile.activity.sign.MainActivity;
-import it.Trilogia.thefridgemobile.controller.DeleteAccountController;
-import it.Trilogia.thefridgemobile.controller.LoginController;
 import it.Trilogia.thefridgemobile.implementation.instance.Instance;
-import it.Trilogia.thefridgemobile.model.entity.User;
 
 public class ProfileActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.profile);
+        setContentView(R.layout.layout_profile);
 
         new Holder();
 
@@ -49,15 +44,15 @@ public class ProfileActivity extends AppCompatActivity {
             TextView tvUsername = findViewById(R.id.tvUsername);
             //query per sapere username
             String username = Instance.getSingletonInstance().getCurrentUser().getUsername();
-            //////////
+
             String welcome = getString(R.string.welcome);
-            String text = welcome.concat(username);
+            String text = welcome.concat(String.format(" " + username) );
             tvUsername.setText(text);
 
             TextView tvEmail = findViewById(R.id.tvEmail);
             //query per sapere email
-            String email = "Email: ";
-            text = email.concat(Instance.getSingletonInstance().getCurrentUser().getEmail());
+            String email = "Email:";
+            text = email.concat(String.format(" " + Instance.getSingletonInstance().getCurrentUser().getEmail() ) );
 
             tvEmail.setText(text);
 

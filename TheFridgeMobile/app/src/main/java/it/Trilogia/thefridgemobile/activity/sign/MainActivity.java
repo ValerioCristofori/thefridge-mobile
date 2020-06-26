@@ -3,8 +3,6 @@ package it.Trilogia.thefridgemobile.activity.sign;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
-import android.app.AlarmManager;
-import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -20,7 +18,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.Calendar;
 import java.util.Objects;
 
 import it.Trilogia.thefridgemobile.R;
@@ -38,25 +35,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_activity_main);
         DatabaseHelper.getDatabaseInstance(getApplicationContext());
 
         Intent intent=new Intent(MainActivity.this, BroadcastService.class);
+        intent.setAction(Intent.ACTION_DATE_CHANGED);
         startService(intent);
-        boolean alarm = (PendingIntent.getBroadcast(this, 0, new Intent("ALARM"), PendingIntent.FLAG_NO_CREATE) == null);
 
-        //create this.Holder
         new Holder();
-        // mettere action on date changed --------------------------------------------------
-        if(alarm){
-            Intent itAlarm = new Intent("ALARM");
-            PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0,itAlarm,0);
-            Calendar calendar = Calendar.getInstance();
-            calendar.setTimeInMillis(System.currentTimeMillis());
-            calendar.add(Calendar.SECOND, 3);
-            AlarmManager alarme = (AlarmManager) getSystemService(ALARM_SERVICE);
-            alarme.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(),60000, pendingIntent);
-        }
+
 
 
     }
@@ -100,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
 
                 LoginController loginController = new LoginController();
                 if (loginController.isValidUser(username, password)) {
-                    //remand home GUI
+                    //remand layout_fridge GUI
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
                 }
@@ -136,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.commit();
                     }
 
-                    //remand home GUI
+                    //remand layout_fridge GUI
 
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
@@ -157,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             //refactor this in the ToastCustom class!
 
             LayoutInflater inflater = getLayoutInflater();
-            View layout = inflater.inflate(R.layout.custom_alert_layout,
+            View layout = inflater.inflate(R.layout.custom_layout_alert,
                     (ViewGroup) findViewById(R.id.custom_toast_container));
 
             TextView text = layout.findViewById(R.id.text);

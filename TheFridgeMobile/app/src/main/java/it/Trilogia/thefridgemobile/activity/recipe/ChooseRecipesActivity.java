@@ -31,7 +31,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.choose_recipes);
+        setContentView(R.layout.layout_choose_recipes);
 
         new Holder(this);
     }

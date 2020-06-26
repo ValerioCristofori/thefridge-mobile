@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -30,7 +29,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.recipe_description);
+        setContentView(R.layout.layout_recipe_description);
 
         new Holder( this );
 
@@ -73,8 +72,8 @@ public class ShowRecipeActivity extends AppCompatActivity {
             ArrayList<String> listIngredientsUsed = this.bld_ingredients_string( recipe.getUsedIngredients());
             ArrayList<String> listIngredientsMissed = this.bld_ingredients_string( recipe.getMissedIngredients());
             tvTitle.setText(recipe.getTitle());
-            ArrayAdapter<String> adapterUsed = new ArrayAdapter<>(this.context, R.layout.my_text_view,  listIngredientsUsed);
-            ArrayAdapter<String> adapterMissed = new ArrayAdapter<>(this.context, R.layout.my_text_view,  listIngredientsMissed);
+            ArrayAdapter<String> adapterUsed = new ArrayAdapter<>(this.context, R.layout.custom_text_view,  listIngredientsUsed);
+            ArrayAdapter<String> adapterMissed = new ArrayAdapter<>(this.context, R.layout.custom_text_view,  listIngredientsMissed);
 
             Picasso.with(this.context)
                     .load( recipe.getImage() )

@@ -36,7 +36,7 @@ public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCus
     @Override
     public RecyclerRecipeCustom.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(context);
-        View view = layoutInflater.inflate(R.layout.recipe_cardview, parent, false);
+        View view = layoutInflater.inflate(R.layout.cardview_recipe, parent, false);
         return new MyViewHolder(view);
     }
 

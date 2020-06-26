@@ -10,7 +10,7 @@
     <string name="your_fridge">Il tuo frigo</string>
     <string name="recipes">Ricette</string>
     <string name="profile">Profilo</string>
-    <string name="choose_recipe">Scegli ricetta</string>
+    <string name="choose_recipe">Scegli la ricetta</string>
     <string name="warning">Una volta cancellato il tuo account perderai tutti i dati, sei sicuro di voler continuare ?</string>
     <string name="yes">Si</string>
     <string name="search_food">Cerca alimento</string>
@@ -20,9 +20,12 @@
     <string name="delete_account">Elimina account</string>
     <string name="ingredients">Ingredienti</string>
     <string name="title">Titolo</string>
-    <string name="go_to_the_recipe">Vai alla ricetta</string>
+    <string name="go_to_the_recipe">VAI ALLA RICETTA</string>
     <string name="view_more">Vedi di più</string>
     <string name="sign_up">Iscriviti</string>
+    <string name="notification1">Oh no!</string>
+    <string name="notification2">è scaduto!!!</string>
+    <string name="titleNotification">Messaggio di scadenza</string>
     <string name="email_address">Email</string>
     <string name="description">Questa applicazione è il progetto finale del corso di Mobile Programming 2019/2020 dell università di Roma Tor Vergata.</string>
     <string name="students">Studenti :</string>
