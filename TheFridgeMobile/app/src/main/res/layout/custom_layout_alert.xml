@@ -15,9 +15,9 @@
         android:background="@color/my_error">
 
         <ImageView
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginEnd="8dp"
+            android:layout_width="@dimen/w_h_alert_icon"
+            android:layout_height="@dimen/w_h_alert_icon"
+            android:layout_marginEnd="@dimen/margin_alert_icon"
             android:src="@drawable/alert_icon"
             tools:ignore="ContentDescription" />
 

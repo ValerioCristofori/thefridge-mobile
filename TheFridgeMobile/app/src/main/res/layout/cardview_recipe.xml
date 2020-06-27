@@ -9,10 +9,10 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:layout_marginLeft="3dp"
-        android:layout_marginRight="3dp"
-        app:cardBackgroundColor="#0016A085"
+        android:layout_margin="@dimen/margin_card_recipes"
+        android:layout_marginLeft="@dimen/margin_card_left_right_recipes"
+        android:layout_marginRight="@dimen/margin_card_left_right_recipes"
+        app:cardBackgroundColor="@color/background_recipes"
         app:cardCornerRadius="0dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -60,9 +60,9 @@
                 android:fontFamily="@font/comfortaa"
                 android:gravity="clip_vertical"
 
-                android:text="example text"
+                android:text="@string/example_text"
                 android:textColor="@color/myWhite"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -81,7 +81,8 @@
                 app:layout_constraintStart_toEndOf="@+id/ibtnShare"
                 app:layout_constraintTop_toBottomOf="@+id/clImage"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ic_baseline_open_in_new_24" />
+                app:srcCompat="@drawable/ic_baseline_open_in_new_24"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView"
@@ -109,7 +110,8 @@
                 app:layout_constraintStart_toStartOf="@+id/clImage"
                 app:layout_constraintTop_toBottomOf="@+id/clImage"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/ic_baseline_share_24" />
+                app:srcCompat="@drawable/ic_baseline_share_24"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/textView14"

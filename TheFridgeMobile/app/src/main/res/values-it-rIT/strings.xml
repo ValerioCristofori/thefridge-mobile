@@ -36,5 +36,7 @@
     <string name="description_functionality">Ti offriamo alcune ricette che puoi fare con gli alimenti nel tuo frigo !</string>
     <string name="howmanyrecipes">Quante ricette vuoi cercare ?</string>
     <string name="emptyfridge">Il tuo frigo è vuoto, aggiungi qualche alimento !</string>
+    <string name="category">Categoria</string>
+    <string name="example_text">testo di esempio</string>
 
 </resources>

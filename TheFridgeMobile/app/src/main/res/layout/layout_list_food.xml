@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/myColorForBackground"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="@dimen/margintop_listfood"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -29,7 +29,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/viewTop"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/layout_height_box_title_layout"
         android:background="@color/myDarkBlue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,9 +38,9 @@
 
         <ImageButton
             android:id="@+id/ibtnLeftArrow"
-            android:layout_width="52dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="@dimen/back_arrow_width"
+            android:layout_height="@dimen/layout_height_box_title_layout"
+            android:layout_marginStart="@dimen/margin_back_arrow"
             android:background="@android:color/transparent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -50,19 +50,19 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/clImage"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="26dp"
+            android:layout_width="@dimen/w_h_icon_food"
+            android:layout_height="@dimen/w_h_icon_food"
+            android:layout_marginStart="@dimen/margin_icon_food"
             android:background="@color/green_color"
-            android:elevation="5dp"
+            android:elevation="@dimen/elevation_icon_food"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ibtnLeftArrow"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/ivSpecificCategory"
-                android:layout_width="31dp"
-                android:layout_height="34dp"
+                android:layout_width="@dimen/w_h_category"
+                android:layout_height="@dimen/w_h_category"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,9 +76,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/comfortaa"
-            android:text="category"
+            android:text="@string/category"
             android:textColor="@color/myWhite"
-            android:textSize="18sp"
+            android:textSize="@dimen/dimension_title_layout"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

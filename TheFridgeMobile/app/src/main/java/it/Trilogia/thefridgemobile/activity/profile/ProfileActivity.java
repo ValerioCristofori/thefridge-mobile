@@ -29,7 +29,9 @@ public class ProfileActivity extends AppCompatActivity {
         new Holder();
 
     }
-
+    @Override
+    public void onBackPressed() {
+    }
 
     class Holder implements View.OnClickListener{
 
