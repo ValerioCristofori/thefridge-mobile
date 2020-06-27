@@ -27,7 +27,7 @@
     <dimen name="margin_icon_menu">30dp</dimen>
     <dimen name="margin_border_text_menu">28dp</dimen>
     <dimen name="margin_down_text_menu">4dp</dimen>
-    <dimen name="margin_right_icon_text_menu">36dp</dimen>
+    <dimen name="margin_right_icon_text_menu">30dp</dimen>
     <dimen name="width_search_bar">224dp</dimen>
     <dimen name="height_search_bar">36dp</dimen>
     <dimen name="text_small">12sp</dimen>
