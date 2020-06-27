@@ -30,7 +30,7 @@ public class NotificationController {
         builder.setTicker("The Fridge");
         builder.setContentTitle(title);
         builder.setContentText(description);
-        builder.setSmallIcon(R.mipmap.ic_launcher_fridge);
+        builder.setSmallIcon(R.drawable.logo_app);
         builder.setContentIntent(p);
         Notification n = builder.build();
         //create the notification
