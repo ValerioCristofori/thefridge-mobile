@@ -9,7 +9,8 @@
 
     <Button
         android:id="@+id/btnSignup"
-        android:layout_height="@dimen/layout_height_singup_singup"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/margin_singup_button"
         android:layout_marginStart="@dimen/margin_input_box_singup"
         android:layout_marginEnd="@dimen/margin_input_box_singup"
         android:layout_marginBottom="@dimen/margin_singup_button"
@@ -25,9 +26,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
 
-
     <EditText
         android:id="@+id/tfUsername"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_input_box_singup"
         android:layout_marginEnd="@dimen/margin_input_box_singup"
@@ -61,6 +62,7 @@
 
     <EditText
         android:id="@+id/tfEmail"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_input_box_singup"
         android:layout_marginTop="@dimen/margin_email_box_top"

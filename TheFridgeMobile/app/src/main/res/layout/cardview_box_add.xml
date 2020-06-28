@@ -9,7 +9,7 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="2dp"
+        android:layout_margin="@dimen/margin_card_add_food"
         app:cardBackgroundColor="@color/green_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,9 +23,9 @@
 
             <ImageView
                 android:id="@+id/ivRecipe"
-                android:layout_width="42dp"
-                android:layout_height="41dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="@dimen/w_h_image_add"
+                android:layout_height="@dimen/w_h_image_add"
+                android:layout_marginTop="@dimen/margin_top_image_add"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -34,10 +34,10 @@
 
             <TextView
                 android:id="@+id/tvRecipe"
-                android:layout_width="128dp"
-                android:layout_height="35dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="30dp"
+                android:layout_width="@dimen/text_width_add"
+                android:layout_height="@dimen/text_height_add"
+                android:layout_marginTop="@dimen/margin_top_text_add"
+                android:layout_marginBottom="@dimen/margin_bottom_text_add"
                 android:fontFamily="@font/comfortaa"
                 android:gravity="center"
                 app:layout_constraintBottom_toBottomOf="parent"
