@@ -4,10 +4,12 @@ import android.animation.Animator;
 import android.os.Build;
 import android.view.View;
 import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
 
-public class AnimationCustom {
+public class AnimationCustom extends Animation {
 
-    public static void start_circular_reveal_anim( View myView ){
+
+    public static Animator start_circular_reveal_anim( View myView ){
 
         // Check if the runtime version is at least Lollipop
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
@@ -20,13 +22,14 @@ public class AnimationCustom {
 
             // create the animator for this view (the start radius is zero)
             Animator anim = ViewAnimationUtils.createCircularReveal(myView, cx, cy, 0f, finalRadius);
-
             // make the view visible and start the animation
             myView.setVisibility(View.VISIBLE);
-            anim.start();
+
+            return anim;
         } else {
             // set the view to invisible without a circular reveal animation below Lollipop
             myView.setVisibility(View.INVISIBLE);
+            return null;
         }
 
         

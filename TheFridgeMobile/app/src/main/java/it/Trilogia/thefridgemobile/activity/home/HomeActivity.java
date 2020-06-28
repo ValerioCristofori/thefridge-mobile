@@ -1,11 +1,15 @@
 package it.Trilogia.thefridgemobile.activity.home;
 
+import android.animation.Animator;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewAnimationUtils;
+import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -111,7 +115,7 @@ public class HomeActivity extends AppCompatActivity {
         
 
         @Override
-        public void onClick(View v) {
+        public void onClick(final View v) {
             v.startAnimation(AnimationUtils.loadAnimation(this.context, R.anim.on_click));
 
             switch(v.getId()) {
@@ -138,6 +142,7 @@ public class HomeActivity extends AppCompatActivity {
 
 
         }
+
 
 
     }
