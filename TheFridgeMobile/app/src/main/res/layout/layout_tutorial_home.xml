@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/layout_fridge" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTutorial"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/myBackgroundTutorial">
+
+        <ImageView
+            android:id="@+id/vButtonFood"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/tutorial_shape_circle"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.188"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.048"
+            app:srcCompat="@drawable/ic_youtube_searched_for_black_24dp" />
+
+        <TextView
+            android:id="@+id/tvTutorialSearchFridge"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tutorial_shape_rounded_borders"
+            android:lineSpacingExtra="8dp"
+            android:fontFamily="@font/comfortaa"
+            android:gravity="center"
+            android:padding="12dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="@string/tutorial_search_fridge"
+            android:textColor="@color/myWhite"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.664"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vButtonFood" />
+
+        <TextView
+            android:id="@+id/tvTutorialFridge"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/tutorial_shape_rounded_borders"
+            android:lineSpacingExtra="8dp"
+            android:fontFamily="@font/comfortaa"
+            android:gravity="center"
+            android:padding="12dp"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="@string/tutorial_fridge"
+            android:textColor="@color/myWhite"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTutorialSearchFridge"
+            app:layout_constraintVertical_bias="0.07" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</RelativeLayout>

@@ -1,9 +1,11 @@
 package it.Trilogia.thefridgemobile.activity.profile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -26,7 +28,7 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_profile);
 
-        new Holder();
+        new Holder(this);
 
     }
     @Override
@@ -36,8 +38,11 @@ public class ProfileActivity extends AppCompatActivity {
     class Holder implements View.OnClickListener{
 
         private View vFridge, vAddFood, vRecipe, vProfile;
+        private Context context;
 
-        Holder(){
+        Holder(Context context){
+
+            this.context = context;
             //init image buttons
             Button btnDelete = findViewById(R.id.btnDelete);
             ImageButton ibtnAddFood = findViewById(R.id.ibtnAddFood);
@@ -77,6 +82,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+            v.startAnimation(AnimationUtils.loadAnimation(this.context, R.anim.on_click));
 
             switch(v.getId()) {
 

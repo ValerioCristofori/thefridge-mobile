@@ -39,4 +39,12 @@
     <string name="category">Categoria</string>
     <string name="example_text">testo di esempio</string>
 
+    <string name="tutorial_search_fridge">Con questo bottone puoi cercare un alimento nel tuo frigo se ne hai tanti!</string>
+    <string name="tutorial_fridge">Benvenuto in The Fridge!\nIn questa sezione puoi vedere una lista degli alimenti che hai inserito nel tuo frigo</string>
+    <string name="tutorial_addfood">Qui puoi inserire gli alimenti nel tuo frigo.Sceglili da una lista</string>
+    <string name="tutorial_search_food">Con questo bottone puoi cercare piu facilmente un alimento da inserire...usalo se sai il nome</string>
+    <string name="tutorial_recipe">Puoi cercare da 1 a 5 ricette random da fare con gli alimenti nel tuo frigo. Scegli il numero di ricette, clicca il bottone e osserva la magia!</string>
+    <string name="tutorial_profile">In questa sezione puoi gestire il profilo e fare il loggout</string>
+    <string name="tutorial_last_message">Quasi dimenticavo! Riceverai una notifica ogni volta che scadra un alimento.\nOra The Fridge e tutto per te!</string>
+
 </resources>

@@ -93,7 +93,7 @@
     <dimen name="margin_top_button_recipe">8dp</dimen>
     <dimen name="margin_bottom_button_recipe">3dp</dimen>
     <dimen name="margin_start_text_recipe">2dp</dimen>
-    <dimen name="text_recipe_layout">12sp</dimen>
+    <dimen name="text_recipe_layout">14sp</dimen>
     <dimen name="margin_top">8dp</dimen>
     <dimen name="margin_bottom_recipe">3dp</dimen>
     <dimen name="margin_category_card">2dp</dimen>

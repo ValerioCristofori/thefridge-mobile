@@ -53,6 +53,15 @@
     <string name="category">category</string>
     <string name="example_text">example text</string>
 
+    <string name="tutorial_search_fridge">With this button you can search for a food in your fridge if you have many!</string>
+    <string name="tutorial_fridge">Hi, welcome to The Fridge !\nIn this section you can see a list of the foods you have put in your fridge </string>
+    <string name="tutorial_addfood">Here you can put the food in your fridge. Choose from a list</string>
+    <string name="tutorial_search_food">With this button you can more easily search for a food to insert ... use it if you know the name</string>
+    <string name="tutorial_recipe">You can search for 1 to 5 random recipes to make with food in your fridge. Choose the number of recipes, click the button and watch the magic!</string>
+    <string name="tutorial_profile">In this section you can manage the profile and log out</string>
+    <string name="tutorial_last_message">
+I almost forgot! You will be notified every time a food expires.\nNow The Fridge is all for you!</string>
+
     <string-array name="food_categories">
         <item>Fruit</item>
         <item>Vegetable</item>

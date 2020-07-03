@@ -22,6 +22,7 @@ import java.util.Objects;
 
 import it.Trilogia.thefridgemobile.R;
 import it.Trilogia.thefridgemobile.activity.home.HomeActivity;
+import it.Trilogia.thefridgemobile.activity.tutorial.TutorialActivity;
 import it.Trilogia.thefridgemobile.controller.LoginController;
 import it.Trilogia.thefridgemobile.controller.SyntaxValidation;
 import it.Trilogia.thefridgemobile.db.init.DatabaseHelper;
@@ -124,7 +125,6 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                     //remand layout_fridge GUI
-
                     startActivity(new Intent(MainActivity.this, HomeActivity.class));
 
                 }else{

@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import it.Trilogia.thefridgemobile.R;
+import it.Trilogia.thefridgemobile.activity.home.HomeActivity;
+import it.Trilogia.thefridgemobile.activity.tutorial.TutorialActivity;
 import it.Trilogia.thefridgemobile.controller.RegistrationController;
 import it.Trilogia.thefridgemobile.controller.SyntaxValidation;
 
@@ -73,8 +75,10 @@ public class RegisterActivity extends AppCompatActivity {
                     //all syntax error verified
                     try {
                         registrationController.registration( tfUsername.getText().toString(),tfPassword.getText().toString(),tfEmail.getText().toString() );
-                        //remand layout_fridge GUI
-                        startActivity(new Intent(RegisterActivity.this, MainActivity.class));
+
+                        //remand to the tutorial activity
+                        startActivity(new Intent(RegisterActivity.this, TutorialActivity.class));
+
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
@@ -109,4 +113,5 @@ public class RegisterActivity extends AppCompatActivity {
 
 
     }
+
 }

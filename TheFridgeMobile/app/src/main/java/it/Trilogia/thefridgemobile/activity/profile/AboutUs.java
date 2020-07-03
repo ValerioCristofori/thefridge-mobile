@@ -1,8 +1,10 @@
 package it.Trilogia.thefridgemobile.activity.profile;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
@@ -17,17 +19,22 @@ public class AboutUs extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_about_us);
 
-        Holder holder = new Holder();
+        new Holder(this);
 
     }
 
     class Holder implements View.OnClickListener{
         private ImageButton ibtnBack;
         private Intent intent;
+        private Context context;
+
+
 
         private String username, text;
 
-        public Holder(){
+        public Holder(Context context){
+
+            this.context = context;
             //init image buttons
             this.ibtnBack = (ImageButton)findViewById(R.id.ibtnBack);
 
@@ -37,6 +44,7 @@ public class AboutUs extends AppCompatActivity {
 
         @Override
         public void onClick(View v) {
+            v.startAnimation(AnimationUtils.loadAnimation(this.context, R.anim.on_click));
 
             switch(v.getId()) {
 
