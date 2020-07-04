@@ -10,15 +10,20 @@ import android.widget.ImageButton;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
+
 import it.Trilogia.thefridgemobile.R;
 
 public class AboutUs extends AppCompatActivity {
+
+    private SlidrInterface slidrInterface;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_about_us);
-
+        slidrInterface = Slidr.attach(this);
         new Holder(this);
 
     }

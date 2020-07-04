@@ -29,7 +29,7 @@
         android:layout_width="@dimen/width_button_confirmation"
         android:layout_height="@dimen/height_button_confirmation"
         android:layout_marginStart="@dimen/margin_start_button_confirmation"
-        android:backgroundTint="@color/green_color"
+        android:backgroundTint="@color/my_error"
         android:fontFamily="@font/comfortaa"
         android:foregroundTint="@color/colorPrimaryDark"
         android:text="@string/yes"

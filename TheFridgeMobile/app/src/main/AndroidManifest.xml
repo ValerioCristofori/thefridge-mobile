@@ -54,15 +54,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.addfood.ListFoodActivity" android:screenOrientation="portrait" />
-        <activity android:name=".activity.profile.AboutUs" android:screenOrientation="portrait" />
+        <activity android:name=".activity.addfood.ListFoodActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme" />
+        <activity android:name=".activity.profile.AboutUs" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme" />
 
         <activity android:name=".activity.recipe.SearchRecipesActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
         <activity android:name=".activity.recipe.ChooseRecipesActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
 
         <activity android:name=".activity.profile.ProfileActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
         <activity android:name=".activity.profile.DeleteAccount" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.recipe.ShowRecipeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".activity.recipe.ShowRecipeActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme"/>
         <activity android:name=".activity.addfood.SearchFoodActivity" android:screenOrientation="portrait" />
         <activity android:name=".activity.tutorial.TutorialActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
         <activity android:name=".activity.tutorial.TutorialActivityRecipe" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>

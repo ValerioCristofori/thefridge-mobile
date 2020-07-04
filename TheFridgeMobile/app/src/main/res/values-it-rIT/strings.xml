@@ -38,7 +38,6 @@
     <string name="emptyfridge">Il tuo frigo è vuoto, aggiungi qualche alimento !</string>
     <string name="category">Categoria</string>
     <string name="example_text">testo di esempio</string>
-
     <string name="tutorial_search_fridge">Con questo bottone puoi cercare un alimento nel tuo frigo se ne hai tanti!</string>
     <string name="tutorial_fridge">Benvenuto in The Fridge!\nIn questa sezione puoi vedere una lista degli alimenti che hai inserito nel tuo frigo</string>
     <string name="tutorial_addfood">Qui puoi inserire gli alimenti nel tuo frigo.Sceglili da una lista</string>

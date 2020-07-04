@@ -14,6 +14,8 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -24,6 +26,7 @@ import it.Trilogia.thefridgemobile.model.entity.Recipe;
 
 public class ShowRecipeActivity extends AppCompatActivity {
 
+    private SlidrInterface slidrInterface;
     private Recipe recipe;
 
     @Override
@@ -31,6 +34,7 @@ public class ShowRecipeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_recipe_description);
 
+        slidrInterface = Slidr.attach(this);
         new Holder( this );
 
     }

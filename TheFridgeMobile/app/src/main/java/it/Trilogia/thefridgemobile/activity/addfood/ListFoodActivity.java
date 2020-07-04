@@ -21,6 +21,9 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.r0adkll.slidr.Slidr;
+import com.r0adkll.slidr.model.SlidrInterface;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -32,6 +35,7 @@ import it.Trilogia.thefridgemobile.model.utility.ListAllFood;
 
 public class ListFoodActivity extends AppCompatActivity {
 
+    private SlidrInterface slidrInterface;
     private String category;
     private int imageOfCategory;
     private ArrayList arrayList;
@@ -40,6 +44,8 @@ public class ListFoodActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_list_food);
+
+        slidrInterface = Slidr.attach(this);
 
         new Holder(this);
     }
