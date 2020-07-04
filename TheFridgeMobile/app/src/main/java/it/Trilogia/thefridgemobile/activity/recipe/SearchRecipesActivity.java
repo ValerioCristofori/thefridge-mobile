@@ -25,7 +25,7 @@ import it.Trilogia.thefridgemobile.model.customize.animation.AnimationCustom;
 public class SearchRecipesActivity extends AppCompatActivity {
 
     private int numRecipes = 1;
-    private ProgressBar progressBar;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,15 +39,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
     public void onBackPressed() {
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == 0) {
-            //reset
-            this.progressBar.setVisibility(View.INVISIBLE);
-        }
-    }
 
     class Holder implements View.OnClickListener, RadioGroup.OnCheckedChangeListener {
 
@@ -75,7 +67,7 @@ public class SearchRecipesActivity extends AppCompatActivity {
             RadioGroup rgNumRecipe = findViewById(R.id.rgNumRecipe);
 
             Button btnSearch = findViewById(R.id.btnSearch);
-            progressBar = findViewById(R.id.progressBar);
+
 
 
             //assign listener
@@ -113,7 +105,6 @@ public class SearchRecipesActivity extends AppCompatActivity {
                     break;
 
                 case R.id.btnSearch:
-                    progressBar.setVisibility(View.VISIBLE);
                     intent = new Intent(v.getContext(), ChooseRecipesActivity.class);
                     intent.putExtra("num_recipes", numRecipes);
                     startActivityForResult(intent,0);

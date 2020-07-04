@@ -7,6 +7,7 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import it.Trilogia.thefridgemobile.activity.recipe.ChooseRecipesActivity;
 import it.Trilogia.thefridgemobile.api.SpoonacularAPI;
 import it.Trilogia.thefridgemobile.implementation.instance.Instance;
 import it.Trilogia.thefridgemobile.model.entity.Food;
@@ -15,6 +16,11 @@ import it.Trilogia.thefridgemobile.model.entity.Recipe;
 public class ChooseRecipesController extends AsyncTask<Integer, Void, ArrayList<Recipe>> {
 
     private static final int NUM_INGREDIENTS = 3;
+    private ChooseRecipesActivity.Holder chooseRecipesActivity;
+
+    public ChooseRecipesController( ChooseRecipesActivity.Holder chooseRecipesActivity ){
+        this.chooseRecipesActivity = chooseRecipesActivity;
+    }
 
     private Recipe search(ArrayList<String> threeIngredients) {
         SpoonacularAPI api = new SpoonacularAPI();
@@ -71,4 +77,9 @@ public class ChooseRecipesController extends AsyncTask<Integer, Void, ArrayList<
         return arrayRecipes;
     }
 
+    @Override
+    protected void onPostExecute(ArrayList<Recipe> recipes) {
+        this.chooseRecipesActivity.populate_recycler(recipes);
+        super.onPostExecute(recipes);
+    }
 }

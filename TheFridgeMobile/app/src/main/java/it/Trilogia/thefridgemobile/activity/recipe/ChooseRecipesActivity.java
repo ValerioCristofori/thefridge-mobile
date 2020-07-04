@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,7 +28,7 @@ import it.Trilogia.thefridgemobile.model.entity.Recipe;
 public class ChooseRecipesActivity extends AppCompatActivity {
 
     private int numRecipes;
-    private ArrayList<Recipe> arrayRecipes;
+    private ProgressBar progressBar;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -37,7 +38,17 @@ public class ChooseRecipesActivity extends AppCompatActivity {
         new Holder(this);
     }
 
-    class Holder implements View.OnClickListener{
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == 0) {
+            //reset
+            this.progressBar.setVisibility(View.INVISIBLE);
+        }
+    }
+
+    public class Holder implements View.OnClickListener{
 
         private Context context;
         private View vFridge, vAddFood, vRecipe, vProfile;
@@ -56,16 +67,12 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             vAddFood = findViewById(R.id.vAddFood);
             vRecipe = findViewById(R.id.vRecipe);
             vProfile = findViewById(R.id.vProfile);
+            progressBar = findViewById(R.id.progressBar);
+
+            progressBar.setVisibility(View.VISIBLE);
 
             this.getData();
             this.setData();
-
-            RecyclerView rvRecipe = findViewById(R.id.rvRecipe);
-
-            //init recycler
-            RecyclerRecipeCustom recyclerCategoryCustom = new RecyclerRecipeCustom(this.context, arrayRecipes);
-            rvRecipe.setAdapter(recyclerCategoryCustom);
-            rvRecipe.setLayoutManager(new LinearLayoutManager(this.context));
 
 
             //assign listener
@@ -74,6 +81,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             ibtnProfile.setOnClickListener(this);
             ibtnAddFood.setOnClickListener(this);
         }
+
 
         @Override
         public void onClick(View v) {
@@ -115,12 +123,20 @@ public class ChooseRecipesActivity extends AppCompatActivity {
         }
 
         private void setData(){
-            try {
-                arrayRecipes = new ChooseRecipesController().execute(numRecipes).get();
-            } catch (ExecutionException | InterruptedException e) {
-                e.printStackTrace();
-            }
+            ChooseRecipesController chooseRecipesController = new ChooseRecipesController(this);
+            chooseRecipesController.execute(numRecipes);
 
         }
+
+        public void populate_recycler(ArrayList<Recipe> arrayRecipes){
+            progressBar.setVisibility(View.INVISIBLE);
+            RecyclerView rvRecipe = findViewById(R.id.rvRecipe);
+            RecyclerRecipeCustom recyclerCategoryCustom = new RecyclerRecipeCustom(this.context, arrayRecipes);
+            rvRecipe.setAdapter(recyclerCategoryCustom);
+            rvRecipe.setLayoutManager(new LinearLayoutManager(this.context));
+        }
     }
+
+
+
 }
