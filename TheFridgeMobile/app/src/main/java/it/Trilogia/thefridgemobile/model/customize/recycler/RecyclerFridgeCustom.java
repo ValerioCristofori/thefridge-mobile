@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 import it.Trilogia.thefridgemobile.R;
 import it.Trilogia.thefridgemobile.controller.ViewFridgeController;
-import it.Trilogia.thefridgemobile.implementation.instance.Instance;
+import it.Trilogia.thefridgemobile.model.implementation.instance.Instance;
 import it.Trilogia.thefridgemobile.model.entity.Food;
 
 public class RecyclerFridgeCustom extends RecyclerView.Adapter<RecyclerFridgeCustom.MyViewHolder> {

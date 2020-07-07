@@ -13,7 +13,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import it.Trilogia.thefridgemobile.R;
-import it.Trilogia.thefridgemobile.activity.addfood.ListFoodActivity;
+import it.Trilogia.thefridgemobile.view.activity.addfood.ListFoodActivity;
 
 public class RecyclerCategoryCustom extends RecyclerView.Adapter<RecyclerCategoryCustom.MyViewHolder> {
 

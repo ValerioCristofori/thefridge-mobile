@@ -19,7 +19,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 
 import it.Trilogia.thefridgemobile.R;
-import it.Trilogia.thefridgemobile.activity.recipe.ShowRecipeActivity;
+import it.Trilogia.thefridgemobile.view.activity.recipe.ShowRecipeActivity;
 import it.Trilogia.thefridgemobile.model.entity.Recipe;
 
 public class RecyclerRecipeCustom extends RecyclerView.Adapter<RecyclerRecipeCustom.MyViewHolder> {

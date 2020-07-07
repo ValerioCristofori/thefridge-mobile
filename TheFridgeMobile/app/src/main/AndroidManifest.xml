@@ -25,14 +25,14 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".activity.sign.MainActivity" android:screenOrientation="portrait" >
+        <activity android:name=".view.activity.sign.MainActivity" android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.sign.RegisterActivity" android:screenOrientation="portrait">
+        <activity android:name=".view.activity.sign.RegisterActivity" android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.INSERT" />
 
@@ -40,34 +40,34 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.home.HomeActivity" android:screenOrientation="portrait"  android:theme="@style/noAnimTheme">
+        <activity android:name=".view.activity.home.HomeActivity" android:screenOrientation="portrait"  android:theme="@style/noAnimTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.HOME" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.addfood.AddFoodActivity" android:screenOrientation="portrait"  android:theme="@style/noAnimTheme">
+        <activity android:name=".view.activity.addfood.AddFoodActivity" android:screenOrientation="portrait"  android:theme="@style/noAnimTheme">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.SELECTED_ALTERNATIVE" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.addfood.ListFoodActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme" />
-        <activity android:name=".activity.profile.AboutUs" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme" />
+        <activity android:name=".view.activity.addfood.ListFoodActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme" />
+        <activity android:name=".view.activity.profile.AboutUs" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme" />
 
-        <activity android:name=".activity.recipe.SearchRecipesActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
-        <activity android:name=".activity.recipe.ChooseRecipesActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
+        <activity android:name=".view.activity.recipe.SearchRecipesActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
+        <activity android:name=".view.activity.recipe.ChooseRecipesActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
 
-        <activity android:name=".activity.profile.ProfileActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
-        <activity android:name=".activity.profile.DeleteAccount" android:screenOrientation="portrait"/>
-        <activity android:name=".activity.recipe.ShowRecipeActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme"/>
-        <activity android:name=".activity.addfood.SearchFoodActivity" android:screenOrientation="portrait" />
-        <activity android:name=".activity.tutorial.TutorialActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
-        <activity android:name=".activity.tutorial.TutorialActivityRecipe" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
-        <activity android:name=".activity.tutorial.TutorialActivityAddFood" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
-        <activity android:name=".activity.tutorial.TutorialActivityProfile" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
+        <activity android:name=".view.activity.profile.ProfileActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
+        <activity android:name=".view.activity.profile.DeleteAccount" android:screenOrientation="portrait"/>
+        <activity android:name=".view.activity.recipe.ShowRecipeActivity" android:screenOrientation="portrait" android:theme="@style/AppTheme.SliderActivityTheme"/>
+        <activity android:name=".view.activity.addfood.SearchFoodActivity" android:screenOrientation="portrait" />
+        <activity android:name=".view.activity.tutorial.TutorialActivity" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
+        <activity android:name=".view.activity.tutorial.TutorialActivityRecipe" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
+        <activity android:name=".view.activity.tutorial.TutorialActivityAddFood" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
+        <activity android:name=".view.activity.tutorial.TutorialActivityProfile" android:screenOrientation="portrait" android:theme="@style/noAnimTheme"/>
         <meta-data
             android:name="com.google.android.actions"
             android:resource="@xml/actions" />

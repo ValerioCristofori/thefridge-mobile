@@ -4,9 +4,9 @@ import android.util.Log;
 
 import java.util.Random;
 
-import it.Trilogia.thefridgemobile.db.init.DatabaseHelper;
-import it.Trilogia.thefridgemobile.implementation.exception.IdUsedException;
-import it.Trilogia.thefridgemobile.implementation.instance.Instance;
+import it.Trilogia.thefridgemobile.model.db.DatabaseHelper;
+import it.Trilogia.thefridgemobile.model.implementation.exception.IdUsedException;
+import it.Trilogia.thefridgemobile.model.implementation.instance.Instance;
 import it.Trilogia.thefridgemobile.model.entity.Fridge;
 import it.Trilogia.thefridgemobile.model.entity.User;
 

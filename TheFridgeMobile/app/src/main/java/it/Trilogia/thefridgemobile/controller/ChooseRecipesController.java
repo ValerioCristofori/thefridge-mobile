@@ -7,9 +7,9 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.Random;
 
-import it.Trilogia.thefridgemobile.activity.recipe.ChooseRecipesActivity;
-import it.Trilogia.thefridgemobile.api.SpoonacularAPI;
-import it.Trilogia.thefridgemobile.implementation.instance.Instance;
+import it.Trilogia.thefridgemobile.view.activity.recipe.ChooseRecipesActivity;
+import it.Trilogia.thefridgemobile.model.api.SpoonacularAPI;
+import it.Trilogia.thefridgemobile.model.implementation.instance.Instance;
 import it.Trilogia.thefridgemobile.model.entity.Food;
 import it.Trilogia.thefridgemobile.model.entity.Recipe;
 

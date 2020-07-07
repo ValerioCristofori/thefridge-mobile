@@ -1,10 +1,8 @@
 package it.Trilogia.thefridgemobile.model.customize.receiver;
 
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
 
@@ -15,9 +13,9 @@ import java.util.Calendar;
 import java.util.Date;
 
 import it.Trilogia.thefridgemobile.R;
-import it.Trilogia.thefridgemobile.activity.sign.MainActivity;
+import it.Trilogia.thefridgemobile.view.activity.sign.MainActivity;
 import it.Trilogia.thefridgemobile.controller.NotificationController;
-import it.Trilogia.thefridgemobile.implementation.instance.Instance;
+import it.Trilogia.thefridgemobile.model.implementation.instance.Instance;
 import it.Trilogia.thefridgemobile.model.entity.Food;
 import it.Trilogia.thefridgemobile.model.entity.Fridge;
 

@@ -52,6 +52,13 @@
     <string name="logout" translatable="false">logout</string>
     <string name="category">category</string>
     <string name="example_text">example text</string>
+    <string name="error_message_fridge">Fridge empty</string>
+    <string name="error_message_username">Username wrong</string>
+    <string name="error_message_password">Password wrong</string>
+    <string name="error_message_username_password">Username/Password not valid</string>
+    <string name="error_message_email">Email wrong</string>
+    <string name="error_message_already_used">Username already used</string>
+
 
     <string name="tutorial_search_fridge">With this button you can search for a food in your fridge if you have many!</string>
     <string name="tutorial_fridge">Hi, welcome to The Fridge !\nIn this section you can see a list of the foods you have put in your fridge </string>

@@ -3,8 +3,8 @@ package it.Trilogia.thefridgemobile.controller;
 import java.util.ArrayList;
 import java.util.regex.Pattern;
 
-import it.Trilogia.thefridgemobile.db.init.DatabaseHelper;
-import it.Trilogia.thefridgemobile.implementation.instance.Instance;
+import it.Trilogia.thefridgemobile.model.db.DatabaseHelper;
+import it.Trilogia.thefridgemobile.model.implementation.instance.Instance;
 import it.Trilogia.thefridgemobile.model.entity.Food;
 import it.Trilogia.thefridgemobile.model.entity.Fridge;
 
