@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="text_size_or_login">16sp</dimen>
-    <dimen name="width_logo">252dp</dimen>
-    <dimen name="height_logo">144dp</dimen>
+    <dimen name="width_logo">180dp</dimen>
+    <dimen name="height_logo">120dp</dimen>
     <dimen name="text_dimension_btnLogin">18sp</dimen>
     <dimen name="dimension_text_title_menu">8sp</dimen>
     <dimen name="lenght_top_email_box">444dp</dimen>

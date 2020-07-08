@@ -32,6 +32,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_input_box_singup"
         android:layout_marginEnd="@dimen/margin_input_box_singup"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/myWhite"
         android:ems="10"
         android:fontFamily="@font/comfortaa"
@@ -42,23 +43,8 @@
         android:textColorHint="@color/myGrey"
         app:layout_constraintBottom_toTopOf="@+id/tfEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivFridgeLogo"
-        app:layout_constraintVertical_bias="0.89" />
-
-    <ImageView
-        android:id="@+id/ivFridgeLogo"
-        android:layout_width="@dimen/width_logo"
-        android:layout_height="@dimen/height_logo"
-        android:src="@drawable/fridge_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161"
-        tools:ignore="ContentDescription" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/tfEmail"
@@ -79,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.09"
+        app:layout_constraintVertical_bias="0.007"
         tools:ignore="Autofill" />
 
     <EditText
@@ -105,6 +91,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tfEmail"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/comfortaa"
+        android:text="@string/sign_up"
+        android:textColor="@color/myBlack"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/tfUsername"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,4 +1,4 @@
-package it.Trilogia.thefridgemobile.model.customize.receiver;
+package it.Trilogia.thefridgemobile.model.receiver;
 
 import android.app.Service;
 import android.content.Context;

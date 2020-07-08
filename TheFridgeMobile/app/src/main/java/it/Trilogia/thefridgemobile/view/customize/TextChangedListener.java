@@ -1,4 +1,4 @@
-package it.Trilogia.thefridgemobile.model.customize;
+package it.Trilogia.thefridgemobile.view.customize;
 
 import android.text.Editable;
 import android.text.TextWatcher;

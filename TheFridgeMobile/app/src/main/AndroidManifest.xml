@@ -7,16 +7,16 @@
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
 
     <application
-        android:process=":location"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_fridge"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_fridge_rounded"
+        android:process=":location"
+        android:roundIcon="@mipmap/ic_launcher_fridge_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <service
-            android:name=".model.customize.receiver.BroadcastService"
+            android:name=".model.receiver.BroadcastService"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.media.action.DATE_CHANGED" />

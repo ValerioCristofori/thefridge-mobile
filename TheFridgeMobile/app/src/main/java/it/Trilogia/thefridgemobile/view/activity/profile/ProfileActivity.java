@@ -19,7 +19,7 @@ import it.Trilogia.thefridgemobile.view.activity.addfood.AddFoodActivity;
 import it.Trilogia.thefridgemobile.view.activity.recipe.SearchRecipesActivity;
 import it.Trilogia.thefridgemobile.view.activity.sign.MainActivity;
 import it.Trilogia.thefridgemobile.model.implementation.instance.Instance;
-import it.Trilogia.thefridgemobile.model.customize.animation.AnimationCustom;
+import it.Trilogia.thefridgemobile.view.customize.animation.AnimationCustom;
 
 public class ProfileActivity extends AppCompatActivity {
 

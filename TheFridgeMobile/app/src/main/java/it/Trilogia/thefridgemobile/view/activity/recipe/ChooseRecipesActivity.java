@@ -20,8 +20,8 @@ import it.Trilogia.thefridgemobile.view.activity.addfood.AddFoodActivity;
 import it.Trilogia.thefridgemobile.view.activity.home.HomeActivity;
 import it.Trilogia.thefridgemobile.view.activity.profile.ProfileActivity;
 import it.Trilogia.thefridgemobile.controller.ChooseRecipesController;
-import it.Trilogia.thefridgemobile.model.customize.animation.AnimationCustom;
-import it.Trilogia.thefridgemobile.model.customize.recycler.RecyclerRecipeCustom;
+import it.Trilogia.thefridgemobile.view.customize.animation.AnimationCustom;
+import it.Trilogia.thefridgemobile.view.customize.recycler.RecyclerRecipeCustom;
 import it.Trilogia.thefridgemobile.model.entity.Recipe;
 
 public class ChooseRecipesActivity extends AppCompatActivity {
@@ -51,6 +51,8 @@ public class ChooseRecipesActivity extends AppCompatActivity {
 
         private Context context;
         private View vFridge, vAddFood, vRecipe, vProfile;
+        private RecyclerRecipeCustom recyclerCategoryCustom;
+        private RecyclerView rvRecipe;
 
         Holder(Context context) {
             //take context
@@ -67,6 +69,7 @@ public class ChooseRecipesActivity extends AppCompatActivity {
             vRecipe = findViewById(R.id.vRecipe);
             vProfile = findViewById(R.id.vProfile);
             progressBar = findViewById(R.id.progressBar);
+            rvRecipe = findViewById(R.id.rvRecipe);
 
             progressBar.setVisibility(View.VISIBLE);
 
@@ -122,15 +125,14 @@ public class ChooseRecipesActivity extends AppCompatActivity {
         }
 
         private void setData(){
-            ChooseRecipesController chooseRecipesController = new ChooseRecipesController(this);
+            ChooseRecipesController chooseRecipesController = new ChooseRecipesController(this );
             chooseRecipesController.execute(numRecipes);
 
         }
 
         public void populate_recycler(ArrayList<Recipe> arrayRecipes){
             progressBar.setVisibility(View.INVISIBLE);
-            RecyclerView rvRecipe = findViewById(R.id.rvRecipe);
-            RecyclerRecipeCustom recyclerCategoryCustom = new RecyclerRecipeCustom(this.context, arrayRecipes);
+            recyclerCategoryCustom = new RecyclerRecipeCustom(this.context, arrayRecipes);
             rvRecipe.setAdapter(recyclerCategoryCustom);
             rvRecipe.setLayoutManager(new LinearLayoutManager(this.context));
         }

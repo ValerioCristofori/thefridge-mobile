@@ -25,7 +25,7 @@ import it.Trilogia.thefridgemobile.view.activity.home.HomeActivity;
 import it.Trilogia.thefridgemobile.controller.LoginController;
 import it.Trilogia.thefridgemobile.controller.SyntaxValidation;
 import it.Trilogia.thefridgemobile.model.db.DatabaseHelper;
-import it.Trilogia.thefridgemobile.model.customize.receiver.BroadcastService;
+import it.Trilogia.thefridgemobile.model.receiver.BroadcastService;
 
 public class MainActivity extends AppCompatActivity {
 

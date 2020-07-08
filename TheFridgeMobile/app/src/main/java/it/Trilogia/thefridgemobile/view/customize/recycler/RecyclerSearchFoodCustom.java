@@ -1,4 +1,4 @@
-package it.Trilogia.thefridgemobile.model.customize.recycler;
+package it.Trilogia.thefridgemobile.view.customize.recycler;
 
 import android.app.DatePickerDialog;
 import android.content.Context;

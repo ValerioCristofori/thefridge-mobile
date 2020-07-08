@@ -24,9 +24,9 @@ import it.Trilogia.thefridgemobile.view.activity.addfood.AddFoodActivity;
 import it.Trilogia.thefridgemobile.view.activity.profile.ProfileActivity;
 import it.Trilogia.thefridgemobile.view.activity.recipe.SearchRecipesActivity;
 import it.Trilogia.thefridgemobile.controller.ViewFridgeController;
-import it.Trilogia.thefridgemobile.model.customize.TextChangedListener;
-import it.Trilogia.thefridgemobile.model.customize.animation.AnimationCustom;
-import it.Trilogia.thefridgemobile.model.customize.recycler.RecyclerFridgeCustom;
+import it.Trilogia.thefridgemobile.view.customize.TextChangedListener;
+import it.Trilogia.thefridgemobile.view.customize.animation.AnimationCustom;
+import it.Trilogia.thefridgemobile.view.customize.recycler.RecyclerFridgeCustom;
 import it.Trilogia.thefridgemobile.model.entity.Food;
 
 public class HomeActivity extends AppCompatActivity {

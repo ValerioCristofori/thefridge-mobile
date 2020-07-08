@@ -1,4 +1,4 @@
-package it.Trilogia.thefridgemobile.model.customize;
+package it.Trilogia.thefridgemobile.view.customize;
 
 import android.view.LayoutInflater;
 import android.view.View;

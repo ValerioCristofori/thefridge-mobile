@@ -1,4 +1,4 @@
-package it.Trilogia.thefridgemobile.model.customize.animation;
+package it.Trilogia.thefridgemobile.view.customize.animation;
 
 import android.animation.Animator;
 import android.os.Build;
