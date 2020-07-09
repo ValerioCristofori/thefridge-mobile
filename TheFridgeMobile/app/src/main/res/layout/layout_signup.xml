@@ -12,6 +12,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/margin_singup_button"
         android:layout_marginStart="@dimen/margin_input_box_singup"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="@dimen/margin_input_box_singup"
         android:layout_marginBottom="@dimen/margin_singup_button"
         android:background="@color/green_color"
@@ -23,7 +24,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tfPassword" />
 
 
     <EditText
@@ -31,8 +33,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_input_box_singup"
+        android:layout_marginTop="213dp"
         android:layout_marginEnd="@dimen/margin_input_box_singup"
-        android:layout_marginBottom="12dp"
         android:backgroundTint="@color/myWhite"
         android:ems="10"
         android:fontFamily="@font/comfortaa"
@@ -41,17 +43,17 @@
         android:inputType="textPersonName"
         android:textColor="@color/myWhite"
         android:textColorHint="@color/myGrey"
-        app:layout_constraintBottom_toTopOf="@+id/tfEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <EditText
         android:id="@+id/tfEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_input_box_singup"
-        android:layout_marginTop="@dimen/margin_email_box_top"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="@dimen/margin_input_box_singup"
         android:backgroundTint="@color/myWhite"
         android:ems="10"
@@ -60,12 +62,10 @@
         android:inputType="textEmailAddress"
         android:textColor="@color/myWhite"
         android:textColorHint="@color/myGrey"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007"
+        app:layout_constraintTop_toBottomOf="@+id/tfUsername"
         tools:ignore="Autofill" />
 
     <EditText
@@ -73,9 +73,8 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_input_box_singup"
-        android:layout_marginTop="@dimen/margin_top_pass_box"
+        android:layout_marginTop="5dp"
         android:layout_marginEnd="@dimen/margin_input_box_singup"
-        android:layout_marginBottom="@dimen/margin_bottom_pass_box"
         android:backgroundTint="@color/myWhite"
         android:ems="10"
         android:fontFamily="@font/comfortaa"
@@ -85,28 +84,25 @@
         android:textAllCaps="false"
         android:textColor="@color/myWhite"
         android:textColorHint="@color/myGrey"
-        app:layout_constraintBottom_toTopOf="@+id/btnSignup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tfEmail"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/tfEmail" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="125dp"
         android:fontFamily="@font/comfortaa"
         android:text="@string/sign_up"
         android:textColor="@color/myBlack"
-        android:textStyle="bold"
         android:textSize="30sp"
-        app:layout_constraintBottom_toTopOf="@+id/tfUsername"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.347" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
