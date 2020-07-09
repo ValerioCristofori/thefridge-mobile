@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+    }
+
     class Holder implements View.OnClickListener, CompoundButton.OnCheckedChangeListener {
         private EditText tfUsername;
         private EditText tfPassword;
