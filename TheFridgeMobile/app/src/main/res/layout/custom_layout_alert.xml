@@ -18,7 +18,7 @@
             android:layout_width="@dimen/w_h_alert_icon"
             android:layout_height="@dimen/w_h_alert_icon"
             android:layout_marginEnd="@dimen/margin_alert_icon"
-            android:src="@drawable/alert_icon"
+            android:src="@drawable/ic_alert_icon"
             tools:ignore="ContentDescription" />
 
         <TextView
