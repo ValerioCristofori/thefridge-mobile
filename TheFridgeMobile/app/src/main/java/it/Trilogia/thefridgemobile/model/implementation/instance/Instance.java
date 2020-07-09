@@ -8,10 +8,10 @@ public class Instance {
 
     private static Instance instance = null;
     private User currentUser;
-    private int[] images = {R.drawable.ic_category_fruit,R.drawable.ic_category_vegetable,R.drawable.ic_category_meat,
-            R.drawable.ic_category_fish,R.drawable.ic_category_cereal,R.drawable.ic_category_bread,R.drawable.ic_category_legume,
-            R.drawable.ic_category_mushroom,R.drawable.ic_category_dairy_product,R.drawable.ic_category_dessert,R.drawable.ic_category_spices,
-            R.drawable.ic_category_sauces,R.drawable.ic_category_beverage,R.drawable.ic_category_vegan,R.drawable.ic_category_oil};
+    private int[] images = {R.drawable.category_fruit,R.drawable.category_vegetable,R.drawable.category_meat,
+            R.drawable.category_fish,R.drawable.category_cereal,R.drawable.category_bread,R.drawable.category_legume,
+            R.drawable.category_mushroom,R.drawable.category_dairy_product,R.drawable.category_dessert,R.drawable.category_spices,
+            R.drawable.category_sauces,R.drawable.category_beverage,R.drawable.category_vegan,R.drawable.category_oil};
 
     private Instance(){
 
